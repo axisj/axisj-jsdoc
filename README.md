@@ -10,11 +10,12 @@ axisj-jsdoc
 
 Usage
 ---
-1. nodejs와 gruntjs는 설치 되었다고 가정 하겠습니다. (만약 관련 정보가 필요하시다면. 영어버전 보실 실력이면 굳이 필요 없으니 번역본 링크 입니다.)
+###nodejs와 gruntjs는 설치 되었다고 가정 하겠습니다. 
+(만약 관련 정보가 필요하시다면. 영어버전 보실 실력이면 굳이 필요 없으니 번역본 링크 입니다.)
 - [nodejs한글번역](http://nodejs.sideeffect.kr/docs/)
 - [gruntjs한글번역](http://gruntjs-kr.herokuapp.com/getting-started)
 
-2. 소스를 받아보시면 root에 Gruntfile.js가 있습니다.
+###소스를 받아보시면 root에 Gruntfile.js가 있습니다.
 ```
 /**
  * http://gruntjs.com/configuring-tasks
@@ -152,7 +153,7 @@ module.exports = function (grunt) {
 };
 ```
 
-conf.json
+###conf.json
 ---
 
 ```
