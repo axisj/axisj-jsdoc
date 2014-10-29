@@ -69,7 +69,6 @@ module.exports = function (grunt) {
 	                DEMO_SAMPLE_PATH + 'lib/AXSelect.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXTab.js',
 
-	                /*
 	                DEMO_SAMPLE_PATH + 'lib/AXDOMRange.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXDrag.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXEditor.js',
@@ -94,7 +93,7 @@ module.exports = function (grunt) {
 	                DEMO_SAMPLE_PATH + 'lib/AXUserSelect.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXValidator.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXWaterfall.js',
-					*/
+
                     // You can add README.md file for index page at documentations.
                     'index.md'
                 ],
