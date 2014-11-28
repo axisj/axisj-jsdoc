@@ -348,6 +348,7 @@ p {
   font-size: 1.7em;
 }
 .main .readme h2 {
+  font-size: 1.5em;
   margin-top: 30px;
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -374,6 +375,15 @@ p {
 }
 .main article dd {
   margin: 0px;
+}
+.main article blockquote {
+  margin: 0px;
+  padding: 0 15px;
+  border-left: 4px solid #ddd;
+  font-style: italic;
+}
+.main article blockquote p {
+  color: #aaa;
 }
 .main article .prettyprint {
   padding: 10px;
