@@ -147,6 +147,10 @@
             
                 <li data-name="axf.docTD"><a href="axf.html#docTD">docTD</a></li>
             
+                <li data-name="axf.Event"><a href="axf.html#Event">Event</a></li>
+            
+                <li data-name="axf.mousewheelevt"><a href="axf.html#mousewheelevt">mousewheelevt</a></li>
+            
             </ul>
             <ul class="typedefs itemMembers">
             
@@ -155,11 +159,41 @@
             
             <span class="subtitle">Methods</span>
             
+                <li data-name="axf.alert"><a href="axf.html#alert">alert</a></li>
+            
+                <li data-name="axf.clientHeight"><a href="axf.html#clientHeight">clientHeight</a></li>
+            
+                <li data-name="axf.clientWidth"><a href="axf.html#clientWidth">clientWidth</a></li>
+            
+                <li data-name="axf.confirm"><a href="axf.html#confirm">confirm</a></li>
+            
+                <li data-name="axf.console"><a href="axf.html#console">console</a></li>
+            
+                <li data-name="axf.copyObject"><a href="axf.html#copyObject">copyObject</a></li>
+            
+                <li data-name="axf.dayLen"><a href="axf.html#dayLen">dayLen</a></li>
+            
                 <li data-name="axf.each"><a href="axf.html#each">each</a></li>
+            
+                <li data-name="axf.encParam"><a href="axf.html#encParam">encParam</a></li>
+            
+                <li data-name="axf.getCookie"><a href="axf.html#getCookie">getCookie</a></li>
             
                 <li data-name="axf.getId"><a href="axf.html#getId">getId</a></li>
             
                 <li data-name="axf.getUniqueId"><a href="axf.html#getUniqueId">getUniqueId</a></li>
+            
+                <li data-name="axf.getUrlInfo"><a href="axf.html#getUrlInfo">getUrlInfo</a></li>
+            
+                <li data-name="axf.isEmpty"><a href="axf.html#isEmpty">isEmpty</a></li>
+            
+                <li data-name="axf.overwriteObject"><a href="axf.html#overwriteObject">overwriteObject</a></li>
+            
+                <li data-name="axf.scrollHeight"><a href="axf.html#scrollHeight">scrollHeight</a></li>
+            
+                <li data-name="axf.scrollWidth"><a href="axf.html#scrollWidth">scrollWidth</a></li>
+            
+                <li data-name="axf.setCookie"><a href="axf.html#setCookie">setCookie</a></li>
             
                 <li data-name="axf.timekey"><a href="axf.html#timekey">timekey</a></li>
             
@@ -479,11 +513,15 @@
             
                 <li data-name="AXGrid.contentScrollTouchstart"><a href="AXGrid.html#contentScrollTouchstart">contentScrollTouchstart</a></li>
             
+                <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
             
                 <li data-name="AXGrid.focusMove"><a href="AXGrid.html#focusMove">focusMove</a></li>
+            
+                <li data-name="AXGrid.getAddingClass"><a href="AXGrid.html#getAddingClass">getAddingClass</a></li>
             
                 <li data-name="AXGrid.getCheckedList"><a href="AXGrid.html#getCheckedList">getCheckedList</a></li>
             
@@ -1481,6 +1519,119 @@
     
 </dd>
 
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="Event"><span class="type-signature static">static</span>axf.Event<span class="type-signature type object">Object</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Event.keyCode 모음</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js">Event: {
+    KEY_BACKSPACE: 8,
+    KEY_TAB: 9,
+    KEY_RETURN: 13,
+    KEY_ESC: 27,
+    KEY_LEFT: 37,
+    KEY_UP: 38,
+    KEY_RIGHT: 39,
+    KEY_DOWN: 40,
+    KEY_DELETE: 46,
+    KEY_HOME: 36,
+    KEY_END: 35,
+    KEY_PAGEUP: 33,
+    KEY_PAGEDOWN: 34,
+    KEY_INSERT: 45
+}</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="mousewheelevt"><span class="type-signature static">static</span>axf.mousewheelevt<span class="type-signature type type">type</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>브라우저에 따른 마우스 휠 이벤트이름</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
         </dl>
     
     
@@ -1488,6 +1639,901 @@
         <h3 class="subsection-title">Methods</h3>
         
         <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="alert">
+            
+            <span class="type-signature static">static</span>axf.alert<span class="signature">(obj)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L383" target="_blank">
+            AXUtil.js,
+            line 383</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>window.alert 를 확장하여 JSObject 구조를 출력 합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> axf.alert(&quot;AXISJ&quot;);
+ // AXISJ
+
+ axf.alert(1234);
+ // 1234
+
+ var myObj = {name:&quot;AXISJ&quot;, url:&quot;http://www.axisj.com&quot;};
+ axf.alert(myObj);
+ // {&quot;name&quot;:&quot;AXISJ&quot;, &quot;url&quot;:&quot;http://www.axisj.com&quot;}</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="clientHeight">
+            
+            <span class="type-signature static">static</span>axf.clientHeight<span class="signature">()</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Number}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L248" target="_blank">
+            AXUtil.js,
+            line 248</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>브라우저 clientHeight 반환합니다. window 창 높이와 같습니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> axf.clientHeight();</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="clientWidth">
+            
+            <span class="type-signature static">static</span>axf.clientWidth<span class="signature">()</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Number}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L268" target="_blank">
+            AXUtil.js,
+            line 268</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>브라우저 clientWidth 반환합니다. window 창 너비와 같습니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> axf.clientWidth();</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="confirm">
+            
+            <span class="type-signature static">static</span>axf.confirm<span class="signature">(obj)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L429" target="_blank">
+            AXUtil.js,
+            line 429</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>window.confirm 를 확장하여 JSObject 구조를 출력 합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> axf.confirm(&quot;AXISJ&quot;);
+ // AXISJ
+
+ axf.confirm(1234);
+ // 1234
+
+ var myObj = {name:&quot;AXISJ&quot;, url:&quot;http://www.axisj.com&quot;};
+ axf.confirm(myObj);
+ // {&quot;name&quot;:&quot;AXISJ&quot;, &quot;url&quot;:&quot;http://www.axisj.com&quot;}</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="console">
+            
+            <span class="type-signature static">static</span>axf.console<span class="signature">(obj)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L324" target="_blank">
+            AXUtil.js,
+            line 324</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>브라우저 console 에 메세지를 출력하여 줍니다. trace 와 같습니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+|
+
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> axf.console(&quot;AXISJ&quot;);
+ // AXISJ
+
+ axf.console(1234);
+ // 1234
+
+ var myObj = {name:&quot;AXISJ&quot;, url:&quot;http://www.axisj.com&quot;};
+ axf.console(myObj);
+ // {&quot;name&quot;:&quot;AXISJ&quot;, &quot;url&quot;:&quot;http://www.axisj.com&quot;}</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="copyObject">
+            
+            <span class="type-signature static">static</span>axf.copyObject<span class="signature">(obj)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Object}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L177" target="_blank">
+            AXUtil.js,
+            line 177</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>오브젝트를 복제하여 새로운 참조를 리턴합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>복제할 오브젝트</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+<h5>Returns:</h5>
+오브젝트
+<br />
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> axf.copyObject({a:1});
+ // 내부코드가 Object.toJSON(obj).object(); 이므로 상황에 맞게 사용해야 합니다.</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="dayLen">
+            
+            <span class="type-signature static">static</span>axf.dayLen<span class="signature">(year, month)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Number}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L234" target="_blank">
+            AXUtil.js,
+            line 234</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>지정한 년도와 월의 날자수를 반환합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>year</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>month</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+<h5>Returns:</h5>
+of daynum
+<br />
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> trace( axf.dayLen(2013, 1) );
+ // 28
+ // 주의 Data.getMonth() 의 반환값을 그대로 사용 하므로 1월은 0 으로 전달 해야 합니다. 0~11 까지의 값을 사용할 수 있습니다.</code></pre>
+    
+
+    
+</dd>
+
+        
             
 <dt>
     <div class="nameContainer">
@@ -1642,6 +2688,267 @@ var new_object = {};
 axf.each({a:1, b:2, c:3}, function(k, v){
     new_object[k] = v*2;
 });</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="encParam">
+            
+            <span class="type-signature static">static</span>axf.encParam<span class="signature">(str)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{String}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L528" target="_blank">
+            AXUtil.js,
+            line 528</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>파라미터에 value를 URLEncode해 줍니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>parameter</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js">axf.encParam(&quot;name=장기영&amp;sex=남&quot;);
+ //&quot;name=%EC%9E%A5%EA%B8%B0%EC%98%81&amp;sex=%EB%82%A8&quot;</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="getCookie">
+            
+            <span class="type-signature static">static</span>axf.getCookie<span class="signature">(name)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L222" target="_blank">
+            AXUtil.js,
+            line 222</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>쿠키에서 값을 읽어들입니다</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> trace( axf.getCookie(&quot;myname&quot;) );
+ // tomas</code></pre>
     
 
     
@@ -1872,6 +3179,823 @@ axf.each({a:1, b:2, c:3}, function(k, v){
             
 <dt>
     <div class="nameContainer">
+        <h4 class="name" id="getUrlInfo">
+            
+            <span class="type-signature static">static</span>axf.getUrlInfo<span class="signature">()</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Object}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L486" target="_blank">
+            AXUtil.js,
+            line 486</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>브라우저 각종 속성을 반환합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js">trace( axf.getUrlInfo() );
+{
+    &quot;url&quot;:&quot;http://127.0.0.1:2013/samples/AXcore/test.html&quot;,
+    &quot;param&quot;:&quot;&quot;,
+    &quot;anchorData&quot;:&quot;127.0.0.1:2013/samples/AXcore/test.html&quot;,
+    &quot;urlParam&quot;:&quot;http://127.0.0.1:2013/samples/AXcore/test.html&quot;,
+    &quot;referUrl&quot;:&quot;&quot;,
+    &quot;pathName&quot;:&quot;/samples/AXcore/test.html&quot;,
+    &quot;protocol&quot;:&quot;http:&quot;,
+    &quot;hostName&quot;:&quot;127.0.0.1&quot;
+}</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="isEmpty">
+            
+            <span class="type-signature static">static</span>axf.isEmpty<span class="signature">(obj)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Boolean}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L468" target="_blank">
+            AXUtil.js,
+            line 468</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>대상 개체가 undefined, null, &quot;&quot; 인지 체크 합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">obj</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> trace( axf.isEmpty(&quot;AXISJ&quot;) );
+ // false
+ trace( axf.isEmpty(&quot;&quot;) );
+ // true
+ trace( axf.isEmpty(undefined) );
+ // true</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="overwriteObject">
+            
+            <span class="type-signature static">static</span>axf.overwriteObject<span class="signature">(tg, obj, <span class="optional">rewirte</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Object}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L149" target="_blank">
+            AXUtil.js,
+            line 149</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>덮어쓰기 대상 오브젝트에 덮어쓰기 할 오브젝트를 덮어쓰기 합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>tg</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>덮어쓰기 대상 오브젝트</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>덮어쓰기 할 오브젝트</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>rewirte</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>덮어쓰기 모드</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+<h5>Returns:</h5>
+tg
+<br />
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> axf.overwriteObject({a:1}, {b:1});
+ // {a:1, b:1}
+ axf.overwriteObject({a:1}, {a:2}, true);
+ // {a:2}
+ // rewirte : false 이면 {a:1} 로 유지 됩니다. 대상오브젝트에 키가 없는 경우에만 덮어쓰기 합니다.</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="scrollHeight">
+            
+            <span class="type-signature static">static</span>axf.scrollHeight<span class="signature">()</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Number}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L258" target="_blank">
+            AXUtil.js,
+            line 258</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>HTML scrollHeight 반환합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> axf.scrollHeight();</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="scrollWidth">
+            
+            <span class="type-signature static">static</span>axf.scrollWidth<span class="signature">()</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{Number}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L278" target="_blank">
+            AXUtil.js,
+            line 278</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>HTML scrollWidth 반환합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> axf.scrollWidth();</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="setCookie">
+            
+            <span class="type-signature static">static</span>axf.setCookie<span class="signature">(name, value, <span class="optional">expiredays</span>)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXUtil.js#L210" target="_blank">
+            AXUtil.js,
+            line 210</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>쿠키에 값을 지정합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>expiredays</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js">axf.setCookie(&quot;myname&quot;, &quot;tomas&quot;, 10);</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
         <h4 class="name" id="timekey">
             
             <span class="type-signature static">static</span>axf.timekey<span class="signature">()</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{String}</span>
@@ -1972,7 +4096,7 @@ axf.each({a:1, b:2, c:3}, function(k, v){
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed Nov 05 2014 13:09:25 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Fri Nov 28 2014 11:49:52 GMT+0900 (KST)
         </footer>
     </div>
 </div>

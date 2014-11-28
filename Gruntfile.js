@@ -73,7 +73,7 @@ module.exports = function (grunt) {
 	                DEMO_SAMPLE_PATH + 'lib/AXDrag.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXEditor.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXExcelConvert.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXSplit.js',
+	                //DEMO_SAMPLE_PATH + 'lib/AXSplit.js',
 
 	                DEMO_SAMPLE_PATH + 'lib/AXHtmlElement.js',
 
@@ -124,17 +124,25 @@ module.exports = function (grunt) {
                 src: 'static/scripts/main.js',
                 dest: DEMO_PATH + '/scripts/main.js'
             }
-        }
+        },
+
+	    wkhtmltopdf: {
+		    dev: {
+			    src: DEMO_PATH + '/*.html',
+			    dest: 'pdf/output/'
+		    }
+	    }
     });
 
     // Load task libraries
     [
-        'grunt-contrib-connect',
-        'grunt-contrib-watch',
-        'grunt-contrib-copy',
-        'grunt-contrib-clean',
-        'grunt-contrib-less',
-        'grunt-jsdoc',
+		'grunt-contrib-connect',
+		'grunt-contrib-watch',
+		'grunt-contrib-copy',
+		'grunt-contrib-clean',
+		'grunt-contrib-less',
+		'grunt-jsdoc',
+		'grunt-wkhtmltopdf'
     ].forEach(function (taskName) {
         grunt.loadNpmTasks(taskName);
     });
@@ -152,4 +160,9 @@ module.exports = function (grunt) {
         'clean:demo',
         'jsdoc:demo'
     ]);
+
+
+	grunt.registerTask('axisj_jsdoc_topdf', 'Create documentations for pdf', [
+		'wkhtmltopdf:dev'
+	]);
 };

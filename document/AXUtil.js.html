@@ -147,6 +147,10 @@
             
                 <li data-name="axf.docTD"><a href="axf.html#docTD">docTD</a></li>
             
+                <li data-name="axf.Event"><a href="axf.html#Event">Event</a></li>
+            
+                <li data-name="axf.mousewheelevt"><a href="axf.html#mousewheelevt">mousewheelevt</a></li>
+            
             </ul>
             <ul class="typedefs itemMembers">
             
@@ -155,11 +159,41 @@
             
             <span class="subtitle">Methods</span>
             
+                <li data-name="axf.alert"><a href="axf.html#alert">alert</a></li>
+            
+                <li data-name="axf.clientHeight"><a href="axf.html#clientHeight">clientHeight</a></li>
+            
+                <li data-name="axf.clientWidth"><a href="axf.html#clientWidth">clientWidth</a></li>
+            
+                <li data-name="axf.confirm"><a href="axf.html#confirm">confirm</a></li>
+            
+                <li data-name="axf.console"><a href="axf.html#console">console</a></li>
+            
+                <li data-name="axf.copyObject"><a href="axf.html#copyObject">copyObject</a></li>
+            
+                <li data-name="axf.dayLen"><a href="axf.html#dayLen">dayLen</a></li>
+            
                 <li data-name="axf.each"><a href="axf.html#each">each</a></li>
+            
+                <li data-name="axf.encParam"><a href="axf.html#encParam">encParam</a></li>
+            
+                <li data-name="axf.getCookie"><a href="axf.html#getCookie">getCookie</a></li>
             
                 <li data-name="axf.getId"><a href="axf.html#getId">getId</a></li>
             
                 <li data-name="axf.getUniqueId"><a href="axf.html#getUniqueId">getUniqueId</a></li>
+            
+                <li data-name="axf.getUrlInfo"><a href="axf.html#getUrlInfo">getUrlInfo</a></li>
+            
+                <li data-name="axf.isEmpty"><a href="axf.html#isEmpty">isEmpty</a></li>
+            
+                <li data-name="axf.overwriteObject"><a href="axf.html#overwriteObject">overwriteObject</a></li>
+            
+                <li data-name="axf.scrollHeight"><a href="axf.html#scrollHeight">scrollHeight</a></li>
+            
+                <li data-name="axf.scrollWidth"><a href="axf.html#scrollWidth">scrollWidth</a></li>
+            
+                <li data-name="axf.setCookie"><a href="axf.html#setCookie">setCookie</a></li>
             
                 <li data-name="axf.timekey"><a href="axf.html#timekey">timekey</a></li>
             
@@ -479,11 +513,15 @@
             
                 <li data-name="AXGrid.contentScrollTouchstart"><a href="AXGrid.html#contentScrollTouchstart">contentScrollTouchstart</a></li>
             
+                <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
             
                 <li data-name="AXGrid.focusMove"><a href="AXGrid.html#focusMove">focusMove</a></li>
+            
+                <li data-name="AXGrid.getAddingClass"><a href="AXGrid.html#getAddingClass">getAddingClass</a></li>
             
                 <li data-name="AXGrid.getCheckedList"><a href="AXGrid.html#getCheckedList">getCheckedList</a></li>
             
@@ -1451,7 +1489,22 @@ trace(axf.timeKey()); // A004222760
 		var d = new Date();
 		return ("A" + d.getHours().setDigit(2) + d.getMinutes().setDigit(2) + d.getSeconds().setDigit(2) + d.getMilliseconds());
 	},
-
+/**
+ * @method axf.overwriteObject
+ * @param {Object} tg - 덮어쓰기 대상 오브젝트
+ * @param {Object} obj - 덮어쓰기 할 오브젝트
+ * @param {Boolean} [rewirte=false] - 덮어쓰기 모드
+ * @returns {Object} 덮어쓰기된 tg
+ * @description 덮어쓰기 대상 오브젝트에 덮어쓰기 할 오브젝트를 덮어쓰기 합니다.
+ * @example
+ ```js
+ axf.overwriteObject({a:1}, {b:1});
+ // {a:1, b:1}
+ axf.overwriteObject({a:1}, {a:2}, true);
+ // {a:2}
+ // rewirte : false 이면 {a:1} 로 유지 됩니다. 대상오브젝트에 키가 없는 경우에만 덮어쓰기 합니다.
+ ```
+ */
 	overwriteObject: function (tg, obj, rewrite) {
 		if (rewrite == undefined) rewrite = true;
 		//trace(tg[k]);
@@ -1464,6 +1517,17 @@ trace(axf.timeKey()); // A004222760
 		});
 		return tg;
 	},
+/**
+ * @method axf.copyObject
+ * @param {Object} obj - 복제할 오브젝트
+ * @returns {Object} 복제된 오브젝트
+ * @description 오브젝트를 복제하여 새로운 참조를 리턴합니다.
+ * @example
+ ```js
+ axf.copyObject({a:1});
+ // 내부코드가 Object.toJSON(obj).object(); 이므로 상황에 맞게 사용해야 합니다.
+ ```
+ */
 	copyObject: function (obj) {
 		//return Object.clone(obj);
 		return Object.toJSON(obj).object();
@@ -1486,13 +1550,83 @@ trace(axf.timeKey()); // A004222760
 		});
 		return rword;
 	},
+/**
+ * @method axf.setCookie
+ * @param {String} name
+ * @param {String} value
+ * @param {Number} [expiredays]
+ * @description 쿠키에 값을 지정합니다.
+ * @example
+```js
+axf.setCookie("myname", "tomas", 10);
+```
+ */
 	setCookie: function (name, value, expiredays) { if (expiredays) { var todayDate = new Date(); todayDate.setDate(todayDate.getDate() + expiredays); document.cookie = name + '=' + escape(value) + '; path=/; expires=' + todayDate.toGMTString() + ';'; } else { document.cookie = name + '=' + escape(value) + '; path=/;'; } },
+/**
+ * @method axf.getCookie
+ * @param {String} name
+ * @description 쿠키에서 값을 읽어들입니다
+ * @example
+ ```js
+ trace( axf.getCookie("myname") );
+ // tomas
+ ```
+ */
 	getCookie: function (name) { var nameOfCookie = name + "="; var x = 0; while (x &lt;= document.cookie.length) { var y = (x + nameOfCookie.length); if (document.cookie.substring(x, y) == nameOfCookie) { if ((endOfCookie = document.cookie.indexOf(";", y)) == -1) endOfCookie = document.cookie.length; return unescape(document.cookie.substring(y, endOfCookie)); } x = document.cookie.indexOf(" ", x) + 1; if (x == 0) break; } return ""; },
 	JSONFilter: /^\/\*-secure-([\s\S]*)\*\/\s*$/,
+/**
+ * @method axf.dayLen
+ * @param {Number} year
+ * @param {Number} month
+ * @returns {Number} end of daynum
+ * @description 지정한 년도와 월의 날자수를 반환합니다.
+ * @example
+```js
+ trace( axf.dayLen(2013, 1) );
+ // 28
+ // 주의 Data.getMonth() 의 반환값을 그대로 사용 하므로 1월은 0 으로 전달 해야 합니다. 0~11 까지의 값을 사용할 수 있습니다.
+```
+ */
 	dayLen: function (y, m) { if ([3, 5, 8, 10].has(function () { return this.item == m; })) { return 30; } else if (m == 1) { return (((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0)) ? 29 : 28; } else { return 31; } },
+/**
+ * @method  axf.clientHeight
+ * @returns {Number} clientHeight
+ * @description 브라우저 clientHeight 반환합니다. window 창 높이와 같습니다.
+ * @example
+```js
+ axf.clientHeight();
+```
+ */
 	clientHeight: function () { return (AXUtil.docTD == "Q") ? document.body.clientHeight : document.documentElement.clientHeight; },
+/**
+ * @method  axf.scrollHeight
+ * @returns {Number} scrollHeight
+ * @description HTML scrollHeight 반환합니다.
+ * @example
+ ```js
+ axf.scrollHeight();
+ ```
+ */
 	scrollHeight: function () { return (AXUtil.docTD == "Q") ? document.body.scrollHeight : document.documentElement.scrollHeight; },
+/**
+ * @method  axf.clientWidth
+ * @returns {Number} clientWidth
+ * @description 브라우저 clientWidth 반환합니다. window 창 너비와 같습니다.
+ * @example
+ ```js
+ axf.clientWidth();
+ ```
+ */
 	clientWidth: function () { return (AXUtil.docTD == "Q") ? document.body.clientWidth : document.documentElement.clientWidth; },
+/**
+ * @method  axf.scrollWidth
+ * @returns {Number} scrollWidth
+ * @description HTML scrollWidth 반환합니다.
+ * @example
+ ```js
+ axf.scrollWidth();
+ ```
+ */
 	scrollWidth: function () { return (AXUtil.docTD == "Q") ? document.body.scrollWidth : document.documentElement.scrollWidth; },
 	scrollTop: function(){
 		return (document.documentElement && document.documentElement.scrollTop) ||
@@ -1502,11 +1636,51 @@ trace(axf.timeKey()); // A004222760
 		return (document.documentElement && document.documentElement.scrollLeft) ||
 			document.body.scrollLeft;
 	},
+/**
+ * @member {Object} axf.Event
+ * @description Event.keyCode 모음
+ * @example
+ ```js
+Event: {
+	KEY_BACKSPACE: 8,
+	KEY_TAB: 9,
+	KEY_RETURN: 13,
+	KEY_ESC: 27,
+	KEY_LEFT: 37,
+	KEY_UP: 38,
+	KEY_RIGHT: 39,
+	KEY_DOWN: 40,
+	KEY_DELETE: 46,
+	KEY_HOME: 36,
+	KEY_END: 35,
+	KEY_PAGEUP: 33,
+	KEY_PAGEDOWN: 34,
+	KEY_INSERT: 45
+}
+ ```
+ */
 	Event: {
 		KEY_BACKSPACE: 8,
 		KEY_TAB: 9,
 		KEY_RETURN: 13, KEY_ESC: 27, KEY_LEFT: 37, KEY_UP: 38, KEY_RIGHT: 39, KEY_DOWN: 40, KEY_DELETE: 46,
 		KEY_HOME: 36, KEY_END: 35, KEY_PAGEUP: 33, KEY_PAGEDOWN: 34, KEY_INSERT: 45, KEY_SPACE: 32, cache: {} },
+/**
+ * @method axf.console
+ * @param {String|Object|Array} obj
+ * @description 브라우저 console 에 메세지를 출력하여 줍니다. trace 와 같습니다.
+ * @example
+```js
+ axf.console("AXISJ");
+ // AXISJ
+
+ axf.console(1234);
+ // 1234
+
+ var myObj = {name:"AXISJ", url:"http://www.axisj.com"};
+ axf.console(myObj);
+ // {"name":"AXISJ", "url":"http://www.axisj.com"}
+ ```
+ */
 	console: function (obj) {
 		var po = "";
 		if (arguments.length > 1) {
@@ -1549,6 +1723,23 @@ trace(axf.timeKey()); // A004222760
 			}
 		}
 	},
+/**
+ * @method  axf.alert
+ * @param {String|Object|Array} obj
+ * @description window.alert 를 확장하여 JSObject 구조를 출력 합니다.
+ * @example
+```js
+ axf.alert("AXISJ");
+ // AXISJ
+
+ axf.alert(1234);
+ // 1234
+
+ var myObj = {name:"AXISJ", url:"http://www.axisj.com"};
+ axf.alert(myObj);
+ // {"name":"AXISJ", "url":"http://www.axisj.com"}
+ ```
+ */
 	alert: function (obj) {
 		var po = "";
 		if (arguments.length > 1) {
@@ -1578,6 +1769,23 @@ trace(axf.timeKey()); // A004222760
 		}
 		alert(po);
 	},
+/**
+ * @method  axf.confirm
+ * @param {String|Object|Array} obj
+ * @description window.confirm 를 확장하여 JSObject 구조를 출력 합니다.
+ * @example
+ ```js
+ axf.confirm("AXISJ");
+ // AXISJ
+
+ axf.confirm(1234);
+ // 1234
+
+ var myObj = {name:"AXISJ", url:"http://www.axisj.com"};
+ axf.confirm(myObj);
+ // {"name":"AXISJ", "url":"http://www.axisj.com"}
+ ```
+ */
 	confirm: function (obj) {
 		var po = "";
 		var type = (typeof obj).toLowerCase();
@@ -1600,9 +1808,43 @@ trace(axf.timeKey()); // A004222760
 	bindPlaceholder: function () {
 
 	},
-	isEmpty: function (val) {
+/**
+ * @method axf.isEmpty
+ * @param {obj} obj
+ * @returns {Boolean}
+ * @description 대상 개체가 undefined, null, "" 인지 체크 합니다.
+ * @example
+```js
+ trace( axf.isEmpty("AXISJ") );
+ // false
+ trace( axf.isEmpty("") );
+ // true
+ trace( axf.isEmpty(undefined) );
+ // true
+```
+ */
+	isEmpty: function (obj) {
 		return (val === "" || val == null || val == undefined) ? true : false;
 	},
+/**
+ * @method axf.getUrlInfo
+ * @returns {Object} urlInfo
+ * @description 브라우저 각종 속성을 반환합니다.
+ * @example
+```js
+trace( axf.getUrlInfo() );
+{
+	"url":"http://127.0.0.1:2013/samples/AXcore/test.html",
+	"param":"",
+	"anchorData":"127.0.0.1:2013/samples/AXcore/test.html",
+	"urlParam":"http://127.0.0.1:2013/samples/AXcore/test.html",
+	"referUrl":"",
+	"pathName":"/samples/AXcore/test.html",
+	"protocol":"http:",
+	"hostName":"127.0.0.1"
+}
+```
+ */
 	getUrlInfo: function () {
 		var url, url_param, param, referUrl, pathName, AXparam, pageProtocol, pageHostName;
 		url_param = window.location.href;
@@ -1626,6 +1868,17 @@ trace(axf.timeKey()); // A004222760
 			hostName : pageHostName
 		};
 	},
+/**
+ * @method axf.encParam
+ * @param {String} str - parameter
+ * @returns {String} parameter
+ * @description 파라미터에 value를 URLEncode해 줍니다.
+ * @example
+```js
+axf.encParam("name=장기영&sex=남");
+ //"name=%EC%9E%A5%EA%B8%B0%EC%98%81&sex=%EB%82%A8"
+```
+ */
 	encParam: function (str) {
 		var re = new RegExp("[^&?]*?=[^&?]*", "ig");
 		var pars = [];
@@ -1666,6 +1919,10 @@ trace(axf.timeKey()); // A004222760
 			head: head, body: body
 		};
 	},
+/**
+ * @member {type} axf.mousewheelevt
+ * @description 브라우저에 따른 마우스 휠 이벤트이름
+ */
 	mousewheelevt: ((/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel")
 };
 var axdom;
@@ -2548,7 +2805,7 @@ var getUrlInfo = axf.getUrlInfo;</code></pre>
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed Nov 05 2014 13:09:24 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Fri Nov 28 2014 11:49:52 GMT+0900 (KST)
         </footer>
     </div>
 </div>

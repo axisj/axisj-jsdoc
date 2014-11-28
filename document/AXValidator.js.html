@@ -147,6 +147,10 @@
             
                 <li data-name="axf.docTD"><a href="axf.html#docTD">docTD</a></li>
             
+                <li data-name="axf.Event"><a href="axf.html#Event">Event</a></li>
+            
+                <li data-name="axf.mousewheelevt"><a href="axf.html#mousewheelevt">mousewheelevt</a></li>
+            
             </ul>
             <ul class="typedefs itemMembers">
             
@@ -155,11 +159,41 @@
             
             <span class="subtitle">Methods</span>
             
+                <li data-name="axf.alert"><a href="axf.html#alert">alert</a></li>
+            
+                <li data-name="axf.clientHeight"><a href="axf.html#clientHeight">clientHeight</a></li>
+            
+                <li data-name="axf.clientWidth"><a href="axf.html#clientWidth">clientWidth</a></li>
+            
+                <li data-name="axf.confirm"><a href="axf.html#confirm">confirm</a></li>
+            
+                <li data-name="axf.console"><a href="axf.html#console">console</a></li>
+            
+                <li data-name="axf.copyObject"><a href="axf.html#copyObject">copyObject</a></li>
+            
+                <li data-name="axf.dayLen"><a href="axf.html#dayLen">dayLen</a></li>
+            
                 <li data-name="axf.each"><a href="axf.html#each">each</a></li>
+            
+                <li data-name="axf.encParam"><a href="axf.html#encParam">encParam</a></li>
+            
+                <li data-name="axf.getCookie"><a href="axf.html#getCookie">getCookie</a></li>
             
                 <li data-name="axf.getId"><a href="axf.html#getId">getId</a></li>
             
                 <li data-name="axf.getUniqueId"><a href="axf.html#getUniqueId">getUniqueId</a></li>
+            
+                <li data-name="axf.getUrlInfo"><a href="axf.html#getUrlInfo">getUrlInfo</a></li>
+            
+                <li data-name="axf.isEmpty"><a href="axf.html#isEmpty">isEmpty</a></li>
+            
+                <li data-name="axf.overwriteObject"><a href="axf.html#overwriteObject">overwriteObject</a></li>
+            
+                <li data-name="axf.scrollHeight"><a href="axf.html#scrollHeight">scrollHeight</a></li>
+            
+                <li data-name="axf.scrollWidth"><a href="axf.html#scrollWidth">scrollWidth</a></li>
+            
+                <li data-name="axf.setCookie"><a href="axf.html#setCookie">setCookie</a></li>
             
                 <li data-name="axf.timekey"><a href="axf.html#timekey">timekey</a></li>
             
@@ -479,11 +513,15 @@
             
                 <li data-name="AXGrid.contentScrollTouchstart"><a href="AXGrid.html#contentScrollTouchstart">contentScrollTouchstart</a></li>
             
+                <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
             
                 <li data-name="AXGrid.focusMove"><a href="AXGrid.html#focusMove">focusMove</a></li>
+            
+                <li data-name="AXGrid.getAddingClass"><a href="AXGrid.html#getAddingClass">getAddingClass</a></li>
             
                 <li data-name="AXGrid.getCheckedList"><a href="AXGrid.html#getCheckedList">getCheckedList</a></li>
             
@@ -1371,13 +1409,13 @@ var AXValidator = Class.create(AXJ, {
         var _elements = this.elements;
         var checkClass = this.validateCheckClass;
 
-        jQuery.each(allElements, function (eidx, Elem) {
+        axdom.each(allElements, function (eidx, Elem) {
             try {
                 var config = {};
                 var isValidate = false;
-                jQuery.each(checkClass, function (k, v) {
+                axdom.each(checkClass, function (k, v) {
                     if (Elem.id) {
-                        if (jQuery("#" + Elem.id).hasClass(cfg.clazz + k)) {
+                        if (axdom("#" + Elem.id).hasClass(cfg.clazz + k)) {
                             config[k] = v;
                             isValidate = true;
                         }
@@ -1399,11 +1437,11 @@ var AXValidator = Class.create(AXJ, {
         });
 	    // checkbox, radio 수집
 	    var checkedItems = {};
-	    jQuery(this.form).find("input[type=checkbox], input[type=radio]").each(function(eidx, Elem){
+	    axdom(this.form).find("input[type=checkbox], input[type=radio]").each(function(eidx, Elem){
 
 		    var config = {};
 		    var isValidate = false, label = "";
-		    jQuery.each(checkClass, function (k, v) {
+		    axdom.each(checkClass, function (k, v) {
 				if (Elem.name) {
 				    if ($(document[cfg.targetFormName][Elem.name]).hasClass(cfg.clazz + k)) {
 					    config[k] = v;
@@ -1553,7 +1591,7 @@ myValidator.add({
 
         if (addObj.id) {
             var findIndex = null;
-            jQuery.each(this.elements, function (eidx, elem) {
+            axdom.each(this.elements, function (eidx, elem) {
                 if (this.id == addObj.id) {
                     findIndex = eidx;
                     return false;
@@ -1563,13 +1601,13 @@ myValidator.add({
                 addElement(addObj, findIndex);
                 addedObject = this.elements[findIndex];
             } else {
-                addObj.name = jQuery("#" + addObj.id).attr("name");
+                addObj.name = axdom("#" + addObj.id).attr("name");
                 this.elements.push(addObj);
                 addedObject = this.elements.last();
             }
         } else if (addObj.name) {
             var findIndex = null;
-            jQuery.each(this.elements, function (eidx, elem) {
+            axdom.each(this.elements, function (eidx, elem) {
                 if (this.name == addObj.name) {
                     findIndex = eidx;
                     return false;
@@ -1592,7 +1630,7 @@ myValidator.add({
         var targetElemForSelect;
 
         if (addedObject.id) {
-            targetElem = jQuery("#" + addedObject.id);
+            targetElem = axdom("#" + addedObject.id);
             targetElemForSelect = AXgetId(addedObject.id);
         } else if (this.name) {
             targetElem = $(document[cfg.targetFormName][addedObject.name]);
@@ -1608,7 +1646,7 @@ myValidator.add({
             Elem.needRealtimeCheck = false;
             Elem.realtimeCheck = {};
 
-            jQuery.each(Elem.config, function (k, v) {
+            axdom.each(Elem.config, function (k, v) {
                 if (k == "maxlength" || k == "maxbyte") {
                     Elem.needRealtimeCheck = true;
                     Elem.realtimeCheck[k] = v;
@@ -1641,7 +1679,7 @@ myValidator.add({
                     }
 
 
-                    jQuery.each(Elem.realtimeCheck, function (k, v) {
+                    axdom.each(Elem.realtimeCheck, function (k, v) {
                         var val = targetElem.val() + "A";
                         if (!validateFormatter(Elem, val, k, v, "realtime")) { // 값 검증 처리
                             returnObject = raiseError(Elem, val, k, v);
@@ -1687,7 +1725,7 @@ myValidator.add({
                 var _val = this.value;
                 var returnObject = null;
                 var vKey;
-                jQuery.each(Elem.config, function (k, v) {
+                axdom.each(Elem.config, function (k, v) {
 
                     //trace(k);
 
@@ -1745,7 +1783,7 @@ myValidator.add({
         if (addedObject.onblur) {
             targetElem.unbind("blur.validate").bind("blur.validate", function (e) {
                 var returnObject = {result:true};
-                jQuery.each(Elem.config, function (k, v) {
+                axdom.each(Elem.config, function (k, v) {
                     var val = targetElem.val();
                     if (!validateFormatter(Elem, val, k, v, "")) {
                         returnObject = raiseError(Elem, val, k, v);
@@ -1835,9 +1873,9 @@ var validateResult = myValidator.validate();
         for (var Elem, eidx= 0, __arr = this.elements; (eidx &lt; __arr.length && (Elem = __arr[eidx])); eidx++) {
             var targetElem;
             if (Elem.id && !Elem.multi) {
-                targetElem = jQuery("#" + Elem.id);
+                targetElem = axdom("#" + Elem.id);
             } else if (Elem.name) {
-                targetElem = jQuery( document[cfg.targetFormName][Elem.name] );
+                targetElem = axdom( document[cfg.targetFormName][Elem.name] );
             }
 
 	        if(Elem.name == "bizno") {
@@ -1887,7 +1925,7 @@ var validateResult = myValidator.validate();
 
                 var _end = false;
 
-                jQuery.each(Elem.config, function (k, v) {
+                axdom.each(Elem.config, function (k, v) {
                     if (!validateFormatter(Elem, val, k, v, "")) { // 값 검증 처리
                         returnObject = raiseError(Elem, val, k, v);
                         _end = true;
@@ -2031,7 +2069,7 @@ var validateResult = myValidator.validate();
                 /* for format */
             } else if (ElemValue != "" && validateKey == "number") {
                 //var pattern = /^[0-9]+$/;
-                result = jQuery.isNumeric(ElemValue.trim());
+                result = axdom.isNumeric(ElemValue.trim());
             } else if (ElemValue != "" && validateKey == "email") {
                 var pattern = /^[_a-zA-Z0-9-\.]+@[\.a-zA-Z0-9-]+\.[a-zA-Z]+$/;
                 result = pattern.test(ElemValue);
@@ -2195,7 +2233,7 @@ var validateResult = myValidator.validate();
                     result = true;
                 }else{
                     var st_date = ElemValue;
-                    var ed_date = jQuery("#" + validateValue.id).val().trim();
+                    var ed_date = axdom("#" + validateValue.id).val().trim();
                     if(ed_date != ""){
                         if (st_date.date().diff(ed_date) &lt; 0) {
                             result = false;
@@ -2211,7 +2249,7 @@ var validateResult = myValidator.validate();
                     result = true;
                 }else{
                     var ed_date = ElemValue;
-                    var st_date = jQuery("#" + validateValue.id).val().trim();
+                    var st_date = axdom("#" + validateValue.id).val().trim();
                     if(st_date != ""){
                         //trace(st_date, ed_date, st_date.date());
                         if (st_date.date().diff(ed_date) &lt; 0) {
@@ -2224,7 +2262,7 @@ var validateResult = myValidator.validate();
                     }
                 }
             } else {
-                if (jQuery.isFunction(validateValue)) {
+                if (axdom.isFunction(validateValue)) {
                     result = validateValue.call({
                         Elem: Elem,
                         ElemValue: ElemValue,
@@ -2302,7 +2340,7 @@ if (!validateResult) {
         }
         var errObj = this.errElements.last();
         var errElement = errObj.element;
-        return jQuery("#" + errElement.id).length > 0 ? jQuery("#" + errElement.id) : jQuery(document[cfg.targetFormName][errElement.name]);
+        return axdom("#" + errElement.id).length > 0 ? axdom("#" + errElement.id) : axdom(document[cfg.targetFormName][errElement.name]);
     },
     getElement: function (elementObj) {
         var cfg = this.config;
@@ -2400,7 +2438,7 @@ if (!validateResult) {
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed Nov 05 2014 13:09:25 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Fri Nov 28 2014 11:49:52 GMT+0900 (KST)
         </footer>
     </div>
 </div>

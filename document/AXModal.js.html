@@ -147,6 +147,10 @@
             
                 <li data-name="axf.docTD"><a href="axf.html#docTD">docTD</a></li>
             
+                <li data-name="axf.Event"><a href="axf.html#Event">Event</a></li>
+            
+                <li data-name="axf.mousewheelevt"><a href="axf.html#mousewheelevt">mousewheelevt</a></li>
+            
             </ul>
             <ul class="typedefs itemMembers">
             
@@ -155,11 +159,41 @@
             
             <span class="subtitle">Methods</span>
             
+                <li data-name="axf.alert"><a href="axf.html#alert">alert</a></li>
+            
+                <li data-name="axf.clientHeight"><a href="axf.html#clientHeight">clientHeight</a></li>
+            
+                <li data-name="axf.clientWidth"><a href="axf.html#clientWidth">clientWidth</a></li>
+            
+                <li data-name="axf.confirm"><a href="axf.html#confirm">confirm</a></li>
+            
+                <li data-name="axf.console"><a href="axf.html#console">console</a></li>
+            
+                <li data-name="axf.copyObject"><a href="axf.html#copyObject">copyObject</a></li>
+            
+                <li data-name="axf.dayLen"><a href="axf.html#dayLen">dayLen</a></li>
+            
                 <li data-name="axf.each"><a href="axf.html#each">each</a></li>
+            
+                <li data-name="axf.encParam"><a href="axf.html#encParam">encParam</a></li>
+            
+                <li data-name="axf.getCookie"><a href="axf.html#getCookie">getCookie</a></li>
             
                 <li data-name="axf.getId"><a href="axf.html#getId">getId</a></li>
             
                 <li data-name="axf.getUniqueId"><a href="axf.html#getUniqueId">getUniqueId</a></li>
+            
+                <li data-name="axf.getUrlInfo"><a href="axf.html#getUrlInfo">getUrlInfo</a></li>
+            
+                <li data-name="axf.isEmpty"><a href="axf.html#isEmpty">isEmpty</a></li>
+            
+                <li data-name="axf.overwriteObject"><a href="axf.html#overwriteObject">overwriteObject</a></li>
+            
+                <li data-name="axf.scrollHeight"><a href="axf.html#scrollHeight">scrollHeight</a></li>
+            
+                <li data-name="axf.scrollWidth"><a href="axf.html#scrollWidth">scrollWidth</a></li>
+            
+                <li data-name="axf.setCookie"><a href="axf.html#setCookie">setCookie</a></li>
             
                 <li data-name="axf.timekey"><a href="axf.html#timekey">timekey</a></li>
             
@@ -479,11 +513,15 @@
             
                 <li data-name="AXGrid.contentScrollTouchstart"><a href="AXGrid.html#contentScrollTouchstart">contentScrollTouchstart</a></li>
             
+                <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
             
                 <li data-name="AXGrid.focusMove"><a href="AXGrid.html#focusMove">focusMove</a></li>
+            
+                <li data-name="AXGrid.getAddingClass"><a href="AXGrid.html#getAddingClass">getAddingClass</a></li>
             
                 <li data-name="AXGrid.getCheckedList"><a href="AXGrid.html#getCheckedList">getCheckedList</a></li>
             
@@ -1311,7 +1349,7 @@
  * @class AXModal
  * @classdesc 모달창을 생성하고 제어 합니다. 모달창은 window, iframe, div 세 가지로 생성할 수 있습니다.
  * @extends AXJ
- * @version v1.38
+ * @version v1.39
  * @author tom@axisj.com
  * @logs
  "2013-02-13 오전 10:39:17 - axmods 에서 컨버트 : tom ",
@@ -1328,6 +1366,7 @@
  "2014-06-09 tom : mediaQuery bugfix"
  "2014-08-04 tom : fix resize error"
  "2014-09-17 tom : 'add Config' scrollLock"
+ "2014-11-16 tom : openDiv 메소드에 verticalAlign 속성 확장"
  *
 ```js
 var myModal = new AXModal();
@@ -1484,8 +1523,8 @@ myModal.open(configs);
 				po.push("		&lt;input type='hidden' name='" + key + "' value='" + val + "' />");
 			});
 		} else {
-			jQuery.each(http.pars, function () {
-				jQuery.each(this, function (key, val) {
+			axdom.each(http.pars, function () {
+				axdom.each(this, function (key, val) {
 					po.push("		&lt;input type='hidden' name='" + key + "' value='" + val + "' />");
 				});
 			});
@@ -1595,12 +1634,12 @@ myModal.open(configs);
 		po.push("		&lt;input type='hidden' name='winID' value='" + this.winID + "' />");
 
 		if (isNaN(http.pars.length)) {
-			jQuery.each(http.pars, function (key, val) {
+			axdom.each(http.pars, function (key, val) {
 				po.push("		&lt;input type='hidden' name='" + key + "' value='" + val + "' />");
 			});
 		} else {
-			jQuery.each(http.pars, function () {
-				jQuery.each(this, function (key, val) {
+			axdom.each(http.pars, function () {
+				axdom.each(this, function (key, val) {
 					po.push("		&lt;input type='hidden' name='" + key + "' value='" + val + "' />");
 				});
 			});
@@ -1678,7 +1717,8 @@ var configs = {
 	targetID: {String} - 모달창 타켓 엘리먼트 아이디,
 	top: {Number} [scrollTop + 100] - 모달창 포지션 top,
 	width: {(String|Number)} - 모달창 너비,
-	closeByEscKey: {Boolean} [false] - 모달창 닫기를 esc 키로 닫을 지 여부
+	closeByEscKey: {Boolean} [false] - 모달창 닫기를 esc 키로 닫을 지 여부,
+	verticalAlign: {Boolean} [false] - 모달창 가운데 표시 여부
 }
 myModal.openDiv(configs);
 ```
@@ -1690,7 +1730,8 @@ myModal.openDiv(configs);
 		var modalID = cfg.opendModalID = args.modalID;
 
 		if (AXgetId(modalID)) {
-			jQuery("#" + modalID).show();
+			var modalTarget = $("#" + modalID);
+			modalTarget.show();
 
 			var maskTop = this.config.defaultTop;
 			if (args.top != undefined) {
@@ -1703,7 +1744,11 @@ myModal.openDiv(configs);
 				maskTop = jQuery(window).scrollTop();
 			}
 
-			jQuery("#" + modalID).css({ "top": maskTop });
+			if( args.verticalAlign ){
+				modalTarget.css({top: axf.clientHeight() / 2 - modalTarget.height()/2 + jQuery(window).scrollTop() })
+			}else{
+				modalTarget.css({ "top": maskTop });
+			}
 
 			if (args.closeByEscKey) {
 				var keydown = this.keydown.bind(this);
@@ -1712,7 +1757,6 @@ myModal.openDiv(configs);
 				};
 				jQuery(document.body).bind("keydown.AXModal", keydownBind);
 			}
-
 			return;
 		}
 
@@ -1739,7 +1783,6 @@ myModal.openDiv(configs);
 		} else {
 			maskTop = jQuery(window).scrollTop() + 50;
 		}
-
 
 		if (maskLeft &lt; 0) maskLeft = 0;
 
@@ -1779,16 +1822,21 @@ myModal.openDiv(configs);
 		}
 
 		/*
-        if (this.mask) {
-            if (this.config.autoHide) this.mask.bind("click", close);
-        }
-        */
+		 if (this.mask) {
+		 if (this.config.autoHide) this.mask.bind("click", close);
+		 }
+		 */
 
 		jQuery(window).unbind("resize.AXModal");
 		jQuery(window).bind("resize.AXModal", this.onDocResize.bind(this));
 
 		if (cfg.scrollLock == true) {
 			jQuery(document.body).css({'overflow':'hidden'});
+		}
+
+		if( args.verticalAlign ){
+			var modalTarget = $("#" + modalID);
+			$("#" + modalID).css({top: axf.clientHeight() / 2 - modalTarget.height()/2 + jQuery(window).scrollTop() })
 		}
 	},
 /**
@@ -1826,12 +1874,12 @@ myModal.openNew(configs);
 		po.push("		&lt;input type='hidden' name='winID' value='" + this.winID + "' />");
 
 		if (isNaN(http.pars.length)) {
-			jQuery.each(http.pars, function (key, val) {
+			axdom.each(http.pars, function (key, val) {
 				po.push("		&lt;input type='hidden' name='" + key + "' value='" + val + "' />");
 			});
 		} else {
-			jQuery.each(http.pars, function () {
-				jQuery.each(this, function (key, val) {
+			axdom.each(http.pars, function () {
+				axdom.each(this, function (key, val) {
 					po.push("		&lt;input type='hidden' name='" + key + "' value='" + val + "' />");
 				});
 			});
@@ -2052,7 +2100,7 @@ parent.myModal.resize(); //iframe 모달창을 오픈한 경우 열려진 iframe
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed Nov 05 2014 13:09:24 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Fri Nov 28 2014 11:49:52 GMT+0900 (KST)
         </footer>
     </div>
 </div>

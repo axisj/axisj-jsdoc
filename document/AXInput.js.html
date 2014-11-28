@@ -147,6 +147,10 @@
             
                 <li data-name="axf.docTD"><a href="axf.html#docTD">docTD</a></li>
             
+                <li data-name="axf.Event"><a href="axf.html#Event">Event</a></li>
+            
+                <li data-name="axf.mousewheelevt"><a href="axf.html#mousewheelevt">mousewheelevt</a></li>
+            
             </ul>
             <ul class="typedefs itemMembers">
             
@@ -155,11 +159,41 @@
             
             <span class="subtitle">Methods</span>
             
+                <li data-name="axf.alert"><a href="axf.html#alert">alert</a></li>
+            
+                <li data-name="axf.clientHeight"><a href="axf.html#clientHeight">clientHeight</a></li>
+            
+                <li data-name="axf.clientWidth"><a href="axf.html#clientWidth">clientWidth</a></li>
+            
+                <li data-name="axf.confirm"><a href="axf.html#confirm">confirm</a></li>
+            
+                <li data-name="axf.console"><a href="axf.html#console">console</a></li>
+            
+                <li data-name="axf.copyObject"><a href="axf.html#copyObject">copyObject</a></li>
+            
+                <li data-name="axf.dayLen"><a href="axf.html#dayLen">dayLen</a></li>
+            
                 <li data-name="axf.each"><a href="axf.html#each">each</a></li>
+            
+                <li data-name="axf.encParam"><a href="axf.html#encParam">encParam</a></li>
+            
+                <li data-name="axf.getCookie"><a href="axf.html#getCookie">getCookie</a></li>
             
                 <li data-name="axf.getId"><a href="axf.html#getId">getId</a></li>
             
                 <li data-name="axf.getUniqueId"><a href="axf.html#getUniqueId">getUniqueId</a></li>
+            
+                <li data-name="axf.getUrlInfo"><a href="axf.html#getUrlInfo">getUrlInfo</a></li>
+            
+                <li data-name="axf.isEmpty"><a href="axf.html#isEmpty">isEmpty</a></li>
+            
+                <li data-name="axf.overwriteObject"><a href="axf.html#overwriteObject">overwriteObject</a></li>
+            
+                <li data-name="axf.scrollHeight"><a href="axf.html#scrollHeight">scrollHeight</a></li>
+            
+                <li data-name="axf.scrollWidth"><a href="axf.html#scrollWidth">scrollWidth</a></li>
+            
+                <li data-name="axf.setCookie"><a href="axf.html#setCookie">setCookie</a></li>
             
                 <li data-name="axf.timekey"><a href="axf.html#timekey">timekey</a></li>
             
@@ -479,11 +513,15 @@
             
                 <li data-name="AXGrid.contentScrollTouchstart"><a href="AXGrid.html#contentScrollTouchstart">contentScrollTouchstart</a></li>
             
+                <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
             
                 <li data-name="AXGrid.focusMove"><a href="AXGrid.html#focusMove">focusMove</a></li>
+            
+                <li data-name="AXGrid.getAddingClass"><a href="AXGrid.html#getAddingClass">getAddingClass</a></li>
             
                 <li data-name="AXGrid.getCheckedList"><a href="AXGrid.html#getCheckedList">getCheckedList</a></li>
             
@@ -1307,7 +1345,7 @@
  * input element에 "search", "number", "money", "slider", "twinSlider", "selector", "switch", "segment", "date", "dateTime", "twinDate", "twinDateTime", "checked"등을 바인드 할 수 있도록 지원하는 클랙스 입니다.
  * @class AXInputConverter
  * @extends AXJ
- * @version v1.58.2
+ * @version v1.58.3
  * @author tom@axisj.com
  * @example
  ```
@@ -1357,6 +1395,7 @@
  "2014-10-13 tom : alignAnchor objID만 있어도 작동 하도록 수정"
  "2014-10-20 tom : bindTwinDateTime blure 이벤트 버그 픽스"
  "2014-10-30 tom : bindNumber, bindMoney 이벤트처리 변경"
+ "2014-11-19 tom : bindMoney - 입력가능하게 패치"
  ```
  */
 
@@ -1985,7 +2024,7 @@ var AXInputConverter = Class.create(AXJ, {
 		obj.bindTarget.css({ "text-align": "right" });
 		var bindMoneyCheck = this.bindMoneyCheck.bind(this);
 		var val = obj.bindTarget.val().trim();
-		if (val != "") val = obj.bindTarget.val().number().money()
+		if (val != "") val = obj.bindTarget.val().number().money();
 		obj.bindTarget.val(val);
 
 		obj.bindTarget.unbind("keydown.AXInput").bind("keydown.AXInput", function (event) {
@@ -2051,10 +2090,14 @@ var AXInputConverter = Class.create(AXJ, {
 			if (minval != undefined && minval != null) {
 				nval = minval;
 			} else {
-				nval = obj.bindTarget.val().number();
+				nval = "";
 			}
 		} else {
-			nval = obj.bindTarget.val().number();
+			if(obj.bindTarget.val() != "-") {
+				nval = obj.bindTarget.val().number();
+			}else{
+				nval = "";
+			}
 		}
 		if (maxval != undefined && maxval != null) {
 			if ((nval) > maxval) {
@@ -2076,7 +2119,9 @@ var AXInputConverter = Class.create(AXJ, {
 					obj.bindTarget.val(nval.money());
 				}
 			}
-		} else {
+		}
+		else
+		{
 			if (minval != undefined && minval != null) {
 				if ((nval) &lt; minval) {
 					obj.bindTarget.val(minval.money());
@@ -2084,11 +2129,10 @@ var AXInputConverter = Class.create(AXJ, {
 						if(eventType == "change") this.msgAlert("설정된 최소값{" + minval.number().money() + "}보다 작은 입력입니다.");
 					} catch (e) { }
 				} else {
-					obj.bindTarget.val(nval.money());
+					if(nval != "" && nval != "-") obj.bindTarget.val(nval.money());
 				}
 			} else {
-				trace(1);
-				obj.bindTarget.val(nval.money());
+				if(nval != "" && nval != "-") obj.bindTarget.val(nval.money());
 			}
 		}
 
@@ -2098,6 +2142,10 @@ var AXInputConverter = Class.create(AXJ, {
 
 		if (obj.config.onChange) {
 			obj.config.onChange.call({ objID: objID, objSeq: objSeq, value: obj.bindTarget.val().number() });
+		}
+
+		if(eventType == "change"){
+			if(obj.bindTarget.val() == "-") obj.bindTarget.val('');
 		}
 	},
 
@@ -6177,7 +6225,7 @@ jQuery.fn.bindInputDisabled = function (Disabled) {
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed Nov 05 2014 13:09:24 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Fri Nov 28 2014 11:49:52 GMT+0900 (KST)
         </footer>
     </div>
 </div>

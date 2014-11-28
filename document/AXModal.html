@@ -147,6 +147,10 @@
             
                 <li data-name="axf.docTD"><a href="axf.html#docTD">docTD</a></li>
             
+                <li data-name="axf.Event"><a href="axf.html#Event">Event</a></li>
+            
+                <li data-name="axf.mousewheelevt"><a href="axf.html#mousewheelevt">mousewheelevt</a></li>
+            
             </ul>
             <ul class="typedefs itemMembers">
             
@@ -155,11 +159,41 @@
             
             <span class="subtitle">Methods</span>
             
+                <li data-name="axf.alert"><a href="axf.html#alert">alert</a></li>
+            
+                <li data-name="axf.clientHeight"><a href="axf.html#clientHeight">clientHeight</a></li>
+            
+                <li data-name="axf.clientWidth"><a href="axf.html#clientWidth">clientWidth</a></li>
+            
+                <li data-name="axf.confirm"><a href="axf.html#confirm">confirm</a></li>
+            
+                <li data-name="axf.console"><a href="axf.html#console">console</a></li>
+            
+                <li data-name="axf.copyObject"><a href="axf.html#copyObject">copyObject</a></li>
+            
+                <li data-name="axf.dayLen"><a href="axf.html#dayLen">dayLen</a></li>
+            
                 <li data-name="axf.each"><a href="axf.html#each">each</a></li>
+            
+                <li data-name="axf.encParam"><a href="axf.html#encParam">encParam</a></li>
+            
+                <li data-name="axf.getCookie"><a href="axf.html#getCookie">getCookie</a></li>
             
                 <li data-name="axf.getId"><a href="axf.html#getId">getId</a></li>
             
                 <li data-name="axf.getUniqueId"><a href="axf.html#getUniqueId">getUniqueId</a></li>
+            
+                <li data-name="axf.getUrlInfo"><a href="axf.html#getUrlInfo">getUrlInfo</a></li>
+            
+                <li data-name="axf.isEmpty"><a href="axf.html#isEmpty">isEmpty</a></li>
+            
+                <li data-name="axf.overwriteObject"><a href="axf.html#overwriteObject">overwriteObject</a></li>
+            
+                <li data-name="axf.scrollHeight"><a href="axf.html#scrollHeight">scrollHeight</a></li>
+            
+                <li data-name="axf.scrollWidth"><a href="axf.html#scrollWidth">scrollWidth</a></li>
+            
+                <li data-name="axf.setCookie"><a href="axf.html#setCookie">setCookie</a></li>
             
                 <li data-name="axf.timekey"><a href="axf.html#timekey">timekey</a></li>
             
@@ -479,11 +513,15 @@
             
                 <li data-name="AXGrid.contentScrollTouchstart"><a href="AXGrid.html#contentScrollTouchstart">contentScrollTouchstart</a></li>
             
+                <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
             
                 <li data-name="AXGrid.focusMove"><a href="AXGrid.html#focusMove">focusMove</a></li>
+            
+                <li data-name="AXGrid.getAddingClass"><a href="AXGrid.html#getAddingClass">getAddingClass</a></li>
             
                 <li data-name="AXGrid.getCheckedList"><a href="AXGrid.html#getCheckedList">getCheckedList</a></li>
             
@@ -1353,7 +1391,7 @@
         
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>v1.38</li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>v1.39</li></ul></dd>
     
     
     
@@ -1432,9 +1470,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L545" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L555" target="_blank">
             AXModal.js,
-            line 545</a>
+            line 555</a>
         </div>
         
     </div>
@@ -1556,9 +1594,9 @@ parent.myModal.close(); // iframe 모달창을 오픈한 경우 열려진 iframe
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L114" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L115" target="_blank">
             AXModal.js,
-            line 114</a>
+            line 115</a>
         </div>
         
     </div>
@@ -1687,9 +1725,9 @@ myModal.open(configs);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L365" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L366" target="_blank">
             AXModal.js,
-            line 365</a>
+            line 366</a>
         </div>
         
     </div>
@@ -1797,7 +1835,8 @@ myModal.open(configs);</code></pre>
     targetID: {String} - 모달창 타켓 엘리먼트 아이디,
     top: {Number} [scrollTop + 100] - 모달창 포지션 top,
     width: {(String|Number)} - 모달창 너비,
-    closeByEscKey: {Boolean} [false] - 모달창 닫기를 esc 키로 닫을 지 여부
+    closeByEscKey: {Boolean} [false] - 모달창 닫기를 esc 키로 닫을 지 여부,
+    verticalAlign: {Boolean} [false] - 모달창 가운데 표시 여부
 }
 myModal.openDiv(configs);</code></pre>
     
@@ -1817,9 +1856,9 @@ myModal.openDiv(configs);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L489" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L499" target="_blank">
             AXModal.js,
-            line 489</a>
+            line 499</a>
         </div>
         
     </div>
@@ -1946,9 +1985,9 @@ myModal.openNew(configs);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L602" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L612" target="_blank">
             AXModal.js,
-            line 602</a>
+            line 612</a>
         </div>
         
     </div>
@@ -2029,9 +2068,9 @@ parent.myModal.remove(); //iframe 모달창을 오픈한 경우 열려진 iframe
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L625" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L635" target="_blank">
             AXModal.js,
-            line 625</a>
+            line 635</a>
         </div>
         
     </div>
@@ -2112,9 +2151,9 @@ parent.myModal.resize(); //iframe 모달창을 오픈한 경우 열려진 iframe
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L88" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L89" target="_blank">
             AXModal.js,
-            line 88</a>
+            line 89</a>
         </div>
         
     </div>
@@ -2244,7 +2283,7 @@ myModal.setWidth(&quot;80%&quot;);</code></pre>
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Wed Nov 05 2014 13:09:25 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Fri Nov 28 2014 11:49:53 GMT+0900 (KST)
         </footer>
     </div>
 </div>
