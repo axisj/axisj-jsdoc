@@ -52,6 +52,7 @@
             color: #fff;
             font-size: 0.7em;
             padding: 2px 4px;
+			a{color: #ffffff;}
         }
 
         span.type {
@@ -158,7 +159,7 @@
         position: relative;
         margin-top: 20px;
         padding-top: 5px;
-        border-top: 1px dashed #000;
+        border-top: 1px dashed #ccc;
 
         .inherited {
             display: inline-block;
@@ -230,6 +231,7 @@
             min-width: 100px;
             color: #6fafe0;
             font-size: 11px;
+			a{color: #6fafe0;}
         }
 
         .attributes {
@@ -321,6 +323,13 @@
 			width: auto;
 			margin: 0px;
 			font-size: 12px;
+			word-break:break-all;
+			li{
+				word-break:break-all;
+				code{
+					span{white-space: pre-wrap;}
+				}
+			}
 		}
     }
 }

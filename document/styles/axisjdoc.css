@@ -169,6 +169,9 @@ p {
   font-size: 0.7em;
   padding: 2px 4px;
 }
+.main h4.name span.type-signature a {
+  color: #ffffff;
+}
 .main h4.name span.type {
   margin-left: 5px;
 }
@@ -253,7 +256,7 @@ p {
   position: relative;
   margin-top: 20px;
   padding-top: 5px;
-  border-top: 1px dashed #000;
+  border-top: 1px dashed #ccc;
 }
 .main .nameContainer .inherited {
   display: inline-block;
@@ -318,6 +321,9 @@ p {
   min-width: 100px;
   color: #6fafe0;
   font-size: 11px;
+}
+.main table.params .type a {
+  color: #6fafe0;
 }
 .main table.params .attributes {
   min-width: 80px;
@@ -402,6 +408,13 @@ p {
   width: auto;
   margin: 0px;
   font-size: 12px;
+  word-break: break-all;
+}
+.main article pre.prettyprint li {
+  word-break: break-all;
+}
+.main article pre.prettyprint li code span {
+  white-space: pre-wrap;
 }
 footer {
   margin: 15px 0;
@@ -410,4 +423,125 @@ footer {
   font-family: "freight-text-pro", Georgia, Cambria, "Times New Roman", Times, serif;
   font-size: 0.8em;
   color: gray;
+}
+@media only print {
+  html,
+  body {
+    background: #fff;
+  }
+  .navigation {
+    display: none;
+  }
+  .main {
+    page-break-before: always;
+    background: #fff;
+    padding: 20px 20px;
+    margin-left: 0px;
+  }
+  .main img {
+    width: 100%;
+  }
+  .main article .prettyprint {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  .main article .prettyprint ol {
+    margin: 0px;
+    margin-left: 40px;
+  }
+  .main article .prettyprint li {
+    margin: 0px;
+    color: #aaa;
+    background: #fff;
+  }
+  .main article pre.prettyprint {
+    width: auto;
+    margin: 0px;
+    font-size: 12px;
+    word-break: break-all;
+  }
+  .main article pre.prettyprint li {
+    word-break: break-all;
+  }
+  .main article pre.prettyprint li code span {
+    white-space: pre-wrap;
+  }
+  .index .navigation {
+    display: block;
+    position: relative;
+    float: none;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    background: #fff;
+  }
+  .index .navigation .applicationName {
+    color: #000;
+  }
+  .index .navigation .applicationName a {
+    color: #000;
+  }
+  .index .navigation .search {
+    display: none;
+  }
+  .index .navigation .list {
+    height: auto;
+    overflow: visible;
+  }
+  .index .navigation li.item {
+    display: block;
+    margin: 8px 0px;
+    padding: 8px 0px;
+    border-top: 1px solid #ccc;
+    border-bottom: 0px none;
+  }
+  .index .navigation li.item a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #000;
+  }
+  .index .navigation li.item a:hover {
+    color: #000;
+  }
+  .index .navigation li.item .title {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    font-size: 0.8em;
+  }
+  .index .navigation li.item .title a {
+    font-size: 18px;
+    color: #000;
+  }
+  .index .navigation li.item .title a:hover {
+    color: #000;
+  }
+  .index .navigation li.item .title .static {
+    display: block;
+    border-radius: 3px;
+    background-color: #f06433;
+    color: #000;
+    font-size: 0.7em;
+    line-height: 1.2em;
+    padding: 2px 4px;
+    float: right;
+  }
+  .index .navigation li.item .subtitle {
+    margin-top: 10px;
+    font: bold 1em Helvetica;
+    color: #f06433;
+    display: block;
+  }
+  .index .navigation li.item ul > li {
+    font-size: 0.9em;
+    padding-left: 20px;
+    margin-top: 2px;
+  }
+  .index .navigation li.item .itemMembers {
+    margin-left: 20px;
+    display: block;
+    font-size: 13px;
+  }
 }

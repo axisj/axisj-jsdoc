@@ -292,3 +292,6 @@ AXGrid.setList 메소드를 붙이는데 문제가 없다면 아래와 같은 �
 * [AXISJ웹사이트] https://www.axisj.com
 * [AXISJ gitHub] https://github.com/axisj-com
 * [AXISJ Facebook] https://www.facebook.com/axisj
+
+## 문서작업 기여자
+Thomas Jang, Bruce Kim, HS Lee, HJ Park

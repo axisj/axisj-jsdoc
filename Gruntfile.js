@@ -128,8 +128,57 @@ module.exports = function (grunt) {
 
 	    wkhtmltopdf: {
 		    dev: {
+			    /*
+			    src: [
+					DEMO_PATH + 'Array.html',
+					DEMO_PATH + 'AXCalendar.html',
+					DEMO_PATH + 'AXConfig.html',
+					DEMO_PATH + 'AXContextMenu.html',
+					DEMO_PATH + 'AXContextMenuClass.html',
+					DEMO_PATH + 'AXEditor.html',
+					DEMO_PATH + 'axf.html',
+					DEMO_PATH + 'AXGrid.html',
+					DEMO_PATH + 'AXInputConverter.html',
+					DEMO_PATH + 'AXJ.html',
+					DEMO_PATH + 'AXMask.html',
+					DEMO_PATH + 'AXMobileMenu.html',
+					DEMO_PATH + 'AXMobileModal.html',
+					DEMO_PATH + 'AXModal.html',
+					DEMO_PATH + 'AXMultiSelect.html',
+					DEMO_PATH + 'AXNotification.html',
+					DEMO_PATH + 'AXPopOver.html',
+					DEMO_PATH + 'AXPopOverClass.html',
+					DEMO_PATH + 'AXProgress.html',
+					DEMO_PATH + 'AXReq.html',
+					DEMO_PATH + 'AXReqQue.html',
+					DEMO_PATH + 'AXResizable.html',
+					DEMO_PATH + 'AXScroll.html',
+					DEMO_PATH + 'AXSearch.html',
+					DEMO_PATH + 'AXSelectConverter.html',
+					DEMO_PATH + 'AXSlideViewer.html',
+					DEMO_PATH + 'AXTabClass.html',
+					DEMO_PATH + 'AXTopDownMenu.html',
+					DEMO_PATH + 'AXTree.html',
+					DEMO_PATH + 'AXUpload5.html',
+					DEMO_PATH + 'AXUserSelect.html',
+					DEMO_PATH + 'AXValidator.html',
+					DEMO_PATH + 'Class.html',
+					DEMO_PATH + 'Date.html',
+					DEMO_PATH + 'Error.html',
+					DEMO_PATH + 'Function.html',
+					DEMO_PATH + 'index.html',
+					DEMO_PATH + 'jQueryExtends.html',
+					DEMO_PATH + 'Number.html',
+					DEMO_PATH + 'Object.html',
+					DEMO_PATH + 'String.html'
+				],
+				*/
 			    src: DEMO_PATH + '/*.html',
-			    dest: 'pdf/output/'
+			    dest: 'pdf/'
+		    },
+		    dev2: {
+			    src: DEMO_PATH + '/AXScroll.html',
+			    dest: 'pdf/'
 		    }
 	    }
     });
