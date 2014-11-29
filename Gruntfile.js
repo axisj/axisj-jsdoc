@@ -69,18 +69,18 @@ module.exports = function (grunt) {
 	                DEMO_SAMPLE_PATH + 'lib/AXSelect.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXTab.js',
 
-	                DEMO_SAMPLE_PATH + 'lib/AXDOMRange.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXDrag.js',
+	                //DEMO_SAMPLE_PATH + 'lib/AXDOMRange.js',
+	                //DEMO_SAMPLE_PATH + 'lib/AXDrag.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXEditor.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXExcelConvert.js',
+	                //DEMO_SAMPLE_PATH + 'lib/AXExcelConvert.js',
 	                //DEMO_SAMPLE_PATH + 'lib/AXSplit.js',
 
-	                DEMO_SAMPLE_PATH + 'lib/AXHtmlElement.js',
+	                //DEMO_SAMPLE_PATH + 'lib/AXHtmlElement.js',
 
 	                DEMO_SAMPLE_PATH + 'lib/AXMobileMenu.js',
 
-	                DEMO_SAMPLE_PATH + 'lib/AXModelControl.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXModelControlGrid.js',
+	                //DEMO_SAMPLE_PATH + 'lib/AXModelControl.js',
+	                //DEMO_SAMPLE_PATH + 'lib/AXModelControlGrid.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXMultiSelector.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXProgress.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXSearch.js',
@@ -92,7 +92,7 @@ module.exports = function (grunt) {
 	                DEMO_SAMPLE_PATH + 'lib/AXUpload5.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXUserSelect.js',
 	                DEMO_SAMPLE_PATH + 'lib/AXValidator.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXWaterfall.js',
+	                //DEMO_SAMPLE_PATH + 'lib/AXWaterfall.js',
 
                     // You can add README.md file for index page at documentations.
                     'index.md'
