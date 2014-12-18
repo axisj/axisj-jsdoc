@@ -180,7 +180,6 @@ module.exports = function (grunt) {
 			    src: [
 				    DEMO_PATH + '/index.html',
 				    DEMO_PATH + '/String.html'
-
 			    ],
 			    dest: 'pdf/'
 		    }
