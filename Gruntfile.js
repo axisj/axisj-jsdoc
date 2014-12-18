@@ -4,7 +4,8 @@
 module.exports = function (grunt) {
     var path = require('path');
     var DEMO_PATH = 'document';
-    var DEMO_SAMPLE_PATH = 'http://newdoc.axisj.com/';
+    //var DEMO_SAMPLE_PATH = 'http://newdoc.axisj.com/';
+    var DEMO_SAMPLE_PATH = '../axisj/';
     
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
