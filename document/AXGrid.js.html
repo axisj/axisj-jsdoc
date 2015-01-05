@@ -6607,10 +6607,10 @@ myGrid.contentScrollResize(false);
 	 * @param pos {Object} - top, left.
 	 * @description  top, left에 맞게 스크롤을 이동 합니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.contentScrollScrollSync({left: myGrid.scrollXHandle.position().left});
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.contentScrollScrollSync({left: myGrid.scrollXHandle.position().left});
+ ```
 	 */
 	contentScrollScrollSync: function (pos) {
 		var cfg = this.config;
@@ -6663,10 +6663,10 @@ myGrid.contentScrollResize(false);
 	 * @param touch {String} - "touch"
 	 * @description  top, left에 맞게 그리드 내용을 이동 합니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.contentScrollContentSync({top: 0}, "touch");
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.contentScrollContentSync({top: 0}, "touch");
+ ```
 	 */
 	contentScrollContentSync: function (pos, touch) {
 
@@ -7154,11 +7154,11 @@ myGrid.contentScrollResize(false);
 	 * @description - 그리드 데이터를 조작후 그리드에 현재 위치된 아이템을 다시 생성합니다.
 	 * @returns {AXGrid}
 	 * @example
-	 ```
-	 myGrid.list[0].id = 12;
-	 myGrid.dataSync();
+ ```
+ myGrid.list[0].id = 12;
+ myGrid.dataSync();
 
-	 ```
+ ```
 	 */
 	dataSync: function(){
 		this.bigDataSync(true);
@@ -7272,10 +7272,10 @@ myGrid.contentScrollResize(false);
 	 * @param itemIndex {Number} - 스크롤될 아이템 인덱스
 	 * @description - itemIndex에 스크롤을 이동시킵니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.scrollTop(0);
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.scrollTop(0);
+ ```
 	 */
 	scrollTop: function (itemIndex) {
 		var cfg = this.config;
@@ -7313,10 +7313,10 @@ myGrid.contentScrollResize(false);
 	 * @param itemIndex {Number} - 선택될 아이템 인덱스
 	 * @description - itemIndex에 해당하는 열을 선택 합니다..
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.setFocus(0);
-	 ```
+```
+var myGrid = new AXGrid();
+myGrid.setFocus(0);
+```
 	 */
 	setFocus: function (itemIndex) {
 		var cfg = this.config, _this = this;
@@ -7460,10 +7460,10 @@ myGrid.contentScrollResize(false);
 	 * @description - 선택된 행의 index, item 을 가져 옵니다.선택된 행이 없으면 에러 객체를 전달 합니다.
 	 * @returns {Object} - {index,item} , exception no item selected {error,description}
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.getSelectedItem();
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.getSelectedItem();
+ ```
 	 */
 	getSelectedItem: function () {
 		var cfg = this.config;
@@ -7486,10 +7486,10 @@ myGrid.contentScrollResize(false);
 	 * @param itemIndex {Number} - 선택될 그리드 아이템 인덱스
 	 * @description - 인덱스에 해당하는 행을 클릭 한 효과를 발생 시킵니다.config 에 body항목의 onclick 지정함수가 있다면 호출 됩니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.click(0);
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.click(0);
+ ```
 	 */
 	click: function (itemIndex) {
 		var cfg = this.config;
@@ -7804,11 +7804,11 @@ myGrid.contentScrollResize(false);
 	 * @param {Object} obj - ({key:value})
 	 * @description - head, foot 속성을 정의한 경우 head, foot 에 값을 표시합니다. 비어있는 객체를 전달할 경우 formatter 연결된 함수에 의해 값이 계산됩니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.setDataSet({price:123000, amount:10});
-	 myGrid.setDataSet({});
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.setDataSet({price:123000, amount:10});
+ myGrid.setDataSet({});
+ ```
 	 */
 	setDataSet: function (obj) {
 		var cfg = this.config;
@@ -7827,11 +7827,11 @@ myGrid.contentScrollResize(false);
 	 * @method AXGrid.redrawDataSet
 	 * @description - setDataSet애 의해 dataSet 객체가 변경된 경우 header나 footer를 다시 렌더링 합니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.setDataSet({price:123000, amount:10});
-	 myGrid.redrawDataSet();
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.setDataSet({price:123000, amount:10});
+ myGrid.redrawDataSet();
+ ```
 	 */
 	redrawDataSet: function () {
 		var cfg = this.config;
@@ -7844,11 +7844,11 @@ myGrid.contentScrollResize(false);
 	 * @method AXGrid.printHead
 	 * @description - grid의 header를 구성합니다 . (getDataSet)
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.setDataSet({price:123000, amount:10});
-	 myGrid.printHead();
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.setDataSet({price:123000, amount:10});
+ myGrid.printHead();
+ ```
 	 */
 	printHead: function () {
 		var cfg = this.config;
@@ -7866,11 +7866,11 @@ myGrid.contentScrollResize(false);
 	 * @method AXGrid.printFoot
 	 * @description - grid의 footer를 구성합니다 . (getDataSet)
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.setDataSet({price:123000, amount:10});
-	 myGrid.printFoot();
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.setDataSet({price:123000, amount:10});
+ myGrid.printFoot();
+ ```
 	 */
 	printFoot: function () {
 		var cfg = this.config;
@@ -8115,11 +8115,11 @@ myGrid.contentScrollResize(false);
 	 * @param {Number} insertIndex - 에디터가 삽입될 위치 인덱스
 	 * @description - 해당하는 인덱스에 에디터를 활성화 합니다.config 내에 editor 관련 항목이 없다면 작동하지 않습니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.setEditor({}, 1);
-	 myGrid.setEditor(null, null, 1);
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.setEditor({}, 1);
+ myGrid.setEditor(null, null, 1);
+ ```
 	 */
 	setEditor: function (item, itemIndex, insertIndex) {
 		var cfg = this.config, _this = this, itemTrHeight;
@@ -8439,20 +8439,20 @@ myGrid.contentScrollResize(false);
 	 * @param {Object} obj - 삽입될 아이템 데이터
 	 * @description - 활성화된 에디터에 특정 값을 전달 합니다.
 	 * @example
-	 ```
-	 var obj = {
+ ```
+ var obj = {
 	key : , colgroup 컬럼 key
 	position :, 적용될 대상의 배열 순서 [0,0]
 	value : , 넘겨줄 값 {String}
 }
 
-	 var myGrid = new AXGrid();
-	 myGrid.setEditorForm({
+ var myGrid = new AXGrid();
+ myGrid.setEditorForm({
 	key:"title",
 	position:[0,2],
 	value:"가나다라"
 });
-	 ```
+```
 	 */
 	setEditorForm: function (obj) {
 		var cfg = this.config;
@@ -8465,10 +8465,10 @@ myGrid.contentScrollResize(false);
 	 * @param {String} key - colgroup 컬럼 key
 	 * @description - 활성화된 에디터의 특정 key 값과 매칭되는 요소를 활성화 합니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.focusEditorForm("regDate");
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.focusEditorForm("regDate");
+ ```
 	 */
 	focusEditorForm: function (key) { /* editor 활성화 된 폼의 특정 요소에 포커스 주기 */
 		var cfg = this.config;
@@ -8483,10 +8483,10 @@ myGrid.contentScrollResize(false);
 	 * @method AXGrid.saveEditor
 	 * @description - 에디터의 내용을 저장하고 리스트에 반영 합니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.saveEditor();
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.saveEditor();
+ ```
 	 */
 	saveEditor: function () {
 		var cfg = this.config;
@@ -8717,10 +8717,10 @@ myGrid.contentScrollResize(false);
 	 * @method AXGrid.cancelEditor
 	 * @description - 활성화된 에디터를 해제 합니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.cancelEditor();
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.cancelEditor();
+ ```
 	 */
 	cancelEditor: function () {
 		this.editor.hide();
@@ -8731,10 +8731,10 @@ myGrid.contentScrollResize(false);
 	 * @method AXGrid.unbindAXbind
 	 * @description - 에디터내부 요소에 부여된 특성을 해제 합니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.unbindAXbind();
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.unbindAXbind();
+ ```
 	 */
 	unbindAXbind: function () {
 		var cfg = this.config;
@@ -8783,12 +8783,12 @@ myGrid.contentScrollResize(false);
 	 * @param {Number} insertIndex - 삽입 대상 index
 	 * @description - 그리드에 신규 데이터를 삽입하기 위해 삽입용 에디터를 활성화 하여 줍니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 var item = {};
-	 myGrid.appendList(item);
-	 myGrid.appendList(item, 3);
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ var item = {};
+ myGrid.appendList(item);
+ myGrid.appendList(item, 3);
+ ```
 	 */
 	appendList: function (item, insertIndex) {
 		if(insertIndex &lt;= this.list.length) insertIndex = this.list.length-1;
@@ -8964,10 +8964,10 @@ myGrid.contentScrollResize(false);
 	 * @param pageAdd {Number} - 이동할 페이지 증/감(-) 수
 	 * @description - pageAdd 만큼 페이지를 이동합니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.goPageMove(-1);
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.goPageMove(-1);
+ ```
 	 */
 	goPageMove: function (pageAdd) {
 		var cfg = this.config;
@@ -9037,10 +9037,10 @@ myGrid.contentScrollResize(false);
 	 * @description - 그리드 리스트 아이템 갯수(length)를 표시 합니다.
 	 * @returns {String}
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.setStatus(myGrid.list.length);
-	 ```
+ ```
+ var myGrid = new AXGrid();
+ myGrid.setStatus(myGrid.list.length);
+ ```
 	 */
 	setStatus: function (listLength) {
 		var cfg = this.config, listCount;
@@ -9061,16 +9061,16 @@ myGrid.contentScrollResize(false);
 	 * @description - 정렬옵션을 반환 합니다.
 	 * @returns {String|Object}
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.getSortParam();
+ ```
+ var myGrid = new AXGrid();
+ myGrid.getSortParam();
 
-	 // return value
-	 {
-		sortKey:"" , -  정렬 기준 key
-		sortWay:""   -  정렬 방법 "asc" or "desc"
-	}
-	 ```
+ // return value
+ {
+	sortKey:"" , -  정렬 기준 key
+	sortWay:""   -  정렬 방법 "asc" or "desc"
+}
+ ```
 	 */
 	getSortParam: function (ty) {
 		var cfg = this.config;
@@ -9091,8 +9091,8 @@ myGrid.contentScrollResize(false);
 	 * @description - 그리드 내용을 엑셀 포맷(html)으로 변환시 컬럼 해더를 생성 합니다.
 	 * @returns {String}
 	 * @example
-	 ```
-	 var arg = {
+ ```
+ var arg = {
 	valign,  - valign 옵션
 	rowspan, - rowspan 옵션
 	colspan, - colspan 옵션
@@ -9103,7 +9103,7 @@ myGrid.contentScrollResize(false);
 	tdHtml, - config colgroup 지정된 label
 	displayLabel - Label이 지정된 경우 출력 여부. 기본적으로 사용시 false 로 셋팅됨. colgroup 에서 따로 지정하지 않기 때문에,,
 }
-	 ```
+ ```
 	 */
 	getExcelColHeadTd: function (arg) {
 		var cfg = this.config;
@@ -9325,10 +9325,10 @@ myGrid.contentScrollResize(false);
 	 * @description -  format에 맞춰 그리드의 내용을 엑셀 포맷으로 변환 합니다.
 	 * @returns {String|Object}
 	 * @example
-	 ```
-	 var txt = myGrid.getExcelFormat("html");
-	 var json = myGrid.getExcelFormat("json");
-	 ```
+ ```
+ var txt = myGrid.getExcelFormat("html");
+ var json = myGrid.getExcelFormat("json");
+ ```
 	 */
 	getExcelFormat: function (format) {
 		var cfg = this.config;
@@ -9405,11 +9405,11 @@ myGrid.contentScrollResize(false);
 	 * @param {JSONObject} obj
 	 * @description - 그리드의 뷰모드를 체인지 합니다.
 	 * @example
-	 ```
-	 myGrid.changeGridView({
+ ```
+ myGrid.changeGridView({
 	viewMode:"grid"
-});
-	 myGrid.changeGridView({
+ });
+ myGrid.changeGridView({
 	viewMode:"icon",
 	view: {
 		width:"200", // icon width
@@ -9437,10 +9437,10 @@ myGrid.contentScrollResize(false);
 		}
 	}
 });
-	 myGrid.changeGridView({
+ myGrid.changeGridView({
 	viewMode:"mobile"
 });
-	 ```
+```
 	 */
 	changeGridView: function (JSObject) {
 		var cfg = this.config;
@@ -9549,7 +9549,7 @@ myGrid.contentScrollResize(false);
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:26:37 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:30:24 GMT+0900 (KST)
         </footer>
     </div>
 </div>

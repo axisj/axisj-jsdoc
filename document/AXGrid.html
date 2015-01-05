@@ -2124,12 +2124,10 @@
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
  var item = {};
  myGrid.appendList(item);
- myGrid.appendList(item, 3);
- ```</code></pre>
+ myGrid.appendList(item, 3);</code></pre>
     
 
     
@@ -2410,10 +2408,8 @@
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.cancelEditor();
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.cancelEditor();</code></pre>
     
 
     
@@ -2542,11 +2538,10 @@
         
 
     
-    <pre class="prettyprint linenums"><code> ```
+    <pre class="prettyprint linenums"><code> myGrid.changeGridView({
+    viewMode:&quot;grid&quot;
+ });
  myGrid.changeGridView({
-viewMode:&quot;grid&quot;</code></pre>
-<p>});
-     myGrid.changeGridView({
     viewMode:&quot;icon&quot;,
     view: {
         width:&quot;200&quot;, // icon width
@@ -2574,10 +2569,9 @@ viewMode:&quot;grid&quot;</code></pre>
         }
     }
 });
-     myGrid.changeGridView({
+ myGrid.changeGridView({
     viewMode:&quot;mobile&quot;
-});
-     ```</p>
+});</code></pre>
     
 
     
@@ -2883,10 +2877,8 @@ viewMode:&quot;grid&quot;</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.click(0);
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.click(0);</code></pre>
     
 
     
@@ -4311,10 +4303,8 @@ viewMode:&quot;grid&quot;</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.contentScrollContentSync({top: 0}, &quot;touch&quot;);
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.contentScrollContentSync({top: 0}, &quot;touch&quot;);</code></pre>
     
 
     
@@ -4988,10 +4978,8 @@ myGrid.contentScrollResize(false);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.contentScrollScrollSync({left: myGrid.scrollXHandle.position().left});
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.contentScrollScrollSync({left: myGrid.scrollXHandle.position().left});</code></pre>
     
 
     
@@ -5889,11 +5877,8 @@ myGrid.contentScrollResize(false);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- myGrid.list[0].id = 12;
- myGrid.dataSync();
-
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> myGrid.list[0].id = 12;
+ myGrid.dataSync();</code></pre>
     
 
     
@@ -6338,10 +6323,8 @@ myGrid.contentScrollResize(false);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.focusEditorForm(&quot;regDate&quot;);
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.focusEditorForm(&quot;regDate&quot;);</code></pre>
     
 
     
@@ -8435,19 +8418,17 @@ html
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var arg = {
-valign,  - valign 옵션
-rowspan, - rowspan 옵션
-colspan, - colspan 옵션
-align,   - align 옵션
-colSeq,  - config colgroup 내부 순서
-formatter, - config colgroup에서 지정된 formatter
-sort,  - 정렬 옵션
-tdHtml, - config colgroup 지정된 label
-displayLabel - Label이 지정된 경우 출력 여부. 기본적으로 사용시 false 로 셋팅됨. colgroup 에서 따로 지정하지 않기 때문에,,</code></pre>
-<p>}
-     ```</p>
+    <pre class="prettyprint linenums"><code> var arg = {
+    valign,  - valign 옵션
+    rowspan, - rowspan 옵션
+    colspan, - colspan 옵션
+    align,   - align 옵션
+    colSeq,  - config colgroup 내부 순서
+    formatter, - config colgroup에서 지정된 formatter
+    sort,  - 정렬 옵션
+    tdHtml, - config colgroup 지정된 label
+    displayLabel - Label이 지정된 경우 출력 여부. 기본적으로 사용시 false 로 셋팅됨. colgroup 에서 따로 지정하지 않기 때문에,,
+}</code></pre>
     
 
     
@@ -8730,10 +8711,8 @@ displayLabel - Label이 지정된 경우 출력 여부. 기본적으로 사용�
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var txt = myGrid.getExcelFormat(&quot;html&quot;);
- var json = myGrid.getExcelFormat(&quot;json&quot;);
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var txt = myGrid.getExcelFormat(&quot;html&quot;);
+ var json = myGrid.getExcelFormat(&quot;json&quot;);</code></pre>
     
 
     
@@ -11014,10 +10993,8 @@ displayLabel - Label이 지정된 경우 출력 여부. 기본적으로 사용�
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.getSelectedItem();
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.getSelectedItem();</code></pre>
     
 
     
@@ -11151,16 +11128,14 @@ displayLabel - Label이 지정된 경우 출력 여부. 기본적으로 사용�
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
  myGrid.getSortParam();
 
  // return value
  {
     sortKey:&quot;&quot; , -  정렬 기준 key
     sortWay:&quot;&quot;   -  정렬 방법 &quot;asc&quot; or &quot;desc&quot;
-}
- ```</code></pre>
+}</code></pre>
     
 
     
@@ -11651,10 +11626,8 @@ displayLabel - Label이 지정된 경우 출력 여부. 기본적으로 사용�
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.goPageMove(-1);
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.goPageMove(-1);</code></pre>
     
 
     
@@ -13042,11 +13015,9 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
  myGrid.setDataSet({price:123000, amount:10});
- myGrid.printFoot();
- ```</code></pre>
+ myGrid.printFoot();</code></pre>
     
 
     
@@ -13130,11 +13101,9 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
  myGrid.setDataSet({price:123000, amount:10});
- myGrid.printHead();
- ```</code></pre>
+ myGrid.printHead();</code></pre>
     
 
     
@@ -13514,11 +13483,9 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
  myGrid.setDataSet({price:123000, amount:10});
- myGrid.redrawDataSet();
- ```</code></pre>
+ myGrid.redrawDataSet();</code></pre>
     
 
     
@@ -14227,10 +14194,8 @@ myGrid.removeListIndex(removeList);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.saveEditor();
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.saveEditor();</code></pre>
     
 
     
@@ -14480,10 +14445,8 @@ myGrid.removeListIndex(removeList);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.scrollTop(0);
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.scrollTop(0);</code></pre>
     
 
     
@@ -15123,11 +15086,9 @@ myGrid.setData(gridData);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
  myGrid.setDataSet({price:123000, amount:10});
- myGrid.setDataSet({});
- ```</code></pre>
+ myGrid.setDataSet({});</code></pre>
     
 
     
@@ -15302,11 +15263,9 @@ myGrid.setData(gridData);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
  myGrid.setEditor({}, 1);
- myGrid.setEditor(null, null, 1);
- ```</code></pre>
+ myGrid.setEditor(null, null, 1);</code></pre>
     
 
     
@@ -15435,19 +15394,18 @@ myGrid.setData(gridData);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var obj = {
-key : , colgroup 컬럼 key
-position :, 적용될 대상의 배열 순서 [0,0]
-value : , 넘겨줄 값 {String}</code></pre>
-<p>}</p>
-<pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> var obj = {
+    key : , colgroup 컬럼 key
+    position :, 적용될 대상의 배열 순서 [0,0]
+    value : , 넘겨줄 값 {String}
+}
+
+ var myGrid = new AXGrid();
  myGrid.setEditorForm({
-key:&quot;title&quot;,
-position:[0,2],
-value:&quot;가나다라&quot;</code></pre>
-<p>});
-     ```</p>
+    key:&quot;title&quot;,
+    position:[0,2],
+    value:&quot;가나다라&quot;
+});</code></pre>
     
 
     
@@ -15576,10 +15534,8 @@ value:&quot;가나다라&quot;</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.setFocus(0);
- ```</code></pre>
+    <pre class="prettyprint linenums"><code>var myGrid = new AXGrid();
+myGrid.setFocus(0);</code></pre>
     
 
     
@@ -16076,10 +16032,8 @@ ajaxUrl:&quot;loadGrid.php&quot;, ajaxPars:&quot;param1=1&amp;param2=2&quot;, on
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.setStatus(myGrid.list.length);
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.setStatus(myGrid.list.length);</code></pre>
     
 
     
@@ -16352,10 +16306,8 @@ list</li>
         
 
     
-    <pre class="prettyprint linenums"><code> ```
- var myGrid = new AXGrid();
- myGrid.unbindAXbind();
- ```</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.unbindAXbind();</code></pre>
     
 
     
@@ -16540,7 +16492,7 @@ list</li>
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:26:38 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:30:25 GMT+0900 (KST)
         </footer>
     </div>
 </div>
