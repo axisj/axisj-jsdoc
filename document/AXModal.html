@@ -873,6 +873,8 @@
             
                 <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
             
+                <li data-name="AXGrid.editCell"><a href="AXGrid.html#editCell">editCell</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
@@ -1197,6 +1199,8 @@
             
                 <li data-name="AXModal.resize"><a href="AXModal.html#resize">resize</a></li>
             
+                <li data-name="AXModal.setConfig"><a href="AXModal.html#setConfig">setConfig</a></li>
+            
                 <li data-name="AXModal.setWidth"><a href="AXModal.html#setWidth">setWidth</a></li>
             
             </ul>
@@ -1449,6 +1453,8 @@
                 <li data-name="AXSearch.getItemId"><a href="AXSearch.html#getItemId">getItemId</a></li>
             
                 <li data-name="AXSearch.getParam"><a href="AXSearch.html#getParam">getParam</a></li>
+            
+                <li data-name="AXSearch.reset"><a href="AXSearch.html#reset">reset</a></li>
             
                 <li data-name="AXSearch.setConig"><a href="AXSearch.html#setConig">setConig</a></li>
             
@@ -1849,9 +1855,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L555" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L583" target="_blank">
             AXModal.js,
-            line 555</a>
+            line 583</a>
         </div>
         
     </div>
@@ -1973,9 +1979,9 @@ parent.myModal.close(); // iframe 모달창을 오픈한 경우 열려진 iframe
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L115" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L121" target="_blank">
             AXModal.js,
-            line 115</a>
+            line 121</a>
         </div>
         
     </div>
@@ -2104,9 +2110,9 @@ myModal.open(configs);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L366" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L394" target="_blank">
             AXModal.js,
-            line 366</a>
+            line 394</a>
         </div>
         
     </div>
@@ -2235,9 +2241,9 @@ myModal.openDiv(configs);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L499" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L527" target="_blank">
             AXModal.js,
-            line 499</a>
+            line 527</a>
         </div>
         
     </div>
@@ -2364,9 +2370,9 @@ myModal.openNew(configs);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L612" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L639" target="_blank">
             AXModal.js,
-            line 612</a>
+            line 639</a>
         </div>
         
     </div>
@@ -2447,9 +2453,9 @@ parent.myModal.remove(); //iframe 모달창을 오픈한 경우 열려진 iframe
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L635" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L662" target="_blank">
             AXModal.js,
-            line 635</a>
+            line 662</a>
         </div>
         
     </div>
@@ -2522,6 +2528,148 @@ parent.myModal.resize(); //iframe 모달창을 오픈한 경우 열려진 iframe
             
 <dt>
     <div class="nameContainer">
+        <h4 class="name" id="setConfig">
+            
+            <span class="type-signature static">static</span>AXModal.setConfig<span class="signature">(modalConfig)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L44" target="_blank">
+            AXModal.js,
+            line 44</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>모달의 기본 환경설정값을 셋팅합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>modalConfig</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Object.html">Object</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code class="lang-js"> var myModal = new AXModal();
+ var modalConfig = {
+    animateDuration: {Number} [300],
+    contentDivClass: {String} [&quot;bodyHeightDiv&quot;] - iframe 모달의 창이 오픈된 경우 iframe 의 높이를 정확히 제어하기 위해 컨텐츠 전체를 감싸는 대상에 지정한 className 값,
+    defaultTop: {Number} [10] - 모달창 포지션 top,
+    displayLoading: {Boolean} [true] - 모달이 오픈될 때 로딩 표시 여부,
+    maskCss: &quot;AXMask&quot; - 배경 mask div의 css,
+    opendModalID: {String} - 모달 ID,
+    padding: {(String|Number)} [&quot;0&quot;] - 모달 padding 값,
+    viewMode: {String} [&quot;dx&quot;],
+    width: {(String|Number)} - 모달의 기본 너비,
+    windowBoxCss: {String} [&quot;AXModalBox&quot;] - 모달을 감싸는 제일 바깥쪽 div의 css,
+    windowID: {String} [&quot;AXModal&quot; + timekey] - 모달 식별 아이디,
+    onclose: {Function} - 모달창이 닫힐 때 이벤트
+};
+ myModal.setConfig(modalConfig);</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
         <h4 class="name" id="setWidth">
             
             <span class="type-signature static">static</span>AXModal.setWidth<span class="signature">()</span>
@@ -2530,9 +2678,9 @@ parent.myModal.resize(); //iframe 모달창을 오픈한 경우 열려진 iframe
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L89" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXModal.js#L95" target="_blank">
             AXModal.js,
-            line 89</a>
+            line 95</a>
         </div>
         
     </div>
@@ -2662,7 +2810,7 @@ myModal.setWidth(&quot;80%&quot;);</code></pre>
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Dec 18 2014 16:32:44 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:26:39 GMT+0900 (KST)
         </footer>
     </div>
 </div>

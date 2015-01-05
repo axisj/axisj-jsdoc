@@ -873,6 +873,8 @@
             
                 <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
             
+                <li data-name="AXGrid.editCell"><a href="AXGrid.html#editCell">editCell</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
@@ -1197,6 +1199,8 @@
             
                 <li data-name="AXModal.resize"><a href="AXModal.html#resize">resize</a></li>
             
+                <li data-name="AXModal.setConfig"><a href="AXModal.html#setConfig">setConfig</a></li>
+            
                 <li data-name="AXModal.setWidth"><a href="AXModal.html#setWidth">setWidth</a></li>
             
             </ul>
@@ -1449,6 +1453,8 @@
                 <li data-name="AXSearch.getItemId"><a href="AXSearch.html#getItemId">getItemId</a></li>
             
                 <li data-name="AXSearch.getParam"><a href="AXSearch.html#getParam">getParam</a></li>
+            
+                <li data-name="AXSearch.reset"><a href="AXSearch.html#reset">reset</a></li>
             
                 <li data-name="AXSearch.setConig"><a href="AXSearch.html#setConig">setConig</a></li>
             
@@ -1724,103 +1730,15 @@
  * AXGrid
  * @class AXGrid
  * @extends AXJ
- * @version v2.6.1
+ * @version v2.7.1
  * @author tom@axisj.com
  * @example
  ```
  "2012-12-24 오전 11:51:26",
  "2013 로그 삭제"
- "2014-01-01 오후 8:55:17 tom : editor validate 액션버그 픽스",
- "2014-01-03 오후 3:31:09 tom : gridBodyClick 이벤트함수 수정",
- "2014-01-10 오후 5:08:30 tom : listCountMSG 설정 기능 추가",
- "2014-02-04 오전 10:13:38 tom : setList 메소드 호출 할 때 pageNo : 1 로 변경 기능 추가",
- "2014-02-06 오후 7:59:54 tom : jQuery 독립 우회 코드 변경",
- "2014-02-12 오전 11:31:41 tom : 불필요한 node 제거, * 설정시 헤드 너비 오차 문제 해결",
- "2014-02-14 오전 11:10:45 tom : setEditor 후 selector 키컨트롤 이벤트 방지, editor 안에 onkeyup 메소드 추가",
- "2014-02-14 오후 12:42:32 tom : appendList메소드 index를 지정 하지 않으면 맨 마지막으로 추가 되도록 변경",
- "2014-02-25 오전 11:24:29 tom : formatter 함수 this에 .value, .key 속성 추가",
- "2014-03-05 오후 12:17:26 tom : editor.response 에서 validate 후 editor 사라지도록 기능 변경, editorForm Item 중복되지 않도록 수정",
- "2014-03-05 오후 5:13:45 tom : 열 리사이즈했을 때 스크롤 위치 버그픽스",
- "2014-03-06 오후 8:22:00 tom : 열 리사이즈 후 컬럼 숨기기 표시 하시 액션 너비 변경 버그픽스",
- "2014-03-12 오후 3:04:11 root : 그리드 헤드 체크 박스 클릭시 disable 된 row 는 체크 하지않도록 변경",
- "2014-03-20 오전 11:16:51 tom : printList 실행 할 때 editor 활성화 되었으면 에디터 비 활성화",
- "2014-03-28 오전 8:18:54 tom : click 메소드 호출시 callBack 버그 픽스",
- "2014-03-31 오전 2:07:24 tom : init 에서 printList 호출 제거 / body.marker.addClass 속성 추가",
- "2014-03-31 오후 4:14:34 tom : scroll 영역 조정 ",
- "2014-04-01 오후 7:10:34 tom : .each for 로 변경/ changeGridView 메소드 추가",
- "2014-04-20 tom : listLoadingDisplay 실행할 때 가능하면 스크롤바의 위치를 맨위로 이동 시키기",
- "2014-04-22 tom : setList 호출시 onError 속성 추가",
- "2014-04-25 tom : setData 메소드 추가",
- "2014-04-28 tom : mobile 에서 터치무브 버그 픽스",
- "2014-04-28 tom : config.emptyListMSG 에서 설정가능",
- "2014-04-29 tom : AXConfig.AXGrid.pageCountMsg 설정기능 추가",
- "2014-05-14 tom : 스크롤 바의 위치 이동 방식 개선 pixel 에서 percent 로 연산방식 변경",
- "2014-05-15 tom : 대용량 데이터 출력 지원",
- "2014-05-16 tom : 대용량 데이터 출력 지원에 따른 printList 출력방식 변경에 따른 구조변경/ setStatus 리사이즈후 문구 픽스",
- "2014-05-17 tom : 대용량 데이터 처리 후 모바일 터치 버그 픽스",
- "2014-05-18 tom : 스크롤바 마우스 클릭이동 액션 핸들이동 완료후 컨텐츠 이동 하도록 변경",
- "2014-05-18 tom : 세로축 스크롤바 이동시 위치 정보 표시 추가",
- "2014-05-19 tom : list empty bug fix",
- "2014-05-20 tom : grid body click 후 virtualScroll 포지션 이상 작동 문제 해결"
- "2014-05-22 tom : bigData 지원 후 checkedColSeq 버그픽스",
- "2014-05-25 tom : resetHeight 메소드 추가",
- "2014-05-26 tom : [add] method:fetchList",
- "2014-05-27 tom : ajax 옵션 추가 확장 지원 "
- "2014-05-29 tom : focus 된 상태에서 스크롤 안되는 버그 픽스"
- "2014-05-29 tom : setList 된 상태에서 다음번 setList 데이터가 없을 때 스크롤 사이즈 버그 픽스"
- "2014-06-02 tom : change ajax data protocol check result or error key in data"
- "2014-06-09 tom : setFocus method bugFix "
- "2014-06-15 tom : [fix] the sorting initialisation issue while running the method:redrawGrid was fixed"
- "2014-06-17 tom : [fix] incorrect scrollHeight size issue while running the method:changeView was fixed"
- "2014-06-20 tom : [fix] checked function not working "
- "2014-06-23 tom : [fix] Not remember checked items "
- "2014-06-30 tom : [improve] add margin to content height "
- "2014-07-05 tom : add "event body.onchangeScroll"
- "2014-07-07 tom : [fix] checked function update "
- "2014-07-07 tom : [fix] not send value key when run sort "
- "2014-07-08 tom : [fix] adjust height when set height:'auto'"
- "2014-07-10 tom : [fix] AJAX without result key error"
- "2014-07-11 tom : [fix] checked error when change mobile view"
- "2014-07-15 tom : [improve] add config mergeCells "
- "2014-07-17 tom : [fix] editor top position bug"
- "2014-07-31 tom : [fix] formatter validate function"
- "2014-08-01 tom : [fix] issue#238"
- "2014-08-01 tom : [fix] issue#242 sync fixedTrHeight with trHeight, colGroup have checked then user checked not saved, 'method setFocus' fixed "
- "2014-08-04 tom : [improve] add options colGroup formatterLabel"
- "2014-08-04 tom : [fix] editorButtonPosition default value 'bottom'"
- "2014-08-13 tom : [fix] setList({}, "sortDisable") 설정 후 페이지 체인지될 때 sortDisable 유지토록 수정"
- "2014-08-18 tom : [fix] colGroup display 상태 변경시 가로 스크롤 사이즈 안맞는 문제 해결"
- "2014-08-18 tom : [fix] restoreList 아이템 복제 오류 픽스"
- "2014-08-19 tom : [fix] window resize 시 head/foot 사라지는 버그 픽스"
- "2014-08-21 tom : sortList callback sendObj -> key 항목 추가"
- "2014-08-27 tom : mobile paging bugfix "
- "2014-08-28 tom : fitToWidth 설정 했을 때 col"
- "2014-08-29 tom : reloadList 시 ajax options 항목 모두 유지 토록 변경"
- "2014-09-01 tom : ie8에서 grid 너비 계산 오류 해결, height:"auto" 설정 후 foot 표시 버그 픽스 "
- "2014-09-16 tom : sort메소드에서 그리드리스트의 왼쪽 스크롤 위치 초기화 하지 않도록 변경"
- "2014-09-19 tom : pushList focus초기화 되는 현상 개선"
- "2014-09-19 tom : oncheck 이벤트 disable된 input에서 발생하지 않도록 변경"
- "2014-09-24 tom : pushList 아큐먼트가 Object | Array 모두 처리 하도록 개선"
- "2014-09-24 tom : mergeCells 옵션사용시 멀티 colIndex 지정하면 앞의 인덱스열이 머지 될 때 다음 셀이 머지 되도록 기능 개선"
- "2014-10-01 tom : setFocus 현재 표시된 범위를 넘어서는 요청에 대한 처리 지원"
- "2014-10-01 tom : foot count 표시 버그 해결"
- "2014-10-08 tom : setFocus method minor fix"
- "2014-10-10 tom : setEditor 후 탭으로 포커스 이동했을 때. 그리드 셀 틀어짐(그리드의 포지션이 임의로 변경되는 현상) 수정"
- "2014-10-13 tom : editor 활성화 상태에서 컬럼 너비 수정 버그 픽스"
- "2014-10-14 tom : 다중컬럼 checked 함수버그 픽스"
- "2014-10-21 tom : 리스트가 비었을 때 editor로 아이템 추가 버그 픽스"
- "2014-10-22 tom : 아이템 안에 checkbox를 사용자가 추가 하면 클릭이벤트 에러 버그픽스"
- "2014-11-06 tom : checkedColSeq 메소드에서 oncheck 이벤트 지연호출 처리 취소 및 dayaSync 메소드 신설"
- "2014-11-08 tom : AXConfig.AXGrid.colHeadAlign > colHeadAlign에 연결되도록 구문 추가, appendList 위치 버그 픽스"
- "2014-11-14 root : [add] colGroup item 에 addClass 속성 추가"
- "2014-11-18 tom : fixedColSeq 표현 버그 픽스"
- "2014-11-23 tom : pushList 메소드 insertIndex 가 없으면 focus 실행 안함."
- "2014-11-24 tom : window resize 이벤트 시 스크롤 초기화 문제 해결 & axdom(document.body).addClass("AXUserSelectNone") 제거 button text 스타일 깨짐 문제 발생"
- "2014-11-16 tom : grid getCheckedList radio 타입 에러 해결"
- "2014-12-03 tom : colGroupListClick 버그 픽스 - 컬럼 보이기 감추기 기능"
- "2014-12-12 tom : checkbox click 지연 이슈 해결"
- "2014-12-15 tom : 스크롤바 X 이동시 실시간 처리로 방식 변경"
-
+ "2014 로그 삭제"
+ "2015-01-02 tom : 그리드 ctrl, shift 키를 이용한 멀티 셀렉트 지원, getSelectedItem 메소드 변경"
+ "2015-01-05 tom : config.sort : false 로 정렬 사용 안할 수 있도록 변경"
  var myGrid = new AXGrid();
  myGrid.setConfig(classConfig:JSObject);
  ```
@@ -2909,7 +2827,9 @@ var AXGrid = Class.create(AXJ, {
 			if (axf.getId(cfg.targetID + "_AX_gridBody")) axf.getId(cfg.targetID + "_AX_gridBody").addEventListener("touchstart", contentScrollTouchstart, false);
 		}
 
-		this.target.bind("keydown", this.onKeydown.bind(this));
+		//this.target.bind("keydown", this.onKeydown.bind(this));
+		//keydown 이벤트 방식 변경
+		$(window).bind("keydown.axgrid", this.onKeydown.bind(this));
 
 		if (cfg.contextMenu) {
 			AXContextMenu.bind({
@@ -2969,8 +2889,7 @@ var AXGrid = Class.create(AXJ, {
 				cfg.viewMode = _viewMode;
 			}
 		}
-
-		this.redrawGrid("");
+		this.redrawGrid(true);
 	},
 	gridTargetSetSize: function (react) { /* AXgridScrollBody 안쪽의 높이와 관련된 요소 설정 */
 		var cfg = this.config;
@@ -3328,16 +3247,18 @@ var AXGrid = Class.create(AXJ, {
 	 * @description  Grid 내부에서 감지되는 이벤트에 대한 처리를 합니다.(방향키로 포커스 이동등..)
 	 */
 	onKeydown: function (event) {
-		if (event.keyCode == 67 && event.ctrlKey) {
-			/*this.copyData(); */
-		}
+		if( this.selectedRow.length == 0 ) return;
 		if (this.editorOpend) return;
 
-		//trace("onKeydown" + event.keyCode);
-
+		if (event.keyCode == 67 && event.ctrlKey) {
+			// this.copyData();
+		}
+		else
 		if (event.keyCode == axf.Event.KEY_UP) { /* */
 			this.focusMove(-1, event);
-		} else if (event.keyCode == axf.Event.KEY_DOWN) { /* */
+		}
+		else
+		if (event.keyCode == axf.Event.KEY_DOWN) { /* */
 			this.focusMove(1, event);
 		}
 	},
@@ -3376,7 +3297,7 @@ myGrid.setConfig({
      */
 
 	onContextmenu: function (event) {
-		var cfg = this.config;
+		var cfg = this.config, body = this.body;
 
 		if (this.readyMoved) return false;
 
@@ -3402,23 +3323,42 @@ myGrid.setConfig({
 			var targetID = myTarget.id;
 			var itemIndex = targetID.split(/_AX_/g).last();
 			var ids = targetID.split(/_AX_/g);
-
+			/*
 			if (this.selectedCells.length > 0) {
 				axf.each(this.selectedCells, function () {
 					axdom("#" + this).removeClass("selected");
 				});
 				this.selectedCells.clear();
 			}
-			if (this.selectedRow.length > 0) {
-				var body = this.body;
+			*/
+
+			if(this.selectedRow.length &lt; 2) {
+				if (this.selectedRow.length > 0) {
+					axf.each(this.selectedRow, function () {
+						body.find(".gridBodyTr_" + this).removeClass("selected");
+					});
+				}
+				this.selectedRow.clear();
+				this.body.find(".gridBodyTr_" + itemIndex).addClass("selected");
+				this.selectedRow.push(itemIndex);
+			}
+			else{
+				var hasItem = false;
 				axf.each(this.selectedRow, function () {
-					body.find(".gridBodyTr_" + this).removeClass("selected");
+					if(this == itemIndex){
+						hasItem = true;
+					}
 				});
+				if(!hasItem){
+					axf.each(this.selectedRow, function () {
+						body.find(".gridBodyTr_" + this).removeClass("selected");
+					});
+					this.selectedRow.clear();
+					this.body.find(".gridBodyTr_" + itemIndex).addClass("selected");
+					this.selectedRow.push(itemIndex);
+				}
 			}
 
-			this.selectedRow.clear();
-			this.body.find(".gridBodyTr_" + itemIndex).addClass("selected");
-			this.selectedRow.push(itemIndex);
 
 			var item = this.list[itemIndex];
 			AXContextMenu.open({ id: cfg.targetID + "ContextMenu", filter: cfg.contextMenu.filter, sendObj: { item: item, index: itemIndex } }, event);
@@ -3987,7 +3927,7 @@ myGrid.setConfig({
 			return;
 		}
 
-		if (myColHead.sort == false) {
+		if (cfg.sort == false || myColHead.sort == false) {
 			return;
 		}
 
@@ -4521,13 +4461,13 @@ myGrid.setConfig({
 	 * @method AXGrid.reloadList
 	 * @description 그리드리스트를 새로 고침 합니다.(ajax를 통할 경우 다시 가져 옵니다).
 	 * @example
-	 ```
-	 myGrid.setList({
-	ajaxUrl:"loadGrid.php", 
+```
+ myGrid.setList({
+	ajaxUrl:"loadGrid.php",
 	ajaxPars:"param1=1&param2=2"
-});
-	 myGrid.reloadList();
-	 ```
+ });
+ myGrid.reloadList();
+```
 	 */
 	reloadList: function () {
 		var cfg = this.config;
@@ -4632,8 +4572,8 @@ myGrid.setConfig({
 	 * @param gridData {JSObject} object of grid
 	 * @description &lt;ko>그리드 데이터를 페이지까지 포함하여 정의해 줍니다. (ajax를 사용하지 않는 방법)&lt;/ko>
 	 * @example
-	 ```
-	 var gridData = {
+```
+var gridData = {
 	list: _obj.document_list,
 	page:{
 		pageNo: _obj.page_navigation.cur_page,
@@ -4646,8 +4586,8 @@ myGrid.setConfig({
 		}
 	}
 };
-	 myGrid.setData(gridData);
-	 ```
+myGrid.setData(gridData);
+```
 	 */
 	setData: function (res) {
 		var cfg = this.config;
@@ -4962,15 +4902,15 @@ myGrid.setConfig({
 	 * @returns {String}
 	 * @description config 의 viewMode가 icon 일때의 리스트를 구성 합니다.
 	 * @example
-	 ```
-	 cssObj = {
+```
+cssObj = {
 	box: "width: ,height:",   - 기타 사용자 지정 스타일 추가 가능
 	img:  "left:, top: , width:, height:", - 기타 사용자 지정 스타일 추가 가능
 	label: "left:, top: , width:, height:", - 기타 사용자 지정 스타일 추가 가능
 	description: "left:, top: , width:, height:", - 기타 사용자 지정 스타일 추가 가능
 	buttons: "left:, top: , width:, height:", - 기타 사용자 지정 스타일 추가 가능
 };
-	 ```
+```
 	 */
 	getIconItem: function (itemIndex, item, viewIconObj, cssObj) {
 		var cfg = this.config;
@@ -5640,16 +5580,16 @@ myGrid.setConfig({
 	 * @returns {AXGrid}
 	 * @description body(list) 구성시 marker row 가 존재할경우 처리 합니다.
 	 * @example
-	 ```
-	 var item = {
+```
+ var item = {
 	a: "a",
 	b: "b",
 	c: "c",
 	d: "d",
 	e: 14350
-};
-	 myGrid.updateList(0,item);
-	 ```
+ };
+ myGrid.updateList(0,item);
+```
 	 */
 	updateList: function (itemIndex, item) {
 		var cfg = this.config;
@@ -5703,11 +5643,11 @@ myGrid.setConfig({
 	 * @returns {AXGrid}
 	 * @description 그리드에 데이터를 삽입합니다. &lt;en>push to Grid.list&lt;/en>
 	 * @example
-	 ```
-	 myGrid.pushList([item Array]);
-	 myGrid.pushList([item Array], 1);
-	 myGrid.pushList([item]);
-	 ```
+ ```
+ myGrid.pushList([item Array]);
+ myGrid.pushList([item Array], 1);
+ myGrid.pushList([item]);
+ ```
 	 */
 	pushList: function (pushItem, insertIndex) {
 		var cfg = this.config;
@@ -5780,14 +5720,14 @@ myGrid.setConfig({
 	 * @returns {AXGrid}
 	 * @description grid의 리스트에 아이템을 추가 합니다.(배열)
 	 * @example
-	 ```
-	 var list = [
+ ```
+ var list = [
 	 {no:1, title:"AXGrid 첫번째 줄 입니다.", writer:"장기영", regDate:"2013-01-18", desc:"myGrid.setList 의 첫번째 사용법 list json 직접 지정 법", price:123000, amount:10},
 	 {no:2, title:"AXGrid 두번째 줄 입니다.", writer:"장기영", regDate:"2013-01-18", desc:"myGrid.setList 의 첫번째 사용법 list json 직접 지정 법", price:12300, amount:7},
 	 {no:3, title:"AXGrid 세번째 줄 입니다.", writer:"장기영", regDate:"2013-01-18", desc:"myGrid.setList 의 첫번째 사용법 list json 직접 지정 법", price:12000, amount:5}
-	 ];
-	 myGrid.fetchList(list);
-	 ```
+ ];
+ myGrid.fetchList(list);
+ ```
 	 */
 	fetchList: function(list){
 		var cfg = this.config, VS = this.virtualScroll;
@@ -5809,14 +5749,14 @@ myGrid.setConfig({
 	 * @returns {AXGrid}
 	 * @description removeList의 전달된 키값 과 일치하는 대상을 삭제 합니다.이때 고유한 값이 아닌 항목을 전달 할 때에는 에러가 발생 할 수 있습니다.
 	 * @example
-	 ```
-	 var checkedList = myGrid.getCheckedList(0);// colSeq
-	 var removeList = [];
-	 $.each(checkedList, function(){
+```
+ var checkedList = myGrid.getCheckedList(0);// colSeq
+ var removeList = [];
+ $.each(checkedList, function(){
 	removeList.push({no:this.no});
  });
-	 myGrid.removeList(removeList);
-	 ```
+ myGrid.removeList(removeList);
+```
 	 */
 	removeList: function (removeList) {
 		var cfg = this.config;
@@ -5881,10 +5821,10 @@ myGrid.setConfig({
 	 * @returns {AXGrid}
 	 * @description removeList의 index에 해당하는 항목을 제거 합니다..
 	 * @example
-	 ```
-	 var removeList = [{index:0},{index:1},{index:2}];
-	 myGrid.removeListIndex(removeList);
-	 ```
+```
+var removeList = [{index:0},{index:1},{index:2}];
+myGrid.removeListIndex(removeList);
+```
 	 */
 	removeListIndex: function (removeList) {
 		var cfg = this.config;
@@ -5953,16 +5893,16 @@ myGrid.setConfig({
 	 * @returns {AXGrid}
 	 * @description restoreList 전달된 키값 과 일치하는 대상의 삭제 표시를 제거 합니다.이때 고유한 값이 아닌 항목을 전달 할 때에는 에러가 발생 할 수 있습니다.(passive)
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.setConfig({passiveMode:true});
-	 var checkedList = myGrid.getCheckedList(0);// colSeq
-	 var removeList = [];
-	 $.each(checkedList, function(){
+ ```
+ var myGrid = new AXGrid();
+ myGrid.setConfig({passiveMode:true});
+ var checkedList = myGrid.getCheckedList(0);// colSeq
+ var removeList = [];
+ $.each(checkedList, function(){
 	removeList.push({no:this.no});
  });
-	 myGrid.restoreList(removeList);
-	 ```
+ myGrid.restoreList(removeList);
+ ```
 	 */
 	restoreList: function (restoreList) {
 		var cfg = this.config;
@@ -6066,7 +6006,7 @@ myGrid.setConfig({
 			this.gridBodyClickAct(event);
 		}
 		else
-		if (cfg.body.ondblclick) {
+		if (cfg.body.ondblclick && !event.shiftKey && !(event.metaKey || event.ctrlKey)) {
 			if (this.needBindDBLClick()) {
 				clearTimeout(this.bodyClickObserver);
 				this.gridBodyClickAct(event);
@@ -6126,7 +6066,8 @@ myGrid.setConfig({
 			}
 		}
 
-		if (isoncheck) { /*체크박스 구현 */
+		if (isoncheck)
+		{ /*체크박스 구현 */
 			var targetID = event.target.id;
 			var itemIndex = targetID.split(/_AX_/g).last();
 			var ids = targetID.split(/_AX_/g);
@@ -6167,7 +6108,7 @@ myGrid.setConfig({
 		}
 		else
 		{
-
+			/*
 			var myTarget = this.getEventTarget({
 				evt: eventTarget, evtIDs: eid,
 				until: function (evt, evtIDs) {
@@ -6179,61 +6120,129 @@ myGrid.setConfig({
 					return ((edom.hasClass("bodyTd") || edom.hasClass("bodyViewIcon") || edom.hasClass("bodyViewMobile")) && !edom.hasClass("buttonGroupItem"));
 				}
 			});
+			*/
+			// 새로운 이벤트 타켓 캡춰 테스트
+			var myTarget = axf.get_event_target(eventTarget, function(el){
+				var edom = axdom(el);
+				return (!edom.hasClass("buttonGroupItem") && (edom.hasClass("bodyTd") || edom.hasClass("bodyViewIcon") || edom.hasClass("bodyViewMobile")));
+			});
+
 			/* event target search ------------------------ */
 
 			if (cfg.viewMode == "grid") {
 				if (myTarget) {
-					var targetID = myTarget.id;
-					var itemIndex = targetID.split(/_AX_/g).last();
-					var ids = targetID.split(/_AX_/g);
 
-					// todo : 다중선택 처리
+					var body = this.body,
+						targetID = myTarget.id,
+						itemIndex = targetID.split(/_AX_/g).last(),
+						ids = targetID.split(/_AX_/g),
+						len = this.selectedRow.length, _selectedRow = [], hasItem = false,
+						r = ids[ids.length - 3], c = ids[ids.length - 2], CG = cfg.colGroup[c],
+						i = 0;
+
 					if (event.shiftKey) {
+						if(len > 0){
+							var l_itemIndex = this.selectedRow.last().number(), itemIndex = itemIndex.number(), st_index, ed_index;
+							if(l_itemIndex &lt; itemIndex){
+								st_index = l_itemIndex;
+								ed_index = itemIndex;
+							}else{
+								st_index = itemIndex;
+								ed_index = l_itemIndex;
+							}
 
+							for(var k=st_index;k&lt;(ed_index+1);k++) {
+								hasItem = false;
+								for(;i&lt;len;i++) {
+									if(k == this.selectedRow[i]){
+										hasItem = true;
+										break;
+									}
+								}
+								if(!hasItem){
+									this.body.find(".gridBodyTr_" + k).addClass("selected");
+									this.selectedRow.push(k);
+								}
+							}
+						}else{
+							this.body.find(".gridBodyTr_" + itemIndex).addClass("selected");
+							this.selectedRow.push(itemIndex);
+						}
+						this.clearRange();
 					}
 					else if (event.metaKey || event.ctrlKey)
 					{
-						// todo : selectedCells 기능 제거하고 selectedRow 추가하는 옵션으로 기능 변경
-						if (this.selectedRow.length > 0) {
-							var body = this.body;
-							axf.each(this.selectedRow, function () {
-								body.find(".gridBodyTr_" + this).removeClass("selected");
-							});
-							this.selectedRow.clear();
+						for(;i&lt;len;i++){
+							if(this.selectedRow[i] == itemIndex) {
+								this.body.find(".gridBodyTr_" + itemIndex).removeClass("selected");
+								hasItem = true;
+							} else {
+								_selectedRow.push(this.selectedRow[i]);
+							}
+						}
+						this.selectedRow = _selectedRow;
+
+						if(!hasItem){
+							this.body.find(".gridBodyTr_" + itemIndex).addClass("selected");
+							this.selectedRow.push(itemIndex);
 						}
 
-						var hasID = false;
-						var collect = [];
-						axf.each(this.selectedCells, function () {
-							if (this == targetID) {
-								hasID = true;
+						// 셀 선택 기능 : 비활성처리
+						if(false) {
+							var hasID = false;
+							var collect = [];
+							axf.each(this.selectedCells, function () {
+								if (this == targetID) {
+									hasID = true;
+								} else {
+									collect.push(this);
+								}
+							});
+							if (hasID) {
+								axdom("#" + targetID).removeClass("selected");
+								this.selectedCells = collect;
 							} else {
-								collect.push(this);
+								axdom("#" + targetID).addClass("selected");
+								this.selectedCells.push(targetID);
 							}
-						});
-						if (hasID) {
-							axdom("#" + targetID).removeClass("selected");
-							this.selectedCells = collect;
-						} else {
-							axdom("#" + targetID).addClass("selected");
-							this.selectedCells.push(targetID);
 						}
+
+						this.clearRange();
 					}
 					else
 					{
+
+						/*
 						if (this.selectedCells.length > 0) {
 							axf.each(this.selectedCells, function () {
 								axdom("#" + this).removeClass("selected");
 							});
 							this.selectedCells.clear();
 						}
-						if (this.selectedRow.length > 0) {
-							var body = this.body;
-							axf.each(this.selectedRow, function () {
-								body.find(".gridBodyTr_" + this).removeClass("selected");
-							});
-						}
+						*/
 
+						// todo : editable 속성 연결
+						if (this.selectedRow.length > 0) {
+							// colGroup 에 editable이 있는지 파악
+
+							if(CG.editable){
+								for(;i&lt;len;i++){
+									if(this.selectedRow[i] == itemIndex){
+										hasItem = true;
+										break;
+									}
+								}
+								if(hasItem){ // inline 에디트가 발생할 수 있는 상황
+									this.editCell(r, c, itemIndex);
+								}
+							}
+
+							if(!hasItem){
+								for(i=0;i&lt;len;i++){
+									body.find(".gridBodyTr_" + this.selectedRow[i]).removeClass("selected");
+								}
+							}
+						}
 						this.selectedRow.clear();
 						this.body.find(".gridBodyTr_" + itemIndex).addClass("selected");
 						this.selectedRow.push(itemIndex);
@@ -6241,8 +6250,7 @@ myGrid.setConfig({
 						var item = this.list[itemIndex];
 
 						if (cfg.body.onclick) {
-							var r = ids[ids.length - 3];
-							var c = ids[ids.length - 2];
+
 							var sendObj = {
 								index: itemIndex,
 								r: r,
@@ -6473,15 +6481,40 @@ myGrid.setConfig({
 		this.stopEvent(event);
 		this.clearRange();
 	},
+/**
+ * 그리드 셀 인라인 에디트
+ * @method AXGrid.editCell
+ * @param {Number} r - index of body.rows
+ * @param {Number} c - index of colGroup
+ * @param {Number} itemIndex - index of this.list
+ * @returns {AXGrid}
+ * @example
+```js
+
+```
+ */
+	editCell: function(r, c, ii){
+		var cfg = this.config,
+			CG = cfg.colGroup[c];
+
+		var td = this.body.find("#" + cfg.targetID + "_AX_bodyText_AX_" + r + "_AX_" + c + "_AX_" + ii);
+
+		console.log(td.html());
+		//trace(cfg.colGroup[c]);
+		//grid-target_AX_bodyText_AX_0_AX_2_AX_1
+
+
+		return this;
+	},
 	/**
 	 * @method AXGrid.contentScrollResize
 	 * @param resetLeft {Boolean} - false 시 가로 스크롤은 초기화 하지 않습니다.
 	 * @description  Grid의 화면에 맞게 스크롤을 생성 합니다.
 	 * @example
-	 ```
-	 var myGrid = new AXGrid();
-	 myGrid.contentScrollResize(false);
-	 ```
+```
+var myGrid = new AXGrid();
+myGrid.contentScrollResize(false);
+```
 	 */
 	contentScrollResize: function (resetLeft) {
 		var cfg = this.config, _this = this;
@@ -6680,7 +6713,8 @@ myGrid.setConfig({
 			}
 		}
 
-		if(touch == undefined) this.bigDataSync();
+		if(typeof touch == "undefined") this.bigDataSync();
+		if(touch == "direct")  this.bigDataSyncApply();
 	},
 	/**
 	 * @method AXGrid.getMousePositionToContentScroll
@@ -7352,9 +7386,7 @@ myGrid.setConfig({
 						scrollTop = 0;
 					}
 					this.scrollContent.css({ top: scrollTop });
-					this.contentScrollContentSync({ top: scrollTop }, "manual");
-
-					this.bigDataSyncApply();
+					this.contentScrollContentSync({ top: scrollTop }, "direct");
 
 					setTimeout(function () {
 						if (_this.body.find(".gridBodyTr_" + itemIndex).get(0)) {
@@ -7364,16 +7396,16 @@ myGrid.setConfig({
 							if (trTop.number() + trHeight.number() > bodyHeight) {
 								scrollTop = bodyHeight - (trTop.number() + trHeight.number());
 								_this.scrollContent.css({ top: scrollTop });
-								_this.contentScrollContentSync({ top: scrollTop });
+								_this.contentScrollContentSync({ top: scrollTop }, "direct");
 							} else {
 								if (trTop.number() == 0) {
 									scrollTop = 0;
 									_this.scrollContent.css({ top: scrollTop });
-									_this.contentScrollContentSync({ top: scrollTop });
+									_this.contentScrollContentSync({ top: scrollTop }, "direct");
 								}
 							}
 						}
-					}, 300);
+					});
 
 				} else {
 					//trace("out of index");
@@ -7436,7 +7468,15 @@ myGrid.setConfig({
 	getSelectedItem: function () {
 		var cfg = this.config;
 		if (this.selectedRow != undefined && this.selectedRow != null && this.selectedRow.length > 0) {
-			return { index: this.selectedRow.first(), item: this.list[this.selectedRow.first()] };
+			if(this.selectedRow.length == 1){
+				return { index: this.selectedRow.first(), item: this.list[this.selectedRow.first()] };
+			}else{
+				var selectedList = [], len = this.selectedRow.length;
+				for(var i=0;i&lt;len;i++){
+					selectedList.push( this.list[i] )
+				}
+				return { index: this.selectedRow, item: selectedList };
+			}
 		} else {
 			return { error: "noselected", description: "선택된 item이 없습니다." };
 		}
@@ -9509,7 +9549,7 @@ myGrid.setConfig({
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Dec 18 2014 16:32:43 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:26:37 GMT+0900 (KST)
         </footer>
     </div>
 </div>

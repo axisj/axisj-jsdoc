@@ -873,6 +873,8 @@
             
                 <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
             
+                <li data-name="AXGrid.editCell"><a href="AXGrid.html#editCell">editCell</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
@@ -1197,6 +1199,8 @@
             
                 <li data-name="AXModal.resize"><a href="AXModal.html#resize">resize</a></li>
             
+                <li data-name="AXModal.setConfig"><a href="AXModal.html#setConfig">setConfig</a></li>
+            
                 <li data-name="AXModal.setWidth"><a href="AXModal.html#setWidth">setWidth</a></li>
             
             </ul>
@@ -1449,6 +1453,8 @@
                 <li data-name="AXSearch.getItemId"><a href="AXSearch.html#getItemId">getItemId</a></li>
             
                 <li data-name="AXSearch.getParam"><a href="AXSearch.html#getParam">getParam</a></li>
+            
+                <li data-name="AXSearch.reset"><a href="AXSearch.html#reset">reset</a></li>
             
                 <li data-name="AXSearch.setConig"><a href="AXSearch.html#setConig">setConig</a></li>
             
@@ -1770,7 +1776,7 @@
         
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>V0.6</li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>V0.7</li></ul></dd>
     
     
     
@@ -1834,6 +1840,9 @@
         //toast.push(Object.toJSON(this));
         //toast.push(Object.toJSON(selectedObject));
         toast.push(&quot;onclose: &quot;+Object.toJSON(value));
+    },
+    onclick: function(selectedObject, value){
+
     }
  });</code></pre>
     
@@ -1877,9 +1886,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L257" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L261" target="_blank">
             AXTab.js,
-            line 257</a>
+            line 261</a>
         </div>
         
     </div>
@@ -2015,12 +2024,12 @@
 
     
     <pre class="prettyprint linenums"><code class="lang-js">$(&quot;#myTab01&quot;).addTabs([
-    {optionValue:&quot;1&quot;, optionText:&quot;1살&quot;, closable: true}, 
-    {optionValue:&quot;2&quot;, optionText:&quot;2살&quot;, closable: true}, 
-    {optionValue:&quot;3&quot;, optionText:&quot;3살&quot;, addClass:&quot;Red&quot;}, 
-    {optionValue:&quot;4&quot;, optionText:&quot;4살&quot;, addClass:&quot;Blue&quot;}, 
-    {optionValue:&quot;5&quot;, optionText:&quot;5살&quot;, addClass:&quot;Green&quot;}, 
-    {optionValue:&quot;6&quot;, optionText:&quot;6살&quot;, addClass:&quot;Classic&quot;}, 
+    {optionValue:&quot;1&quot;, optionText:&quot;1살&quot;, closable: true},
+    {optionValue:&quot;2&quot;, optionText:&quot;2살&quot;, closable: true},
+    {optionValue:&quot;3&quot;, optionText:&quot;3살&quot;, addClass:&quot;Red&quot;},
+    {optionValue:&quot;4&quot;, optionText:&quot;4살&quot;, addClass:&quot;Blue&quot;},
+    {optionValue:&quot;5&quot;, optionText:&quot;5살&quot;, addClass:&quot;Green&quot;},
+    {optionValue:&quot;6&quot;, optionText:&quot;6살&quot;, addClass:&quot;Classic&quot;},
     {optionValue:&quot;7&quot;, optionText:&quot;7살&quot;}
 ]);</code></pre>
     
@@ -2040,9 +2049,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L59" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L63" target="_blank">
             AXTab.js,
-            line 59</a>
+            line 63</a>
         </div>
         
     </div>
@@ -2160,12 +2169,12 @@
             value:&quot;2&quot;,
             closable: false,
             options:[
-                {optionValue:&quot;1&quot;, optionText:&quot;1살&quot;, closable: true}, 
-                {optionValue:&quot;2&quot;, optionText:&quot;2살&quot;, closable: true}, 
-                {optionValue:&quot;3&quot;, optionText:&quot;3살&quot;, addClass:&quot;Red&quot;}, 
-                {optionValue:&quot;4&quot;, optionText:&quot;4살&quot;, addClass:&quot;Blue&quot;}, 
-                {optionValue:&quot;5&quot;, optionText:&quot;5살&quot;, addClass:&quot;Green&quot;}, 
-                {optionValue:&quot;6&quot;, optionText:&quot;6살&quot;, addClass:&quot;Classic&quot;}, 
+                {optionValue:&quot;1&quot;, optionText:&quot;1살&quot;, closable: true},
+                {optionValue:&quot;2&quot;, optionText:&quot;2살&quot;, closable: true},
+                {optionValue:&quot;3&quot;, optionText:&quot;3살&quot;, addClass:&quot;Red&quot;},
+                {optionValue:&quot;4&quot;, optionText:&quot;4살&quot;, addClass:&quot;Blue&quot;},
+                {optionValue:&quot;5&quot;, optionText:&quot;5살&quot;, addClass:&quot;Green&quot;},
+                {optionValue:&quot;6&quot;, optionText:&quot;6살&quot;, addClass:&quot;Classic&quot;},
                 {optionValue:&quot;7&quot;, optionText:&quot;7살&quot;}
             ],
             onchange: function(selectedObject, value){
@@ -2197,9 +2206,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L426" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L430" target="_blank">
             AXTab.js,
-            line 426</a>
+            line 430</a>
         </div>
         
     </div>
@@ -2367,9 +2376,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L694" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L713" target="_blank">
             AXTab.js,
-            line 694</a>
+            line 713</a>
         </div>
         
     </div>
@@ -2560,9 +2569,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L540" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L559" target="_blank">
             AXTab.js,
-            line 540</a>
+            line 559</a>
         </div>
         
     </div>
@@ -2753,9 +2762,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L621" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L640" target="_blank">
             AXTab.js,
-            line 621</a>
+            line 640</a>
         </div>
         
     </div>
@@ -2946,9 +2955,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L355" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L359" target="_blank">
             AXTab.js,
-            line 355</a>
+            line 359</a>
         </div>
         
     </div>
@@ -3117,9 +3126,9 @@ $(&quot;#myTab01&quot;).closeTab(&quot;optionValue&quot;);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L745" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L764" target="_blank">
             AXTab.js,
-            line 745</a>
+            line 764</a>
         </div>
         
     </div>
@@ -3287,9 +3296,9 @@ $(&quot;#myTab01&quot;).closeTab(&quot;optionValue&quot;);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L132" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L136" target="_blank">
             AXTab.js,
-            line 132</a>
+            line 136</a>
         </div>
         
     </div>
@@ -3434,9 +3443,9 @@ $(&quot;#myTab01&quot;).closeTab(&quot;optionValue&quot;);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L712" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L731" target="_blank">
             AXTab.js,
-            line 712</a>
+            line 731</a>
         </div>
         
     </div>
@@ -3513,9 +3522,9 @@ $(&quot;#myTab01&quot;).closeTab(&quot;optionValue&quot;);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L479" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTab.js#L498" target="_blank">
             AXTab.js,
-            line 479</a>
+            line 498</a>
         </div>
         
     </div>
@@ -3675,7 +3684,7 @@ $(&quot;#myTab01&quot;).closeTab(&quot;optionValue&quot;);</code></pre>
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Dec 18 2014 16:32:44 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:26:39 GMT+0900 (KST)
         </footer>
     </div>
 </div>

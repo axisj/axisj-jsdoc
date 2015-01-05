@@ -873,6 +873,8 @@
             
                 <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
             
+                <li data-name="AXGrid.editCell"><a href="AXGrid.html#editCell">editCell</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
@@ -1197,6 +1199,8 @@
             
                 <li data-name="AXModal.resize"><a href="AXModal.html#resize">resize</a></li>
             
+                <li data-name="AXModal.setConfig"><a href="AXModal.html#setConfig">setConfig</a></li>
+            
                 <li data-name="AXModal.setWidth"><a href="AXModal.html#setWidth">setWidth</a></li>
             
             </ul>
@@ -1449,6 +1453,8 @@
                 <li data-name="AXSearch.getItemId"><a href="AXSearch.html#getItemId">getItemId</a></li>
             
                 <li data-name="AXSearch.getParam"><a href="AXSearch.html#getParam">getParam</a></li>
+            
+                <li data-name="AXSearch.reset"><a href="AXSearch.html#reset">reset</a></li>
             
                 <li data-name="AXSearch.setConig"><a href="AXSearch.html#setConig">setConig</a></li>
             
@@ -1923,12 +1929,13 @@ this.clearRange();
 // -- AXReq ----------------------------------------------
 /**
  * @class AXReqQue
- * @version v1.2
+ * @version v1.3
  * @author tom@axisj.com
  * @logs
  * 2012-09-28 오후 2:58:32 - 시작
  * 2014-04-10 - tom : onbeforesend 옵션 추가 return false 하면 호출 제어됨.
  * 2014-10-06 - tom : dataSendMethod bug fix.
+ * 2014-12-31 - tom : AXConfig.AXReq.pars 확장
  */
 var AXReqQue = Class.create({
 /**
@@ -2004,14 +2011,32 @@ var AXReqQue = Class.create({
 
         if (config.debug) trace({ url: myQue.url, pars: myQue.configs.pars });
 
-        var ajaxOption = {};
+        var ajaxOption = {}, pars;
         axf.each(config, function (k, v) { // update to {this.config}
             ajaxOption[k] = v;
         });
         ajaxOption.url = myQue.url;
+        pars = myQue.configs.pars;
+        if(dataSendMethod != "DTO" && AXConfig.AXReq.pars){
+            if (typeof pars == "object") {
+                if (typeof AXConfig.AXReq.pars == "object") {
+                    pars = jQuery.extend(pars, AXConfig.AXReq.pars);
+                } else if (typeof AXConfig.AXReq.pars == "string") {
+                    pars = jQuery.extend(pars, AXConfig.AXReq.pars.queryToObject());
+                }
+            }else if (typeof pars == "string") {
+                if (typeof AXConfig.AXReq.pars == "object") {
+                    pars += "&" + jQuery.param(AXConfig.AXReq.pars);
+                } else if (typeof AXConfig.AXReq.pars == "string") {
+                    pars += "&" + AXConfig.AXReq.pars;
+                }
+            }
+        }
 
-        if (dataSendMethod == "json") ajaxOption["data"] = "{queryString:\"" + myQue.configs.pars + "\"}";
-        else ajaxOption["data"] = myQue.configs.pars;
+        if (dataSendMethod == "json") ajaxOption["data"] = "{queryString:\"" + pars + "\"}";
+        else ajaxOption["data"] = pars;
+
+
 
         ajaxOption.success = onsucc;
         ajaxOption.error = onerr;
@@ -2028,17 +2053,18 @@ var AXReqQue = Class.create({
     },
     onsucc: function (req) {
         if (req != undefined) {
-            var myQue = this.que.first();
+            var myQue = this.que.first(), res;
 
             try {
                 if (myQue.configs.debug) trace("onsucc" + req);
+
                 if (myQue.configs.responseType == "text/html") {
-                    var res = req;
+                    res = req;
                 } else {
                     if ((typeof req) == "string") {
-                        var res = req.object();
+                        res = req.object();
                     } else {
-                        var res = AXConfig.AXReq.resultFormatter.call(req);
+                        res = AXConfig.AXReq.resultFormatter.call(req);
                     }
                 }
 
@@ -4865,7 +4891,7 @@ axdom.fn.unbindAXResizable = function (config) {
  * AXContextMenuClass
  * @class AXContextMenuClass
  * @extends AXJ
- * @version v1.24
+ * @version v1.25
  * @author tom@axisj.com, axisj.com
  * @logs
  "2013-03-22 오후 6:08:57",
@@ -4876,6 +4902,7 @@ axdom.fn.unbindAXResizable = function (config) {
  "2014-04-07 오전 9:55:57 tom, extent checkbox, sortbox"
  "2014-06-24 tom : reserveKeys.subMenu 설정할 수 있도록 기능 보강, 콜백함수 개선"
  "2014-12-18 tom : onclose 속성을 추가 할 수 있도록 속성 추가
+ "2014-12-22 tom : filter를 통화한 메뉴 아이템이 없을 경우 표시 안하도록 변경"
  */
 
 var AXContextMenuClass = Class.create(AXJ, {
@@ -5351,6 +5378,8 @@ AXContextMenu.open({
 
         var filter = this.filter.bind(this);
         var getSubMenu = this.getSubMenu.bind(this);
+
+        var displayMenuCount = 0;
         var po = [];
         po.push("&lt;div id=\"" + objID + "\" class=\"" + theme + "\" style=\"width:" + width + "px;\">");
         AXUtil.each(obj.menu, function (idx, menu) {
@@ -5385,9 +5414,15 @@ AXContextMenu.open({
                 if (menu.underLine) {
                     po.push("&lt;div class=\"hline\">&lt;/div>");
                 }
+                displayMenuCount++;
             }
         });
         po.push("&lt;/div>");
+
+        if(displayMenuCount == 0){
+            // 표시할 메뉴가 없음.
+            return false;
+        }
         axdom(document.body).append(po.join(''));
 
         axdom("#" + objID + " .contextMenuItem:first-child").addClass("first");
@@ -5623,7 +5658,7 @@ AXContextMenu.close({
         var obj = this.objects[objSeq];
 
         if (event.keyCode == AXUtil.Event.KEY_ESC) {
-            this._close(objSeq, objID);
+            this._close(objSeq, objID, event);
             return;
         }
 
@@ -5639,7 +5674,7 @@ AXContextMenu.close({
         if (myTarget) {
 
         } else {
-            this._close(objSeq, objID);
+            this._close(objSeq, objID, event);
         }
     },
     contextMenuItemClick: function (event, objSeq, objID) {
@@ -5715,7 +5750,7 @@ AXContextMenu.close({
 
                 if (obj.onsort) {
                     if(obj.onsort.call({ menu: obj.menu, sortMenu: menu, sendObj: obj.sendObj }, objID) != true){
-                        this._close(objSeq, objID);
+                        this._close(objSeq, objID, event);
                     }
                 }
                 return true;
@@ -5723,7 +5758,7 @@ AXContextMenu.close({
 
             if (menu.onclick) {
                 if(menu.onclick.call({ menu: menu, sendObj: obj.sendObj }, objID) != true){
-                    this._close(objSeq, objID);
+                    this._close(objSeq, objID, event);
                 }
                 return true;
             }else if (obj.onchange) { // 라벨 선택 할 때. 정렬항목도 없는 경우만 체크 모드로 연결
@@ -5732,7 +5767,7 @@ AXContextMenu.close({
 
                 if (obj.onchange) {
                     if (obj.onchange.call({ menu: obj.menu, clickMenu: menu, sendObj: obj.sendObj }, objID) != true){
-                        this._close(objSeq, objID);
+                        this._close(objSeq, objID, event);
                     }
                 }
                 return true;
@@ -6503,6 +6538,7 @@ obj.modalBody.html("&lt;div style='height:250px;background:#fff;text-align: cent
             width: (modalWidth*0.8),
             height: (modalHeight*0.8)
         };
+        //cssStylesStart.top += jQuery(window).scrollTop();
         this.modalPanel.css(cssStylesStart);
 
         cssStyles.left = left;
@@ -6860,7 +6896,7 @@ axdom(document.body).ready(function () {
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Dec 18 2014 16:32:42 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:26:37 GMT+0900 (KST)
         </footer>
     </div>
 </div>
