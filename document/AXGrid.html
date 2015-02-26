@@ -456,6 +456,8 @@
             
                 <li data-name="jQueryExtends.bindSelectUpdate"><a href="jQueryExtends.html#bindSelectUpdate">bindSelectUpdate</a></li>
             
+                <li data-name="jQueryExtends.bindSelectUpdateOptions"><a href="jQueryExtends.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
+            
                 <li data-name="jQueryExtends.bindSlider"><a href="jQueryExtends.html#bindSlider">bindSlider</a></li>
             
                 <li data-name="jQueryExtends.bindSwitch"><a href="jQueryExtends.html#bindSwitch">bindSwitch</a></li>
@@ -503,6 +505,8 @@
                 <li data-name="jQueryExtends.unbindSelect"><a href="jQueryExtends.html#unbindSelect">unbindSelect</a></li>
             
                 <li data-name="jQueryExtends.unbindTab"><a href="jQueryExtends.html#unbindTab">unbindTab</a></li>
+            
+                <li data-name="jQueryExtends.updateTabs"><a href="jQueryExtends.html#updateTabs">updateTabs</a></li>
             
             </ul>
             <ul class="events itemMembers">
@@ -821,6 +825,8 @@
             
                 <li data-name="AXGrid.click"><a href="AXGrid.html#click">click</a></li>
             
+                <li data-name="AXGrid.clipBoardClear"><a href="AXGrid.html#clipBoardClear">clipBoardClear</a></li>
+            
                 <li data-name="AXGrid.colGroupListClick"><a href="AXGrid.html#colGroupListClick">colGroupListClick</a></li>
             
                 <li data-name="AXGrid.colHeadCheckBoxClick"><a href="AXGrid.html#colHeadCheckBoxClick">colHeadCheckBoxClick</a></li>
@@ -874,6 +880,8 @@
                 <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
             
                 <li data-name="AXGrid.editCell"><a href="AXGrid.html#editCell">editCell</a></li>
+            
+                <li data-name="AXGrid.editCellClear"><a href="AXGrid.html#editCellClear">editCellClear</a></li>
             
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
@@ -991,15 +999,19 @@
             
                 <li data-name="AXGrid.scrollTop"><a href="AXGrid.html#scrollTop">scrollTop</a></li>
             
+                <li data-name="AXGrid.selectClear"><a href="AXGrid.html#selectClear">selectClear</a></li>
+            
                 <li data-name="AXGrid.setBody"><a href="AXGrid.html#setBody">setBody</a></li>
             
                 <li data-name="AXGrid.setColHead"><a href="AXGrid.html#setColHead">setColHead</a></li>
             
-                <li data-name="AXGrid.setConig"><a href="AXGrid.html#setConig">setConig</a></li>
+                <li data-name="AXGrid.setConfig"><a href="AXGrid.html#setConfig">setConfig</a></li>
             
                 <li data-name="AXGrid.setData"><a href="AXGrid.html#setData">setData</a></li>
             
                 <li data-name="AXGrid.setDataSet"><a href="AXGrid.html#setDataSet">setDataSet</a></li>
+            
+                <li data-name="AXGrid.setEditCellValue"><a href="AXGrid.html#setEditCellValue">setEditCellValue</a></li>
             
                 <li data-name="AXGrid.setEditor"><a href="AXGrid.html#setEditor">setEditor</a></li>
             
@@ -1018,6 +1030,8 @@
                 <li data-name="AXGrid.sortList"><a href="AXGrid.html#sortList">sortList</a></li>
             
                 <li data-name="AXGrid.unbindAXbind"><a href="AXGrid.html#unbindAXbind">unbindAXbind</a></li>
+            
+                <li data-name="AXGrid.updateItem"><a href="AXGrid.html#updateItem">updateItem</a></li>
             
                 <li data-name="AXGrid.updateList"><a href="AXGrid.html#updateList">updateList</a></li>
             
@@ -1485,6 +1499,8 @@
             
                 <li data-name="AXSelectConverter.bindSelectRemoveOptions"><a href="AXSelectConverter.html#bindSelectRemoveOptions">bindSelectRemoveOptions</a></li>
             
+                <li data-name="AXSelectConverter.bindSelectUpdateOptions"><a href="AXSelectConverter.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
+            
             </ul>
             <ul class="events itemMembers">
             
@@ -1778,7 +1794,7 @@
         
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>v2.7.1</li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>v3.2</li></ul></dd>
     
     
     
@@ -1866,9 +1882,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2814" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2928" target="_blank">
             AXGrid.js,
-            line 2814</a>
+            line 2928</a>
         </div>
         
     </div>
@@ -1985,9 +2001,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7051" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7671" target="_blank">
             AXGrid.js,
-            line 7051</a>
+            line 7671</a>
         </div>
         
     </div>
@@ -2119,10 +2135,12 @@
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
  var item = {};
  myGrid.appendList(item);
- myGrid.appendList(item, 3);</code></pre>
+ myGrid.appendList(item, 3);
+ ```</code></pre>
     
 
     
@@ -2140,9 +2158,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5438" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5953" target="_blank">
             AXGrid.js,
-            line 5438</a>
+            line 5953</a>
         </div>
         
     </div>
@@ -2216,9 +2234,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5451" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5966" target="_blank">
             AXGrid.js,
-            line 5451</a>
+            line 5966</a>
         </div>
         
     </div>
@@ -2337,9 +2355,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6987" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7607" target="_blank">
             AXGrid.js,
-            line 6987</a>
+            line 7607</a>
         </div>
         
     </div>
@@ -2403,8 +2421,10 @@
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.cancelEditor();</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.cancelEditor();
+ ```</code></pre>
     
 
     
@@ -2422,9 +2442,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7674" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8297" target="_blank">
             AXGrid.js,
-            line 7674</a>
+            line 8297</a>
         </div>
         
     </div>
@@ -2533,10 +2553,11 @@
         
 
     
-    <pre class="prettyprint linenums"><code> myGrid.changeGridView({
-    viewMode:&quot;grid&quot;
- });
+    <pre class="prettyprint linenums"><code> ```
  myGrid.changeGridView({
+viewMode:&quot;grid&quot;</code></pre>
+<p> });
+     myGrid.changeGridView({
     viewMode:&quot;icon&quot;,
     view: {
         width:&quot;200&quot;, // icon width
@@ -2564,9 +2585,10 @@
         }
     }
 });
- myGrid.changeGridView({
+     myGrid.changeGridView({
     viewMode:&quot;mobile&quot;
-});</code></pre>
+});
+     ```</p>
     
 
     
@@ -2584,9 +2606,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1369" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1412" target="_blank">
             AXGrid.js,
-            line 1369</a>
+            line 1412</a>
         </div>
         
     </div>
@@ -2759,9 +2781,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5755" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6322" target="_blank">
             AXGrid.js,
-            line 5755</a>
+            line 6322</a>
         </div>
         
     </div>
@@ -2870,10 +2892,87 @@
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.click(0);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.click(0);
+ ```</code></pre>
     
 
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="clipBoardClear">
+            
+            <span class="type-signature static">static</span>AXGrid.clipBoardClear<span class="signature">()</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="AXGrid.html">AXGrid</a>}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8430" target="_blank">
+            AXGrid.js,
+            line 8430</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
     
 </dd>
 
@@ -2889,9 +2988,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2305" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2415" target="_blank">
             AXGrid.js,
-            line 2305</a>
+            line 2415</a>
         </div>
         
     </div>
@@ -3009,9 +3108,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2354" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2464" target="_blank">
             AXGrid.js,
-            line 2354</a>
+            line 2464</a>
         </div>
         
     </div>
@@ -3124,9 +3223,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1986" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2091" target="_blank">
             AXGrid.js,
-            line 1986</a>
+            line 2091</a>
         </div>
         
     </div>
@@ -3239,9 +3338,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1957" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2062" target="_blank">
             AXGrid.js,
-            line 1957</a>
+            line 2062</a>
         </div>
         
     </div>
@@ -3354,9 +3453,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2166" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2276" target="_blank">
             AXGrid.js,
-            line 2166</a>
+            line 2276</a>
         </div>
         
     </div>
@@ -3469,9 +3568,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2151" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2261" target="_blank">
             AXGrid.js,
-            line 2151</a>
+            line 2261</a>
         </div>
         
     </div>
@@ -3584,9 +3683,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2015" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2120" target="_blank">
             AXGrid.js,
-            line 2015</a>
+            line 2120</a>
         </div>
         
     </div>
@@ -3699,9 +3798,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2062" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2172" target="_blank">
             AXGrid.js,
-            line 2062</a>
+            line 2172</a>
         </div>
         
     </div>
@@ -3814,9 +3913,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2139" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2249" target="_blank">
             AXGrid.js,
-            line 2139</a>
+            line 2249</a>
         </div>
         
     </div>
@@ -3929,9 +4028,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2073" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2183" target="_blank">
             AXGrid.js,
-            line 2073</a>
+            line 2183</a>
         </div>
         
     </div>
@@ -4044,9 +4143,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2252" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2362" target="_blank">
             AXGrid.js,
-            line 2252</a>
+            line 2362</a>
         </div>
         
     </div>
@@ -4164,9 +4263,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4931" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5415" target="_blank">
             AXGrid.js,
-            line 4931</a>
+            line 5415</a>
         </div>
         
     </div>
@@ -4296,8 +4395,10 @@
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.contentScrollContentSync({top: 0}, &quot;touch&quot;);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.contentScrollContentSync({top: 0}, &quot;touch&quot;);
+ ```</code></pre>
     
 
     
@@ -4315,9 +4416,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5357" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5872" target="_blank">
             AXGrid.js,
-            line 5357</a>
+            line 5872</a>
         </div>
         
     </div>
@@ -4389,9 +4490,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4780" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5264" target="_blank">
             AXGrid.js,
-            line 4780</a>
+            line 5264</a>
         </div>
         
     </div>
@@ -4498,8 +4599,10 @@
         
 
     
-    <pre class="prettyprint linenums"><code>var myGrid = new AXGrid();
-myGrid.contentScrollResize(false);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.contentScrollResize(false);
+ ```</code></pre>
     
 
     
@@ -4517,9 +4620,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5130" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5614" target="_blank">
             AXGrid.js,
-            line 5130</a>
+            line 5614</a>
         </div>
         
     </div>
@@ -4632,9 +4735,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5100" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5584" target="_blank">
             AXGrid.js,
-            line 5100</a>
+            line 5584</a>
         </div>
         
     </div>
@@ -4747,9 +4850,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5032" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5516" target="_blank">
             AXGrid.js,
-            line 5032</a>
+            line 5516</a>
         </div>
         
     </div>
@@ -4862,9 +4965,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4876" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5360" target="_blank">
             AXGrid.js,
-            line 4876</a>
+            line 5360</a>
         </div>
         
     </div>
@@ -4971,8 +5074,10 @@ myGrid.contentScrollResize(false);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.contentScrollScrollSync({left: myGrid.scrollXHandle.position().left});</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.contentScrollScrollSync({left: myGrid.scrollXHandle.position().left});
+ ```</code></pre>
     
 
     
@@ -4990,9 +5095,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5159" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5643" target="_blank">
             AXGrid.js,
-            line 5159</a>
+            line 5643</a>
         </div>
         
     </div>
@@ -5105,9 +5210,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5372" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5887" target="_blank">
             AXGrid.js,
-            line 5372</a>
+            line 5887</a>
         </div>
         
     </div>
@@ -5216,9 +5321,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5384" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5899" target="_blank">
             AXGrid.js,
-            line 5384</a>
+            line 5899</a>
         </div>
         
     </div>
@@ -5337,9 +5442,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5412" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5927" target="_blank">
             AXGrid.js,
-            line 5412</a>
+            line 5927</a>
         </div>
         
     </div>
@@ -5454,9 +5559,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5334" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5849" target="_blank">
             AXGrid.js,
-            line 5334</a>
+            line 5849</a>
         </div>
         
     </div>
@@ -5569,9 +5674,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5265" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5780" target="_blank">
             AXGrid.js,
-            line 5265</a>
+            line 5780</a>
         </div>
         
     </div>
@@ -5684,9 +5789,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5224" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5739" target="_blank">
             AXGrid.js,
-            line 5224</a>
+            line 5739</a>
         </div>
         
     </div>
@@ -5799,9 +5904,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5423" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5938" target="_blank">
             AXGrid.js,
-            line 5423</a>
+            line 5938</a>
         </div>
         
     </div>
@@ -5870,8 +5975,11 @@ myGrid.contentScrollResize(false);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> myGrid.list[0].id = 12;
- myGrid.dataSync();</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ myGrid.list[0].id = 12;
+ myGrid.dataSync();
+
+ ```</code></pre>
     
 
     
@@ -5889,9 +5997,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4755" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4935" target="_blank">
             AXGrid.js,
-            line 4755</a>
+            line 4935</a>
         </div>
         
     </div>
@@ -6049,8 +6157,211 @@ myGrid.contentScrollResize(false);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code class="lang-js">
-</code></pre>
+    <pre class="prettyprint linenums"><code> ```js
+
+ ```</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="editCellClear">
+            
+            <span class="type-signature static">static</span>AXGrid.editCellClear<span class="signature">(<span class="optional">r</span>, <span class="optional">c</span>, <span class="optional">itemIndex</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="AXGrid.html">AXGrid</a>|false}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5157" target="_blank">
+            AXGrid.js,
+            line 5157</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>셀 인라인 에디트 상태 해제</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>r</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Number.html">Number</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>index of config.body.rows</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>c</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Number.html">Number</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>index of colGrop</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>itemIndex</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Number.html">Number</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>index of data</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code> ```
+ mygrid.editCellClear(); // 셀 에디트 상태 해제
+ mygrid.editCellClear(0, 1, 1); // 셀 에디트 해제 하려는 위치가 값을 현재 위치와 비교 하여 false가 리턴되면 현재 위치
+ ```</code></pre>
     
 
     
@@ -6068,9 +6379,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3988" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4140" target="_blank">
             AXGrid.js,
-            line 3988</a>
+            line 4140</a>
         </div>
         
     </div>
@@ -6182,12 +6493,14 @@ myGrid.contentScrollResize(false);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var list = [
-     {no:1, title:&quot;AXGrid 첫번째 줄 입니다.&quot;, writer:&quot;장기영&quot;, regDate:&quot;2013-01-18&quot;, desc:&quot;myGrid.setList 의 첫번째 사용법 list json 직접 지정 법&quot;, price:123000, amount:10},
-     {no:2, title:&quot;AXGrid 두번째 줄 입니다.&quot;, writer:&quot;장기영&quot;, regDate:&quot;2013-01-18&quot;, desc:&quot;myGrid.setList 의 첫번째 사용법 list json 직접 지정 법&quot;, price:12300, amount:7},
-     {no:3, title:&quot;AXGrid 세번째 줄 입니다.&quot;, writer:&quot;장기영&quot;, regDate:&quot;2013-01-18&quot;, desc:&quot;myGrid.setList 의 첫번째 사용법 list json 직접 지정 법&quot;, price:12000, amount:5}
+    <pre class="prettyprint linenums"><code> ```
+ var list = [
+ {no:1, title:&quot;AXGrid 첫번째 줄 입니다.&quot;, writer:&quot;장기영&quot;, regDate:&quot;2013-01-18&quot;, desc:&quot;myGrid.setList 의 첫번째 사용법 list json 직접 지정 법&quot;, price:123000, amount:10},
+ {no:2, title:&quot;AXGrid 두번째 줄 입니다.&quot;, writer:&quot;장기영&quot;, regDate:&quot;2013-01-18&quot;, desc:&quot;myGrid.setList 의 첫번째 사용법 list json 직접 지정 법&quot;, price:12300, amount:7},
+ {no:3, title:&quot;AXGrid 세번째 줄 입니다.&quot;, writer:&quot;장기영&quot;, regDate:&quot;2013-01-18&quot;, desc:&quot;myGrid.setList 의 첫번째 사용법 list json 직접 지정 법&quot;, price:12000, amount:5}
  ];
- myGrid.fetchList(list);</code></pre>
+ myGrid.fetchList(list);
+ ```</code></pre>
     
 
     
@@ -6205,9 +6518,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6734" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7323" target="_blank">
             AXGrid.js,
-            line 6734</a>
+            line 7323</a>
         </div>
         
     </div>
@@ -6316,8 +6629,10 @@ myGrid.contentScrollResize(false);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.focusEditorForm(&quot;regDate&quot;);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.focusEditorForm(&quot;regDate&quot;);
+ ```</code></pre>
     
 
     
@@ -6335,9 +6650,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5710" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6239" target="_blank">
             AXGrid.js,
-            line 5710</a>
+            line 6239</a>
         </div>
         
     </div>
@@ -6388,6 +6703,9 @@ myGrid.contentScrollResize(false);</code></pre>
             
                 
 <span class="param-type"><a href="Number.html">Number</a></span>
+|
+
+<span class="param-type"><a href="String.html">String</a></span>
 
 
             
@@ -6397,7 +6715,7 @@ myGrid.contentScrollResize(false);</code></pre>
             
             <td class="description last">
                 
-                <p>정수/음수 이동될 칸 수</p></td>
+                <p>정수/음수 또는 L/R</p></td>
         </tr>
 	
 	
@@ -6479,9 +6797,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3021" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3160" target="_blank">
             AXGrid.js,
-            line 3021</a>
+            line 3160</a>
         </div>
         
     </div>
@@ -6721,9 +7039,9 @@ myGrid.contentScrollResize(false);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1466" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1530" target="_blank">
             AXGrid.js,
-            line 1466</a>
+            line 1530</a>
         </div>
         
     </div>
@@ -6839,8 +7157,8 @@ myGrid.contentScrollResize(false);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code>var myGrid = new AXGrid();
-myGrid.getCheckedList(0);</code></pre>
+    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.getCheckedList(0);</code></pre>
     
 
     
@@ -6858,9 +7176,9 @@ myGrid.getCheckedList(0);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1492" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1556" target="_blank">
             AXGrid.js,
-            line 1492</a>
+            line 1556</a>
         </div>
         
     </div>
@@ -6995,9 +7313,9 @@ item:JSObject}] -그리드 리스트의 체크된 인덱스 , 아이템
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1262" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1305" target="_blank">
             AXGrid.js,
-            line 1262</a>
+            line 1305</a>
         </div>
         
     </div>
@@ -7132,9 +7450,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1673" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1778" target="_blank">
             AXGrid.js,
-            line 1673</a>
+            line 1778</a>
         </div>
         
     </div>
@@ -7280,9 +7598,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1299" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1342" target="_blank">
             AXGrid.js,
-            line 1299</a>
+            line 1342</a>
         </div>
         
     </div>
@@ -7436,9 +7754,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5892" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6471" target="_blank">
             AXGrid.js,
-            line 5892</a>
+            line 6471</a>
         </div>
         
     </div>
@@ -7654,9 +7972,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6310" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6899" target="_blank">
             AXGrid.js,
-            line 6310</a>
+            line 6899</a>
         </div>
         
     </div>
@@ -7803,9 +8121,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6161" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6740" target="_blank">
             AXGrid.js,
-            line 6161</a>
+            line 6740</a>
         </div>
         
     </div>
@@ -8044,9 +8362,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6209" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6788" target="_blank">
             AXGrid.js,
-            line 6209</a>
+            line 6788</a>
         </div>
         
     </div>
@@ -8285,9 +8603,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7359" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7982" target="_blank">
             AXGrid.js,
-            line 7359</a>
+            line 7982</a>
         </div>
         
     </div>
@@ -8401,17 +8719,19 @@ html
         
 
     
-    <pre class="prettyprint linenums"><code> var arg = {
-    valign,  - valign 옵션
-    rowspan, - rowspan 옵션
-    colspan, - colspan 옵션
-    align,   - align 옵션
-    colSeq,  - config colgroup 내부 순서
-    formatter, - config colgroup에서 지정된 formatter
-    sort,  - 정렬 옵션
-    tdHtml, - config colgroup 지정된 label
-    displayLabel - Label이 지정된 경우 출력 여부. 기본적으로 사용시 false 로 셋팅됨. colgroup 에서 따로 지정하지 않기 때문에,,
-}</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var arg = {
+valign,  - valign 옵션
+rowspan, - rowspan 옵션
+colspan, - colspan 옵션
+align,   - align 옵션
+colSeq,  - config colgroup 내부 순서
+formatter, - config colgroup에서 지정된 formatter
+sort,  - 정렬 옵션
+tdHtml, - config colgroup 지정된 label
+displayLabel - Label이 지정된 경우 출력 여부. 기본적으로 사용시 false 로 셋팅됨. colgroup 에서 따로 지정하지 않기 때문에,,</code></pre>
+<p>}
+     ```</p>
     
 
     
@@ -8429,9 +8749,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7541" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8164" target="_blank">
             AXGrid.js,
-            line 7541</a>
+            line 8164</a>
         </div>
         
     </div>
@@ -8578,9 +8898,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7593" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8216" target="_blank">
             AXGrid.js,
-            line 7593</a>
+            line 8216</a>
         </div>
         
     </div>
@@ -8694,8 +9014,10 @@ html
         
 
     
-    <pre class="prettyprint linenums"><code> var txt = myGrid.getExcelFormat(&quot;html&quot;);
- var json = myGrid.getExcelFormat(&quot;json&quot;);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var txt = myGrid.getExcelFormat(&quot;html&quot;);
+ var json = myGrid.getExcelFormat(&quot;json&quot;);
+ ```</code></pre>
     
 
     
@@ -8713,9 +9035,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7491" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8114" target="_blank">
             AXGrid.js,
-            line 7491</a>
+            line 8114</a>
         </div>
         
     </div>
@@ -8862,9 +9184,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7400" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8023" target="_blank">
             AXGrid.js,
-            line 7400</a>
+            line 8023</a>
         </div>
         
     </div>
@@ -9011,9 +9333,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7448" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8071" target="_blank">
             AXGrid.js,
-            line 7448</a>
+            line 8071</a>
         </div>
         
     </div>
@@ -9183,9 +9505,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6004" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6583" target="_blank">
             AXGrid.js,
-            line 6004</a>
+            line 6583</a>
         </div>
         
     </div>
@@ -9332,9 +9654,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2884" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2998" target="_blank">
             AXGrid.js,
-            line 2884</a>
+            line 2998</a>
         </div>
         
     </div>
@@ -9597,9 +9919,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5935" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6514" target="_blank">
             AXGrid.js,
-            line 5935</a>
+            line 6514</a>
         </div>
         
     </div>
@@ -9746,9 +10068,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1661" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1766" target="_blank">
             AXGrid.js,
-            line 1661</a>
+            line 1766</a>
         </div>
         
     </div>
@@ -9866,9 +10188,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3167" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3315" target="_blank">
             AXGrid.js,
-            line 3167</a>
+            line 3315</a>
         </div>
         
     </div>
@@ -10049,13 +10371,15 @@ html
         
 
     
-    <pre class="prettyprint linenums"><code>cssObj = {
-    box: &quot;width: ,height:&quot;,   - 기타 사용자 지정 스타일 추가 가능
-    img:  &quot;left:, top: , width:, height:&quot;, - 기타 사용자 지정 스타일 추가 가능
-    label: &quot;left:, top: , width:, height:&quot;, - 기타 사용자 지정 스타일 추가 가능
-    description: &quot;left:, top: , width:, height:&quot;, - 기타 사용자 지정 스타일 추가 가능
-    buttons: &quot;left:, top: , width:, height:&quot;, - 기타 사용자 지정 스타일 추가 가능
-};</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ cssObj = {
+box: &quot;width: ,height:&quot;,   - 기타 사용자 지정 스타일 추가 가능
+img:  &quot;left:, top: , width:, height:&quot;, - 기타 사용자 지정 스타일 추가 가능
+label: &quot;left:, top: , width:, height:&quot;, - 기타 사용자 지정 스타일 추가 가능
+description: &quot;left:, top: , width:, height:&quot;, - 기타 사용자 지정 스타일 추가 가능
+buttons: &quot;left:, top: , width:, height:&quot;, - 기타 사용자 지정 스타일 추가 가능</code></pre>
+<p>};
+     ```</p>
     
 
     
@@ -10073,9 +10397,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3055" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3194" target="_blank">
             AXGrid.js,
-            line 3055</a>
+            line 3194</a>
         </div>
         
     </div>
@@ -10266,9 +10590,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3315" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3463" target="_blank">
             AXGrid.js,
-            line 3315</a>
+            line 3463</a>
         </div>
         
     </div>
@@ -10436,9 +10760,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3392" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3540" target="_blank">
             AXGrid.js,
-            line 3392</a>
+            line 3540</a>
         </div>
         
     </div>
@@ -10583,9 +10907,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3234" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3382" target="_blank">
             AXGrid.js,
-            line 3234</a>
+            line 3382</a>
         </div>
         
     </div>
@@ -10753,9 +11077,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4990" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5474" target="_blank">
             AXGrid.js,
-            line 4990</a>
+            line 5474</a>
         </div>
         
     </div>
@@ -10900,9 +11224,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5729" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6296" target="_blank">
             AXGrid.js,
-            line 5729</a>
+            line 6296</a>
         </div>
         
     </div>
@@ -10976,8 +11300,8 @@ html
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.getSelectedItem();</code></pre>
+    <pre class="prettyprint linenums"><code>var myGrid = new AXGrid();
+myGrid.getSelectedItem();</code></pre>
     
 
     
@@ -10995,9 +11319,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7329" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7952" target="_blank">
             AXGrid.js,
-            line 7329</a>
+            line 7952</a>
         </div>
         
     </div>
@@ -11111,14 +11435,16 @@ html
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
  myGrid.getSortParam();
 
  // return value
  {
-    sortKey:&quot;&quot; , -  정렬 기준 key
-    sortWay:&quot;&quot;   -  정렬 방법 &quot;asc&quot; or &quot;desc&quot;
-}</code></pre>
+sortKey:&quot;&quot; , -  정렬 기준 key
+sortWay:&quot;&quot;   -  정렬 방법 &quot;asc&quot; or &quot;desc&quot;</code></pre>
+<p>}
+     ```</p>
     
 
     
@@ -11136,9 +11462,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2962" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3101" target="_blank">
             AXGrid.js,
-            line 2962</a>
+            line 3101</a>
         </div>
         
     </div>
@@ -11378,9 +11704,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5003" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5487" target="_blank">
             AXGrid.js,
-            line 5003</a>
+            line 5487</a>
         </div>
         
     </div>
@@ -11498,9 +11824,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7233" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7856" target="_blank">
             AXGrid.js,
-            line 7233</a>
+            line 7856</a>
         </div>
         
     </div>
@@ -11609,8 +11935,10 @@ html
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.goPageMove(-1);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.goPageMove(-1);
+ ```</code></pre>
     
 
     
@@ -11628,9 +11956,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4266" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4418" target="_blank">
             AXGrid.js,
-            line 4266</a>
+            line 4418</a>
         </div>
         
     </div>
@@ -11743,9 +12071,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4300" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4452" target="_blank">
             AXGrid.js,
-            line 4300</a>
+            line 4452</a>
         </div>
         
     </div>
@@ -11858,9 +12186,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4627" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4807" target="_blank">
             AXGrid.js,
-            line 4627</a>
+            line 4807</a>
         </div>
         
     </div>
@@ -11973,9 +12301,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4253" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4405" target="_blank">
             AXGrid.js,
-            line 4253</a>
+            line 4405</a>
         </div>
         
     </div>
@@ -12088,9 +12416,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4236" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4388" target="_blank">
             AXGrid.js,
-            line 4236</a>
+            line 4388</a>
         </div>
         
     </div>
@@ -12203,9 +12531,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2580" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2690" target="_blank">
             AXGrid.js,
-            line 2580</a>
+            line 2690</a>
         </div>
         
     </div>
@@ -12277,9 +12605,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5792" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6356" target="_blank">
             AXGrid.js,
-            line 5792</a>
+            line 6356</a>
         </div>
         
     </div>
@@ -12421,9 +12749,9 @@ html
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1538" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1640" target="_blank">
             AXGrid.js,
-            line 1538</a>
+            line 1640</a>
         </div>
         
     </div>
@@ -12532,8 +12860,8 @@ html
 
     
     <p> // 마우스 오른쪽 버튼 클릭시 메뉴를 호출 합니다.(추가,삭제,수정)</p>
-<pre class="prettyprint linenums"><code>var myGrid = new AXGrid();
-myGrid.setConfig({
+<pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+ myGrid.setConfig({
     targetID : &quot;AXGridTarget&quot;,
     theme : &quot;AXGrid&quot;,
     mediaQuery: {
@@ -12571,9 +12899,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1517" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1581" target="_blank">
             AXGrid.js,
-            line 1517</a>
+            line 1581</a>
         </div>
         
     </div>
@@ -12686,9 +13014,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7265" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7888" target="_blank">
             AXGrid.js,
-            line 7265</a>
+            line 7888</a>
         </div>
         
     </div>
@@ -12807,9 +13135,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7734" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8357" target="_blank">
             AXGrid.js,
-            line 7734</a>
+            line 8357</a>
         </div>
         
     </div>
@@ -12928,9 +13256,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6136" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6715" target="_blank">
             AXGrid.js,
-            line 6136</a>
+            line 6715</a>
         </div>
         
     </div>
@@ -12994,9 +13322,11 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
  myGrid.setDataSet({price:123000, amount:10});
- myGrid.printFoot();</code></pre>
+ myGrid.printFoot();
+ ```</code></pre>
     
 
     
@@ -13014,9 +13344,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6114" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6693" target="_blank">
             AXGrid.js,
-            line 6114</a>
+            line 6693</a>
         </div>
         
     </div>
@@ -13080,9 +13410,11 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
  myGrid.setDataSet({price:123000, amount:10});
- myGrid.printHead();</code></pre>
+ myGrid.printHead();
+ ```</code></pre>
     
 
     
@@ -13100,9 +13432,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3419" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3567" target="_blank">
             AXGrid.js,
-            line 3419</a>
+            line 3567</a>
         </div>
         
     </div>
@@ -13224,9 +13556,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3910" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4062" target="_blank">
             AXGrid.js,
-            line 3910</a>
+            line 4062</a>
         </div>
         
     </div>
@@ -13376,9 +13708,11 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code> myGrid.pushList([item Array]);
+    <pre class="prettyprint linenums"><code> ```
+ myGrid.pushList([item Array]);
  myGrid.pushList([item Array], 1);
- myGrid.pushList([item]);</code></pre>
+ myGrid.pushList([item]);
+ ```</code></pre>
     
 
     
@@ -13396,9 +13730,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6097" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6676" target="_blank">
             AXGrid.js,
-            line 6097</a>
+            line 6676</a>
         </div>
         
     </div>
@@ -13462,9 +13796,11 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
  myGrid.setDataSet({price:123000, amount:10});
- myGrid.redrawDataSet();</code></pre>
+ myGrid.redrawDataSet();
+ ```</code></pre>
     
 
     
@@ -13482,9 +13818,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1323" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1366" target="_blank">
             AXGrid.js,
-            line 1323</a>
+            line 1366</a>
         </div>
         
     </div>
@@ -13610,9 +13946,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2731" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2845" target="_blank">
             AXGrid.js,
-            line 2731</a>
+            line 2845</a>
         </div>
         
     </div>
@@ -13674,11 +14010,13 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code> myGrid.setList({
-    ajaxUrl:&quot;loadGrid.php&quot;,
-    ajaxPars:&quot;param1=1&amp;param2=2&quot;
- });
- myGrid.reloadList();</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ myGrid.setList({
+ajaxUrl:&quot;loadGrid.php&quot;,
+ajaxPars:&quot;param1=1&amp;param2=2&quot;</code></pre>
+<p> });
+     myGrid.reloadList();
+     ```</p>
     
 
     
@@ -13696,9 +14034,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4017" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4169" target="_blank">
             AXGrid.js,
-            line 4017</a>
+            line 4169</a>
         </div>
         
     </div>
@@ -13810,12 +14148,14 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code> var checkedList = myGrid.getCheckedList(0);// colSeq
+    <pre class="prettyprint linenums"><code> ```
+ var checkedList = myGrid.getCheckedList(0);// colSeq
  var removeList = [];
  $.each(checkedList, function(){
-    removeList.push({no:this.no});
- });
- myGrid.removeList(removeList);</code></pre>
+removeList.push({no:this.no});</code></pre>
+<p> });
+     myGrid.removeList(removeList);
+     ```</p>
     
 
     
@@ -13833,9 +14173,9 @@ myGrid.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4089" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4241" target="_blank">
             AXGrid.js,
-            line 4089</a>
+            line 4241</a>
         </div>
         
     </div>
@@ -13947,8 +14287,10 @@ myGrid.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code>var removeList = [{index:0},{index:1},{index:2}];
-myGrid.removeListIndex(removeList);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var removeList = [{index:0},{index:1},{index:2}];
+ myGrid.removeListIndex(removeList);
+ ```</code></pre>
     
 
     
@@ -13966,9 +14308,9 @@ myGrid.removeListIndex(removeList);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4161" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L4313" target="_blank">
             AXGrid.js,
-            line 4161</a>
+            line 4313</a>
         </div>
         
     </div>
@@ -14080,14 +14422,16 @@ myGrid.removeListIndex(removeList);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
  myGrid.setConfig({passiveMode:true});
  var checkedList = myGrid.getCheckedList(0);// colSeq
  var removeList = [];
  $.each(checkedList, function(){
-    removeList.push({no:this.no});
- });
- myGrid.restoreList(removeList);</code></pre>
+removeList.push({no:this.no});</code></pre>
+<p> });
+     myGrid.restoreList(removeList);
+     ```</p>
     
 
     
@@ -14105,9 +14449,9 @@ myGrid.removeListIndex(removeList);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6753" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7342" target="_blank">
             AXGrid.js,
-            line 6753</a>
+            line 7342</a>
         </div>
         
     </div>
@@ -14171,8 +14515,10 @@ myGrid.removeListIndex(removeList);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.saveEditor();</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.saveEditor();
+ ```</code></pre>
     
 
     
@@ -14190,9 +14536,9 @@ myGrid.removeListIndex(removeList);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6935" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7555" target="_blank">
             AXGrid.js,
-            line 6935</a>
+            line 7555</a>
         </div>
         
     </div>
@@ -14311,9 +14657,9 @@ myGrid.removeListIndex(removeList);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5541" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6058" target="_blank">
             AXGrid.js,
-            line 5541</a>
+            line 6058</a>
         </div>
         
     </div>
@@ -14422,10 +14768,87 @@ myGrid.removeListIndex(removeList);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.scrollTop(0);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.scrollTop(0);
+ ```</code></pre>
     
 
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="selectClear">
+            
+            <span class="type-signature static">static</span>AXGrid.selectClear<span class="signature">()</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="AXGrid.html">AXGrid</a>}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8446" target="_blank">
+            AXGrid.js,
+            line 8446</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
     
 </dd>
 
@@ -14441,9 +14864,9 @@ myGrid.removeListIndex(removeList);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2457" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2567" target="_blank">
             AXGrid.js,
-            line 2457</a>
+            line 2567</a>
         </div>
         
     </div>
@@ -14583,9 +15006,9 @@ myGrid.removeListIndex(removeList);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1752" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L1853" target="_blank">
             AXGrid.js,
-            line 1752</a>
+            line 1853</a>
         </div>
         
     </div>
@@ -14654,17 +15077,17 @@ myGrid.removeListIndex(removeList);</code></pre>
             
 <dt>
     <div class="nameContainer">
-        <h4 class="name" id="setConig">
+        <h4 class="name" id="setConfig">
             
-            <span class="type-signature static">static</span>AXGrid.setConig<span class="signature">(config)</span>
+            <span class="type-signature static">static</span>AXGrid.setConfig<span class="signature">(config)</span>
         </h4>
     
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L919" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L960" target="_blank">
             AXGrid.js,
-            line 919</a>
+            line 960</a>
         </div>
         
     </div>
@@ -14811,9 +15234,9 @@ myGrid.removeListIndex(removeList);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2841" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2955" target="_blank">
             AXGrid.js,
-            line 2841</a>
+            line 2955</a>
         </div>
         
     </div>
@@ -14920,20 +15343,22 @@ myGrid.removeListIndex(removeList);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code>var gridData = {
-    list: _obj.document_list,
-    page:{
-        pageNo: _obj.page_navigation.cur_page,
-        pageSize: 20,
-        pageCount: _obj.page_navigation.page_count,
-        listCount: _obj.page_navigation.total_count,
-        onchange: function(pageNo){
-            dialog.push(Object.toJSON(this));
-            trace(this, pageNo);
-        }
+    <pre class="prettyprint linenums"><code> ```
+ var gridData = {
+list: _obj.document_list,
+page:{
+    pageNo: _obj.page_navigation.cur_page,
+    pageSize: 20,
+    pageCount: _obj.page_navigation.page_count,
+    listCount: _obj.page_navigation.total_count,
+    onchange: function(pageNo){
+        dialog.push(Object.toJSON(this));
+        trace(this, pageNo);
     }
-};
-myGrid.setData(gridData);</code></pre>
+}</code></pre>
+<p>};
+     myGrid.setData(gridData);
+     ```</p>
     
 
     
@@ -14951,9 +15376,9 @@ myGrid.setData(gridData);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6073" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6652" target="_blank">
             AXGrid.js,
-            line 6073</a>
+            line 6652</a>
         </div>
         
     </div>
@@ -15062,9 +15487,145 @@ myGrid.setData(gridData);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
  myGrid.setDataSet({price:123000, amount:10});
- myGrid.setDataSet({});</code></pre>
+ myGrid.setDataSet({});
+ ```</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="setEditCellValue">
+            
+            <span class="type-signature static">static</span>AXGrid.setEditCellValue<span class="signature">(val)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="AXGrid.html">AXGrid</a>}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5182" target="_blank">
+            AXGrid.js,
+            line 5182</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>현재 활성화된 인라인 에디트 input에 값을 지정합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>val</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="String.html">String</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code> ```
+ mygrid.setEditCellValue(&quot;123&quot;);
+ ```</code></pre>
     
 
     
@@ -15082,9 +15643,9 @@ myGrid.setData(gridData);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6382" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6971" target="_blank">
             AXGrid.js,
-            line 6382</a>
+            line 6971</a>
         </div>
         
     </div>
@@ -15239,9 +15800,11 @@ myGrid.setData(gridData);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
  myGrid.setEditor({}, 1);
- myGrid.setEditor(null, null, 1);</code></pre>
+ myGrid.setEditor(null, null, 1);
+ ```</code></pre>
     
 
     
@@ -15259,9 +15822,9 @@ myGrid.setData(gridData);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6708" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7297" target="_blank">
             AXGrid.js,
-            line 6708</a>
+            line 7297</a>
         </div>
         
     </div>
@@ -15370,18 +15933,19 @@ myGrid.setData(gridData);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var obj = {
-    key : , colgroup 컬럼 key
-    position :, 적용될 대상의 배열 순서 [0,0]
-    value : , 넘겨줄 값 {String}
-}
-
- var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var obj = {
+key : , colgroup 컬럼 key
+position :, 적용될 대상의 배열 순서 [0,0]
+value : , 넘겨줄 값 {String}</code></pre>
+<p>}</p>
+<pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
  myGrid.setEditorForm({
-    key:&quot;title&quot;,
-    position:[0,2],
-    value:&quot;가나다라&quot;
-});</code></pre>
+key:&quot;title&quot;,
+position:[0,2],
+value:&quot;가나다라&quot;</code></pre>
+<p>});
+     ```</p>
     
 
     
@@ -15399,9 +15963,9 @@ myGrid.setData(gridData);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5582" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L6099" target="_blank">
             AXGrid.js,
-            line 5582</a>
+            line 6099</a>
         </div>
         
     </div>
@@ -15510,8 +16074,10 @@ myGrid.setData(gridData);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code>var myGrid = new AXGrid();
-myGrid.setFocus(0);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.setFocus(0);
+ ```</code></pre>
     
 
     
@@ -15529,9 +16095,9 @@ myGrid.setFocus(0);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2616" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2726" target="_blank">
             AXGrid.js,
-            line 2616</a>
+            line 2726</a>
         </div>
         
     </div>
@@ -15692,25 +16258,27 @@ myGrid.setFocus(0);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> // Array
+    <pre class="prettyprint linenums"><code> ```
+ // Array
  myGrid.setList({Array});
 
  // AJAX url 속성
  myGrid.setList({
-    //method :
-    //contentType :
-    //responseType :
-    //dataType :
-    //headers :
-    //debug :
-    //ajaxUrl :
-    //ajaxPars :
-    //onLoad :
-    //onError :
-    ajaxUrl:&quot;loadGrid.php&quot;, ajaxPars:&quot;param1=1&amp;param2=2&quot;, onLoad:function(){
+//method :
+//contentType :
+//responseType :
+//dataType :
+//headers :
+//debug :
+//ajaxUrl :
+//ajaxPars :
+//onLoad :
+//onError :
+ajaxUrl:&quot;loadGrid.php&quot;, ajaxPars:&quot;param1=1&amp;param2=2&quot;, onLoad:function(){
 
-    }
-});</code></pre>
+}</code></pre>
+<p>});
+     ```</p>
     
 
     
@@ -15728,9 +16296,9 @@ myGrid.setFocus(0);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7069" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7689" target="_blank">
             AXGrid.js,
-            line 7069</a>
+            line 7689</a>
         </div>
         
     </div>
@@ -15809,9 +16377,9 @@ myGrid.setFocus(0);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7173" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7793" target="_blank">
             AXGrid.js,
-            line 7173</a>
+            line 7793</a>
         </div>
         
     </div>
@@ -15890,9 +16458,9 @@ myGrid.setFocus(0);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7305" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7928" target="_blank">
             AXGrid.js,
-            line 7305</a>
+            line 7928</a>
         </div>
         
     </div>
@@ -16006,8 +16574,10 @@ myGrid.setFocus(0);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.setStatus(myGrid.list.length);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.setStatus(myGrid.list.length);
+ ```</code></pre>
     
 
     
@@ -16025,9 +16595,9 @@ myGrid.setFocus(0);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2383" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L2493" target="_blank">
             AXGrid.js,
-            line 2383</a>
+            line 2493</a>
         </div>
         
     </div>
@@ -16190,11 +16760,13 @@ list</li>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
  // Array
  myGrid.setList({Array});
  ...
- myGrid.sortList(&quot;desc&quot;,myGrid.cfg.colHead.rows[0][0],myGrid.list);</code></pre>
+ myGrid.sortList(&quot;desc&quot;,myGrid.cfg.colHead.rows[0][0],myGrid.list);
+ ```</code></pre>
     
 
     
@@ -16212,9 +16784,9 @@ list</li>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7001" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L7621" target="_blank">
             AXGrid.js,
-            line 7001</a>
+            line 7621</a>
         </div>
         
     </div>
@@ -16278,8 +16850,193 @@ list</li>
         
 
     
-    <pre class="prettyprint linenums"><code> var myGrid = new AXGrid();
- myGrid.unbindAXbind();</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myGrid = new AXGrid();
+ myGrid.unbindAXbind();
+ ```</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="updateItem">
+            
+            <span class="type-signature static">static</span>AXGrid.updateItem<span class="signature">(itemIndex, key, value)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="AXGrid.html">AXGrid</a>}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L5198" target="_blank">
+            AXGrid.js,
+            line 5198</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>리스트데이터의 특정 아이템값을 변경합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>itemIndex</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Number.html">Number</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="String.html">String</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="String.html">String</a></span>
+|
+
+<span class="param-type"><a href="Number.html">Number</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code> ```
+
+ ```</code></pre>
     
 
     
@@ -16297,9 +17054,9 @@ list</li>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3847" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L3999" target="_blank">
             AXGrid.js,
-            line 3847</a>
+            line 3999</a>
         </div>
         
     </div>
@@ -16434,14 +17191,16 @@ list</li>
         
 
     
-    <pre class="prettyprint linenums"><code> var item = {
-    a: &quot;a&quot;,
-    b: &quot;b&quot;,
-    c: &quot;c&quot;,
-    d: &quot;d&quot;,
-    e: 14350
- };
- myGrid.updateList(0,item);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var item = {
+a: &quot;a&quot;,
+b: &quot;b&quot;,
+c: &quot;c&quot;,
+d: &quot;d&quot;,
+e: 14350</code></pre>
+<p> };
+     myGrid.updateList(0,item);
+     ```</p>
     
 
     
@@ -16464,7 +17223,7 @@ list</li>
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:38:12 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Feb 26 2015 22:25:55 GMT+0900 (KST)
         </footer>
     </div>
 </div>

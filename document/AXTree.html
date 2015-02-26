@@ -456,6 +456,8 @@
             
                 <li data-name="jQueryExtends.bindSelectUpdate"><a href="jQueryExtends.html#bindSelectUpdate">bindSelectUpdate</a></li>
             
+                <li data-name="jQueryExtends.bindSelectUpdateOptions"><a href="jQueryExtends.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
+            
                 <li data-name="jQueryExtends.bindSlider"><a href="jQueryExtends.html#bindSlider">bindSlider</a></li>
             
                 <li data-name="jQueryExtends.bindSwitch"><a href="jQueryExtends.html#bindSwitch">bindSwitch</a></li>
@@ -503,6 +505,8 @@
                 <li data-name="jQueryExtends.unbindSelect"><a href="jQueryExtends.html#unbindSelect">unbindSelect</a></li>
             
                 <li data-name="jQueryExtends.unbindTab"><a href="jQueryExtends.html#unbindTab">unbindTab</a></li>
+            
+                <li data-name="jQueryExtends.updateTabs"><a href="jQueryExtends.html#updateTabs">updateTabs</a></li>
             
             </ul>
             <ul class="events itemMembers">
@@ -821,6 +825,8 @@
             
                 <li data-name="AXGrid.click"><a href="AXGrid.html#click">click</a></li>
             
+                <li data-name="AXGrid.clipBoardClear"><a href="AXGrid.html#clipBoardClear">clipBoardClear</a></li>
+            
                 <li data-name="AXGrid.colGroupListClick"><a href="AXGrid.html#colGroupListClick">colGroupListClick</a></li>
             
                 <li data-name="AXGrid.colHeadCheckBoxClick"><a href="AXGrid.html#colHeadCheckBoxClick">colHeadCheckBoxClick</a></li>
@@ -874,6 +880,8 @@
                 <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
             
                 <li data-name="AXGrid.editCell"><a href="AXGrid.html#editCell">editCell</a></li>
+            
+                <li data-name="AXGrid.editCellClear"><a href="AXGrid.html#editCellClear">editCellClear</a></li>
             
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
@@ -991,15 +999,19 @@
             
                 <li data-name="AXGrid.scrollTop"><a href="AXGrid.html#scrollTop">scrollTop</a></li>
             
+                <li data-name="AXGrid.selectClear"><a href="AXGrid.html#selectClear">selectClear</a></li>
+            
                 <li data-name="AXGrid.setBody"><a href="AXGrid.html#setBody">setBody</a></li>
             
                 <li data-name="AXGrid.setColHead"><a href="AXGrid.html#setColHead">setColHead</a></li>
             
-                <li data-name="AXGrid.setConig"><a href="AXGrid.html#setConig">setConig</a></li>
+                <li data-name="AXGrid.setConfig"><a href="AXGrid.html#setConfig">setConfig</a></li>
             
                 <li data-name="AXGrid.setData"><a href="AXGrid.html#setData">setData</a></li>
             
                 <li data-name="AXGrid.setDataSet"><a href="AXGrid.html#setDataSet">setDataSet</a></li>
+            
+                <li data-name="AXGrid.setEditCellValue"><a href="AXGrid.html#setEditCellValue">setEditCellValue</a></li>
             
                 <li data-name="AXGrid.setEditor"><a href="AXGrid.html#setEditor">setEditor</a></li>
             
@@ -1018,6 +1030,8 @@
                 <li data-name="AXGrid.sortList"><a href="AXGrid.html#sortList">sortList</a></li>
             
                 <li data-name="AXGrid.unbindAXbind"><a href="AXGrid.html#unbindAXbind">unbindAXbind</a></li>
+            
+                <li data-name="AXGrid.updateItem"><a href="AXGrid.html#updateItem">updateItem</a></li>
             
                 <li data-name="AXGrid.updateList"><a href="AXGrid.html#updateList">updateList</a></li>
             
@@ -1485,6 +1499,8 @@
             
                 <li data-name="AXSelectConverter.bindSelectRemoveOptions"><a href="AXSelectConverter.html#bindSelectRemoveOptions">bindSelectRemoveOptions</a></li>
             
+                <li data-name="AXSelectConverter.bindSelectUpdateOptions"><a href="AXSelectConverter.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
+            
             </ul>
             <ul class="events itemMembers">
             
@@ -1779,7 +1795,7 @@
         
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>v1.58.2</li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>v1.59.2</li></ul></dd>
     
     
     
@@ -1858,9 +1874,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4184" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4214" target="_blank">
             AXTree.js,
-            line 4184</a>
+            line 4214</a>
         </div>
         
     </div>
@@ -2013,13 +2029,15 @@
         
 
     
-    <pre class="prettyprint linenums"><code>// 선택아이템의 자식 추가하기
-var obj = myTree.getSelectedList();
-myTree.appendTree(obj.index, obj.item, [{nodeID:&quot;N&quot;, nodenm:frm.nodeName.value, writer:&quot;mondo&quot;, type:&quot;file&quot;, parentcd:obj.item.nodeID}]);
+    <pre class="prettyprint linenums"><code> ```
+ // 선택아이템의 자식 추가하기
+ var obj = myTree.getSelectedList();
+ myTree.appendTree(obj.index, obj.item, [{nodeID:&quot;N&quot;, nodenm:frm.nodeName.value, writer:&quot;mondo&quot;, type:&quot;file&quot;, parentcd:obj.item.nodeID}]);
 
-// 선택아이템의 형제 추가하기
-var obj = myTree.getSelectedListParent();
-myTree.appendTree(obj.index, obj.item, [{nodeID:&quot;N&quot;, nodenm:frm.nodeName.value, writer:&quot;mondo&quot;, type:&quot;file&quot;, parentcd:(obj.item.nodeID|0)}]);</code></pre>
+ // 선택아이템의 형제 추가하기
+ var obj = myTree.getSelectedListParent();
+ myTree.appendTree(obj.index, obj.item, [{nodeID:&quot;N&quot;, nodenm:frm.nodeName.value, writer:&quot;mondo&quot;, type:&quot;file&quot;, parentcd:(obj.item.nodeID|0)}]);
+ ```</code></pre>
     
 
     
@@ -2037,9 +2055,9 @@ myTree.appendTree(obj.index, obj.item, [{nodeID:&quot;N&quot;, nodenm:frm.nodeNa
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L3699" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L3729" target="_blank">
             AXTree.js,
-            line 3699</a>
+            line 3729</a>
         </div>
         
     </div>
@@ -2101,7 +2119,9 @@ myTree.appendTree(obj.index, obj.item, [{nodeID:&quot;N&quot;, nodenm:frm.nodeNa
         
 
     
-    <pre class="prettyprint linenums"><code>myTree.clearFocus();</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ myTree.clearFocus();
+ ```</code></pre>
     
 
     
@@ -2119,9 +2139,9 @@ myTree.appendTree(obj.index, obj.item, [{nodeID:&quot;N&quot;, nodenm:frm.nodeNa
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L3786" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L3816" target="_blank">
             AXTree.js,
-            line 3786</a>
+            line 3816</a>
         </div>
         
     </div>
@@ -2301,16 +2321,18 @@ ID } 대상아이디가 오브젝트로 옵니다.</li>
         
 
     
-    <pre class="prettyprint linenums"><code>var findIndex = null;
-$.each(List, function(jindex, J){
-    if(this.id == &quot;findid&quot;){
-        findIndex = jindex;
-        return false;
-    }
-});
-if(findIndex != null){
-    var focusItem = myTree.click(findIndex, &quot;open&quot;, true); // 아이템 확장처리만 원함.
+    <pre class="prettyprint linenums"><code> ```
+ var findIndex = null;
+ $.each(List, function(jindex, J){
+if(this.id == &quot;findid&quot;){
+    findIndex = jindex;
+    return false;
 }</code></pre>
+<p>});
+     if(findIndex != null){
+    var focusItem = myTree.click(findIndex, &quot;open&quot;, true); // 아이템 확장처리만 원함.
+}
+     ```</p>
     
 
     
@@ -2328,9 +2350,9 @@ if(findIndex != null){
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5233" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5263" target="_blank">
             AXTree.js,
-            line 5233</a>
+            line 5263</a>
         </div>
         
     </div>
@@ -2392,7 +2414,9 @@ if(findIndex != null){
         
 
     
-    <pre class="prettyprint linenums"><code>myTree.collapseAll();</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ myTree.collapseAll();
+ ```</code></pre>
     
 
     
@@ -2410,9 +2434,9 @@ if(findIndex != null){
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5204" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5234" target="_blank">
             AXTree.js,
-            line 5204</a>
+            line 5234</a>
         </div>
         
     </div>
@@ -2525,8 +2549,10 @@ if(findIndex != null){
         
 
     
-    <pre class="prettyprint linenums"><code>myTree.expandAll(); //모두확장
-myTree.expandAll(1); //1 뎁스까지만 확장</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ myTree.expandAll(); //모두확장
+ myTree.expandAll(1); //1 뎁스까지만 확장
+ ```</code></pre>
     
 
     
@@ -2544,9 +2570,9 @@ myTree.expandAll(1); //1 뎁스까지만 확장</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L2696" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L2717" target="_blank">
             AXTree.js,
-            line 2696</a>
+            line 2717</a>
         </div>
         
     </div>
@@ -2699,10 +2725,12 @@ myTree.expandAll(1); //1 뎁스까지만 확장</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code> var iwantItemIndex = 10;
+    <pre class="prettyprint linenums"><code> ```
+ var iwantItemIndex = 10;
  var myitem = myTree.list[iwantItemIndex];
  myTree.expandToggleList(iwantItemIndex, myitem);
- myTree.expandToggleList(iwantItemIndex, myitem, true); // 노드를 열린 상태로 바꾸어 줍니다.</code></pre>
+ myTree.expandToggleList(iwantItemIndex, myitem, true); // 노드를 열린 상태로 바꾸어 줍니다.
+ ```</code></pre>
     
 
     
@@ -2720,9 +2748,9 @@ myTree.expandAll(1); //1 뎁스까지만 확장</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L1141" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L1162" target="_blank">
             AXTree.js,
-            line 1141</a>
+            line 1162</a>
         </div>
         
     </div>
@@ -2839,7 +2867,9 @@ myTree.expandAll(1); //1 뎁스까지만 확장</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code>var myArray = myTree.getCheckedList(0);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var myArray = myTree.getCheckedList(0);
+ ```</code></pre>
     
 
     
@@ -2857,9 +2887,9 @@ myTree.expandAll(1); //1 뎁스까지만 확장</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5118" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5148" target="_blank">
             AXTree.js,
-            line 5118</a>
+            line 5148</a>
         </div>
         
     </div>
@@ -2932,8 +2962,10 @@ item: {} }</li>
         
 
     
-    <pre class="prettyprint linenums"><code>var SL = AXTree.getSelectedList();
-trace(SL);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var SL = AXTree.getSelectedList();
+ trace(SL);
+ ```</code></pre>
     
 
     
@@ -2951,9 +2983,9 @@ trace(SL);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5138" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5168" target="_blank">
             AXTree.js,
-            line 5138</a>
+            line 5168</a>
         </div>
         
     </div>
@@ -3025,8 +3057,10 @@ item: {} }</li>
         
 
     
-    <pre class="prettyprint linenums"><code>var SL = AXTree.getSelectedListParent();
-trace(SL)</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var SL = AXTree.getSelectedListParent();
+ trace(SL)
+ ```</code></pre>
     
 
     
@@ -3044,9 +3078,9 @@ trace(SL)</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4661" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4691" target="_blank">
             AXTree.js,
-            line 4661</a>
+            line 4691</a>
         </div>
         
     </div>
@@ -3153,34 +3187,36 @@ trace(SL)</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code>myTree.moveTree({
-    startMove: function(){      //moveTree가 발동 되었을 때 발생되는 콜백함수
-        myTree.addClassItem({
-            className:&quot;disable&quot;,
-            addClass:function(){
-                return (this.nodeID == &quot;N&quot;);
-            }
-        });
-    },
-    validate:function(){        //moveTree가 활성화 된 상태에서 사용자의 선택을 검증하는 콜백함수
-        //this.moveObj
-        //this.targetObj
-        if(this.targetObj.nodeID == &quot;N&quot;){
-            alert(&quot;이동할 수 없는 대상을 선택하셨습니다.&quot;);
-            return false;
-        }else{
-            return true;
+    <pre class="prettyprint linenums"><code> ```
+ myTree.moveTree({
+startMove: function(){      //moveTree가 발동 되었을 때 발생되는 콜백함수
+    myTree.addClassItem({
+        className:&quot;disable&quot;,
+        addClass:function(){
+            return (this.nodeID == &quot;N&quot;);
         }
-    },
-    endMove: function(){        //moveTree가 완료 되었을때 발생되는 콜백함수
-        myTree.removeClassItem({
-            className:&quot;disable&quot;,
-            removeClass:function(){
-                return (this.nodeID == &quot;N&quot;);
-            }
-        });
+    });
+},
+validate:function(){        //moveTree가 활성화 된 상태에서 사용자의 선택을 검증하는 콜백함수
+    //this.moveObj
+    //this.targetObj
+    if(this.targetObj.nodeID == &quot;N&quot;){
+        alert(&quot;이동할 수 없는 대상을 선택하셨습니다.&quot;);
+        return false;
+    }else{
+        return true;
     }
-});</code></pre>
+},
+endMove: function(){        //moveTree가 완료 되었을때 발생되는 콜백함수
+    myTree.removeClassItem({
+        className:&quot;disable&quot;,
+        removeClass:function(){
+            return (this.nodeID == &quot;N&quot;);
+        }
+    });
+}</code></pre>
+<p>});
+     ```</p>
     
 
     
@@ -3198,9 +3234,9 @@ trace(SL)</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5179" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L5209" target="_blank">
             AXTree.js,
-            line 5179</a>
+            line 5209</a>
         </div>
         
     </div>
@@ -3316,8 +3352,10 @@ item of list
         
 
     
-    <pre class="prettyprint linenums"><code>myTree.relationFixedSync();
-myTree.relationFixedSync({expandItem:true}); // 체크된 아이템을 확장상태로 변경합니다.</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ myTree.relationFixedSync();
+ myTree.relationFixedSync({expandItem:true}); // 체크된 아이템을 확장상태로 변경합니다.
+ ```</code></pre>
     
 
     
@@ -3335,9 +3373,9 @@ myTree.relationFixedSync({expandItem:true}); // 체크된 아이템을 확장상
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4376" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4406" target="_blank">
             AXTree.js,
-            line 4376</a>
+            line 4406</a>
         </div>
         
     </div>
@@ -3470,12 +3508,14 @@ myTree.relationFixedSync({expandItem:true}); // 체크된 아이템을 확장상
         
 
     
-    <pre class="prettyprint linenums"><code>var obj = myTree.getSelectedList();
-if(obj.error){
-    alert(&quot;개체를 선택해 주세요&quot;);
-    return;
-}
-myTree.removeTree(obj.index, obj.item);</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var obj = myTree.getSelectedList();
+ if(obj.error){
+alert(&quot;개체를 선택해 주세요&quot;);
+return;</code></pre>
+<p>}
+     myTree.removeTree(obj.index, obj.item);
+     ```</p>
     
 
     
@@ -3493,9 +3533,9 @@ myTree.removeTree(obj.index, obj.item);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L950" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L953" target="_blank">
             AXTree.js,
-            line 950</a>
+            line 953</a>
         </div>
         
     </div>
@@ -3602,53 +3642,55 @@ myTree.removeTree(obj.index, obj.item);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code class="lang-js">var myTree = new AXTree();
-myTree.setConfig({
-    targetID : &quot;AXTreeTarget&quot;,  //{String} - HTML 엘리먼트 타겟아이디
-    theme: &quot;AXTree_none&quot;,   //[String] - (&quot;AXTree&quot;,&quot;AXTree_none&quot;) CSS Class 이름
-    relation:{  //무보자식 키 정의
-        parentKey:&quot;pno&quot;,    //부모아이디 키
-        childKey:&quot;no&quot;   //자식아이디 키
-    },
-    colGroup: [ //트리 헤드정의
-        {
-            key:&quot;nodeName&quot;, //{String} - 컬럼에 매치될 item 의 키
-            label:&quot;제목&quot;, //{String} - 컬럼에 표시할 라벨
-            width:&quot;100%&quot;,   //[Number[&quot;px&quot;, &quot;%&quot;] = &quot;auto&quot;] - &quot;100%&quot;, &quot;500px&quot;, &quot;auto&quot;지정하면 트리의 너비만큼 단일 컬럼의 너비가 자동 맞춤 처리됩니다.
-            align:&quot;left&quot;,   //[String = &quot;left&quot;[left, center, right]] - 정렬방식 지정
-            indent:true,    //[Boolean = true]
-            getIconClass: function(){   // [Function] - indent 속성 정의된 대상에 아이콘을 지정할 수 있습니다.
-                var iconNames = &quot;folder, AXfolder, movie, img, zip, file, fileTxt, fileTag&quot;.split(/, /g);
-                var iconName = &quot;&quot;;
-                if(this.item.type) iconName = iconNames[this.item.type];
-                return iconName;
-            },
-            formatter:function(){   // [Function] - 컬럼값의 표현형식 각각 화폐표현식, urlDecode, input.Checkbox, input.radioBox, 사용자 정의 함수
-                return &quot;&lt;b&gt;&quot;+this.item.no.setDigit(2) + &quot;&lt;/b&gt; : &quot; + this.item.nodeName + &quot; (&quot; + this.item.writer + &quot;)&quot;;
-            }
-        }
-    ],
-    body: {
-        onclick:function(idx, item){ //[Function] 바디 클릭 이벤트 콜백함수
-            toast.push(Object.toJSON(item));
+    <pre class="prettyprint linenums"><code> ```js
+ var myTree = new AXTree();
+ myTree.setConfig({
+targetID : &quot;AXTreeTarget&quot;,  //{String} - HTML 엘리먼트 타겟아이디
+theme: &quot;AXTree_none&quot;,   //[String] - (&quot;AXTree&quot;,&quot;AXTree_none&quot;) CSS Class 이름
+relation:{  //무보자식 키 정의
+    parentKey:&quot;pno&quot;,    //부모아이디 키
+    childKey:&quot;no&quot;   //자식아이디 키
+},
+colGroup: [ //트리 헤드정의
+    {
+        key:&quot;nodeName&quot;, //{String} - 컬럼에 매치될 item 의 키
+        label:&quot;제목&quot;, //{String} - 컬럼에 표시할 라벨
+        width:&quot;100%&quot;,   //[Number[&quot;px&quot;, &quot;%&quot;] = &quot;auto&quot;] - &quot;100%&quot;, &quot;500px&quot;, &quot;auto&quot;지정하면 트리의 너비만큼 단일 컬럼의 너비가 자동 맞춤 처리됩니다.
+        align:&quot;left&quot;,   //[String = &quot;left&quot;[left, center, right]] - 정렬방식 지정
+        indent:true,    //[Boolean = true]
+        getIconClass: function(){   // [Function] - indent 속성 정의된 대상에 아이콘을 지정할 수 있습니다.
+            var iconNames = &quot;folder, AXfolder, movie, img, zip, file, fileTxt, fileTag&quot;.split(/, /g);
+            var iconName = &quot;&quot;;
+            if(this.item.type) iconName = iconNames[this.item.type];
+            return iconName;
         },
-        ondblclick:function(idx, item){ //[Function] 바디 더블클릭 이벤트 콜백함수
-            toast.push(Object.toJSON(item));
-        },
-        oncheck:function(idx, item){ //[Function] 트리 체크박스클릭시 함수연결
-            toast.push(Object.toJSON(item));
-        },
-        onexpand:function(idx, item){ //[Function] 트리 아이템 확장 이벤트 콜백함수
-            toast.push(Object.toJSON(item));
-        },
-        oncontract:function(idx, item){ //[Function] 트리 아이템 축소 이벤트 콜백함수
-            toast.push(Object.toJSON(item));
-        },
-        addClass:function(idx, item){ //[Function] 트리 아이템에 사용자 CSS 클래스를 추가할 수 있는 사용자 함수 추가하려는 클래스명을 return 으로 반환하십시요
-            toast.push(Object.toJSON(item));
+        formatter:function(){   // [Function] - 컬럼값의 표현형식 각각 화폐표현식, urlDecode, input.Checkbox, input.radioBox, 사용자 정의 함수
+            return &quot;&lt;b&gt;&quot;+this.item.no.setDigit(2) + &quot;&lt;/b&gt; : &quot; + this.item.nodeName + &quot; (&quot; + this.item.writer + &quot;)&quot;;
         }
     }
-});</code></pre>
+],
+body: {
+    onclick:function(idx, item){ //[Function] 바디 클릭 이벤트 콜백함수
+        toast.push(Object.toJSON(item));
+    },
+    ondblclick:function(idx, item){ //[Function] 바디 더블클릭 이벤트 콜백함수
+        toast.push(Object.toJSON(item));
+    },
+    oncheck:function(idx, item){ //[Function] 트리 체크박스클릭시 함수연결
+        toast.push(Object.toJSON(item));
+    },
+    onexpand:function(idx, item){ //[Function] 트리 아이템 확장 이벤트 콜백함수
+        toast.push(Object.toJSON(item));
+    },
+    oncontract:function(idx, item){ //[Function] 트리 아이템 축소 이벤트 콜백함수
+        toast.push(Object.toJSON(item));
+    },
+    addClass:function(idx, item){ //[Function] 트리 아이템에 사용자 CSS 클래스를 추가할 수 있는 사용자 함수 추가하려는 클래스명을 return 으로 반환하십시요
+        toast.push(Object.toJSON(item));
+    }
+}</code></pre>
+<p>});</p>
+<pre class="prettyprint linenums"><code> ```</code></pre>
     
 
     
@@ -3666,9 +3708,9 @@ myTree.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L3727" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L3757" target="_blank">
             AXTree.js,
-            line 3727</a>
+            line 3757</a>
         </div>
         
     </div>
@@ -3775,7 +3817,9 @@ myTree.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code class="lang-js">myTree.setFocus(3);</code></pre>
+    <pre class="prettyprint linenums"><code> ```js
+ myTree.setFocus(3);
+ ```</code></pre>
     
 
     
@@ -3793,9 +3837,9 @@ myTree.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L1994" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L2015" target="_blank">
             AXTree.js,
-            line 1994</a>
+            line 2015</a>
         </div>
         
     </div>
@@ -3940,31 +3984,33 @@ myTree.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code>//Array - list Array setConfig 에서 정의한 relation 의 부모, 자식키 값을 이용하여 list형 데이터를 tree형 데이터로 변환하여 트리를 구성합니다.
-var List = [
-    {no:1, nodeName:&quot;LEVEL 1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:0},
-    {no:11, nodeName:&quot;LEVEL 1-1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:1},
-    {no:2, nodeName:&quot;LEVEL 2-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:0},
-    {no:21, nodeName:&quot;LEVEL 2-1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:2},
-    {no:24, nodeName:&quot;LEVEL 2-1-4&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:2},
-    {no:241, nodeName:&quot;LEVEL 2-1-4-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:24},
-    {no:2411, nodeName:&quot;LEVEL 2-1-4-1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:241},
-    {no:2412, nodeName:&quot;LEVEL 2-1-4-1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:241},
-    {no:25, nodeName:&quot;LEVEL 2-1-2&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:2},
-    {no:26, nodeName:&quot;LEVEL 2-1-3&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:2},
-    {no:3, nodeName:&quot;LEVEL 3-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:0},
-    {no:11, nodeName:&quot;LEVEL 3-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:0}
-];
-myTree.setList(List);
+    <pre class="prettyprint linenums"><code> ```
+ //Array - list Array setConfig 에서 정의한 relation 의 부모, 자식키 값을 이용하여 list형 데이터를 tree형 데이터로 변환하여 트리를 구성합니다.
+ var List = [
+ {no:1, nodeName:&quot;LEVEL 1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:0},
+ {no:11, nodeName:&quot;LEVEL 1-1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:1},
+ {no:2, nodeName:&quot;LEVEL 2-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:0},
+ {no:21, nodeName:&quot;LEVEL 2-1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:2},
+ {no:24, nodeName:&quot;LEVEL 2-1-4&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:2},
+ {no:241, nodeName:&quot;LEVEL 2-1-4-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:24},
+ {no:2411, nodeName:&quot;LEVEL 2-1-4-1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:241},
+ {no:2412, nodeName:&quot;LEVEL 2-1-4-1-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:241},
+ {no:25, nodeName:&quot;LEVEL 2-1-2&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:2},
+ {no:26, nodeName:&quot;LEVEL 2-1-3&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:2},
+ {no:3, nodeName:&quot;LEVEL 3-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:0},
+ {no:11, nodeName:&quot;LEVEL 3-1&quot;, writer:&quot;tom&quot;, type:&quot;0&quot;, pno:0}
+ ];
+ myTree.setList(List);
 
-var AJAXconfigs = {
-    ajaxUrl:&quot;loadTree.php&quot;, //{String} - AJAX 호출 URL
-    ajaxPars:&quot;param1=1&amp;param2=2&quot;,   //{String} - AJAX 호출 URL 파라미터 (전송은 post 방식으로 이루어집니다.)
-    onLoad: function(){ //[Function] - AJAX 호출완료 이벤트 콜백함수
-    ...
-    }
-};
-myTree.setList(AJAXconfigs);</code></pre>
+ var AJAXconfigs = {
+ajaxUrl:&quot;loadTree.php&quot;, //{String} - AJAX 호출 URL
+ajaxPars:&quot;param1=1&amp;param2=2&quot;,   //{String} - AJAX 호출 URL 파라미터 (전송은 post 방식으로 이루어집니다.)
+onLoad: function(){ //[Function] - AJAX 호출완료 이벤트 콜백함수
+...
+}</code></pre>
+<p>};
+     myTree.setList(AJAXconfigs);
+     ```</p>
     
 
     
@@ -3982,9 +4028,9 @@ myTree.setList(AJAXconfigs);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4074" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4104" target="_blank">
             AXTree.js,
-            line 4074</a>
+            line 4104</a>
         </div>
         
     </div>
@@ -4094,28 +4140,30 @@ myTree.setList(AJAXconfigs);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code>//Array - JSObject(tree형)
-var Tree = [
-    {no:&quot;1&quot;, type:&quot;WBS&quot;, activity:&quot;WBS 이름&quot;, desc:&quot;&quot;, charger:&quot;&quot;, admin:&quot;&quot;, docs:&quot;&quot;, open:true, subTree:[
-        {no:&quot;1.1&quot;, type:&quot;phase&quot;, activity:&quot;기획 및 설계&quot;, desc:&quot;M&quot;, charger:&quot;최인석&quot;, admin:&quot;&quot;, docs:&quot;&quot;, open:true, subTree:[
-            {no:&quot;1.1.1&quot;, type:&quot;process&quot;, activity:&quot;기획단계&quot;, desc:&quot;M&quot;, charger:&quot;최인석&quot;, admin:&quot;&quot;, docs:&quot;&quot;, open:true, subTree:[
-                {no:&quot;1.1.1.1&quot;, type:&quot;activity&quot;, activity:&quot;요구사항정의&quot;, desc:&quot;M&quot;, charger:&quot;최인석/PM&quot;, admin:&quot;홍길동&quot;, docs:&quot;[필수]요구사항정의서&quot;, open:false, subTree:[]},
-                {no:&quot;1.1.1.2&quot;, type:&quot;activity&quot;, activity:&quot;업무분할&quot;, desc:&quot;M&quot;, charger:&quot;한승욱/기획&quot;, admin:&quot;&quot;, docs:&quot;[권고]요구사항정의서&quot;, open:false, subTree:[]}
-            ]}
+    <pre class="prettyprint linenums"><code> ```
+ //Array - JSObject(tree형)
+ var Tree = [
+ {no:&quot;1&quot;, type:&quot;WBS&quot;, activity:&quot;WBS 이름&quot;, desc:&quot;&quot;, charger:&quot;&quot;, admin:&quot;&quot;, docs:&quot;&quot;, open:true, subTree:[
+    {no:&quot;1.1&quot;, type:&quot;phase&quot;, activity:&quot;기획 및 설계&quot;, desc:&quot;M&quot;, charger:&quot;최인석&quot;, admin:&quot;&quot;, docs:&quot;&quot;, open:true, subTree:[
+        {no:&quot;1.1.1&quot;, type:&quot;process&quot;, activity:&quot;기획단계&quot;, desc:&quot;M&quot;, charger:&quot;최인석&quot;, admin:&quot;&quot;, docs:&quot;&quot;, open:true, subTree:[
+            {no:&quot;1.1.1.1&quot;, type:&quot;activity&quot;, activity:&quot;요구사항정의&quot;, desc:&quot;M&quot;, charger:&quot;최인석/PM&quot;, admin:&quot;홍길동&quot;, docs:&quot;[필수]요구사항정의서&quot;, open:false, subTree:[]},
+            {no:&quot;1.1.1.2&quot;, type:&quot;activity&quot;, activity:&quot;업무분할&quot;, desc:&quot;M&quot;, charger:&quot;한승욱/기획&quot;, admin:&quot;&quot;, docs:&quot;[권고]요구사항정의서&quot;, open:false, subTree:[]}
         ]}
-    ]},
-    {no:&quot;9&quot;, type:&quot;WBS&quot;, activity:&quot;WBS 이름&quot;, desc:&quot;&quot;, charger:&quot;&quot;, admin:&quot;&quot;, docs:&quot;&quot;, open:true, subTree:[]}
-];
-myTree.setTree(Tree);
+    ]}
+]},
+ {no:&quot;9&quot;, type:&quot;WBS&quot;, activity:&quot;WBS 이름&quot;, desc:&quot;&quot;, charger:&quot;&quot;, admin:&quot;&quot;, docs:&quot;&quot;, open:true, subTree:[]}
+ ];
+ myTree.setTree(Tree);
 
-var AJAXconfigs = {
-    ajaxUrl:&quot;loadTree.php&quot;, //{String} - AJAX 호출 URL
-    ajaxPars:&quot;param1=1&amp;param2=2&quot;,   //{String} - AJAX 호출 URL 파라미터 (전송은 post 방식으로 이루어집니다.)
-    onLoad: function(){ //[Function] - AJAX 호출완료 이벤트 콜백함수
-        ...
-    }
-};
-myTree.setTree(AJAXconfigs);</code></pre>
+ var AJAXconfigs = {
+ajaxUrl:&quot;loadTree.php&quot;, //{String} - AJAX 호출 URL
+ajaxPars:&quot;param1=1&amp;param2=2&quot;,   //{String} - AJAX 호출 URL 파라미터 (전송은 post 방식으로 이루어집니다.)
+onLoad: function(){ //[Function] - AJAX 호출완료 이벤트 콜백함수
+    ...
+}</code></pre>
+<p>};
+     myTree.setTree(AJAXconfigs);
+     ```</p>
     
 
     
@@ -4133,9 +4181,9 @@ myTree.setTree(AJAXconfigs);</code></pre>
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4342" target="_blank">
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXTree.js#L4372" target="_blank">
             AXTree.js,
-            line 4342</a>
+            line 4372</a>
         </div>
         
     </div>
@@ -4288,9 +4336,11 @@ myTree.setTree(AJAXconfigs);</code></pre>
         
 
     
-    <pre class="prettyprint linenums"><code>var obj = myTree.getSelectedList();
-myTree.updateTree(obj.index, obj.item, {nodenm:frm.nodeName.value});
-// 수정하려는 아이템의 일부 키만 전달 해도 수정이 가능합니다.</code></pre>
+    <pre class="prettyprint linenums"><code> ```
+ var obj = myTree.getSelectedList();
+ myTree.updateTree(obj.index, obj.item, {nodenm:frm.nodeName.value});
+ // 수정하려는 아이템의 일부 키만 전달 해도 수정이 가능합니다.
+ ```</code></pre>
     
 
     
@@ -4313,7 +4363,7 @@ myTree.updateTree(obj.index, obj.item, {nodenm:frm.nodeName.value});
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:38:13 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Feb 26 2015 22:25:57 GMT+0900 (KST)
         </footer>
     </div>
 </div>

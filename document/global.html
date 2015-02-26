@@ -456,6 +456,8 @@
             
                 <li data-name="jQueryExtends.bindSelectUpdate"><a href="jQueryExtends.html#bindSelectUpdate">bindSelectUpdate</a></li>
             
+                <li data-name="jQueryExtends.bindSelectUpdateOptions"><a href="jQueryExtends.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
+            
                 <li data-name="jQueryExtends.bindSlider"><a href="jQueryExtends.html#bindSlider">bindSlider</a></li>
             
                 <li data-name="jQueryExtends.bindSwitch"><a href="jQueryExtends.html#bindSwitch">bindSwitch</a></li>
@@ -503,6 +505,8 @@
                 <li data-name="jQueryExtends.unbindSelect"><a href="jQueryExtends.html#unbindSelect">unbindSelect</a></li>
             
                 <li data-name="jQueryExtends.unbindTab"><a href="jQueryExtends.html#unbindTab">unbindTab</a></li>
+            
+                <li data-name="jQueryExtends.updateTabs"><a href="jQueryExtends.html#updateTabs">updateTabs</a></li>
             
             </ul>
             <ul class="events itemMembers">
@@ -821,6 +825,8 @@
             
                 <li data-name="AXGrid.click"><a href="AXGrid.html#click">click</a></li>
             
+                <li data-name="AXGrid.clipBoardClear"><a href="AXGrid.html#clipBoardClear">clipBoardClear</a></li>
+            
                 <li data-name="AXGrid.colGroupListClick"><a href="AXGrid.html#colGroupListClick">colGroupListClick</a></li>
             
                 <li data-name="AXGrid.colHeadCheckBoxClick"><a href="AXGrid.html#colHeadCheckBoxClick">colHeadCheckBoxClick</a></li>
@@ -874,6 +880,8 @@
                 <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
             
                 <li data-name="AXGrid.editCell"><a href="AXGrid.html#editCell">editCell</a></li>
+            
+                <li data-name="AXGrid.editCellClear"><a href="AXGrid.html#editCellClear">editCellClear</a></li>
             
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
@@ -991,15 +999,19 @@
             
                 <li data-name="AXGrid.scrollTop"><a href="AXGrid.html#scrollTop">scrollTop</a></li>
             
+                <li data-name="AXGrid.selectClear"><a href="AXGrid.html#selectClear">selectClear</a></li>
+            
                 <li data-name="AXGrid.setBody"><a href="AXGrid.html#setBody">setBody</a></li>
             
                 <li data-name="AXGrid.setColHead"><a href="AXGrid.html#setColHead">setColHead</a></li>
             
-                <li data-name="AXGrid.setConig"><a href="AXGrid.html#setConig">setConig</a></li>
+                <li data-name="AXGrid.setConfig"><a href="AXGrid.html#setConfig">setConfig</a></li>
             
                 <li data-name="AXGrid.setData"><a href="AXGrid.html#setData">setData</a></li>
             
                 <li data-name="AXGrid.setDataSet"><a href="AXGrid.html#setDataSet">setDataSet</a></li>
+            
+                <li data-name="AXGrid.setEditCellValue"><a href="AXGrid.html#setEditCellValue">setEditCellValue</a></li>
             
                 <li data-name="AXGrid.setEditor"><a href="AXGrid.html#setEditor">setEditor</a></li>
             
@@ -1018,6 +1030,8 @@
                 <li data-name="AXGrid.sortList"><a href="AXGrid.html#sortList">sortList</a></li>
             
                 <li data-name="AXGrid.unbindAXbind"><a href="AXGrid.html#unbindAXbind">unbindAXbind</a></li>
+            
+                <li data-name="AXGrid.updateItem"><a href="AXGrid.html#updateItem">updateItem</a></li>
             
                 <li data-name="AXGrid.updateList"><a href="AXGrid.html#updateList">updateList</a></li>
             
@@ -1485,6 +1499,8 @@
             
                 <li data-name="AXSelectConverter.bindSelectRemoveOptions"><a href="AXSelectConverter.html#bindSelectRemoveOptions">bindSelectRemoveOptions</a></li>
             
+                <li data-name="AXSelectConverter.bindSelectUpdateOptions"><a href="AXSelectConverter.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
+            
             </ul>
             <ul class="events itemMembers">
             
@@ -1845,6 +1861,167 @@
             
 <dt>
     <div class="nameContainer">
+        <h4 class="name" id="getCheckedParams">
+            
+            getCheckedParams<span class="signature">(colSeq, traditional)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="Array.html">Array</a>}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <i class="axi axi-github"></i>
+            <a href="https://github.com/axisj-com/axisj/blob/master/lib/AXGrid.js#L8491" target="_blank">
+            AXGrid.js,
+            line 8491</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>AXGrid의 checked 값을 jQuery.param 메서드에서 사용 가능한 배열로 반환합니다.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>colSeq</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Number.html">Number</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>대상 체크박스(formatter:&quot;checkbox&quot; 로 선언된 항목의 순서)</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>traditional</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>[false] 반환 형태 지정</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+<h5>Returns:</h5>
+[ { name: 'no', value: 1 }, { name: 'no', value: 2 } ], traditional[true]: [ { 'no': 1 }, { 'no': 2 } ]
+<br />
+
+    
+    
+    
+        <h5>Example</h5>
+        
+
+    
+    <pre class="prettyprint linenums"><code>var myGrid = new AXGrid();
+myGrid.getCheckedParams(0); // -&gt; [ { name: 'no', value: 1 }, { name: 'no', value: 2 } ]
+myGrid.getCheckedParams(0); // -&gt; [ { 'no': 1 }, { 'no': 2 } ]</code></pre>
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
         <h4 class="name" id="openI">
             
             openI<span class="signature">()</span>
@@ -1937,7 +2114,7 @@
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:38:11 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Feb 26 2015 22:25:54 GMT+0900 (KST)
         </footer>
     </div>
 </div>

@@ -456,6 +456,8 @@
             
                 <li data-name="jQueryExtends.bindSelectUpdate"><a href="jQueryExtends.html#bindSelectUpdate">bindSelectUpdate</a></li>
             
+                <li data-name="jQueryExtends.bindSelectUpdateOptions"><a href="jQueryExtends.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
+            
                 <li data-name="jQueryExtends.bindSlider"><a href="jQueryExtends.html#bindSlider">bindSlider</a></li>
             
                 <li data-name="jQueryExtends.bindSwitch"><a href="jQueryExtends.html#bindSwitch">bindSwitch</a></li>
@@ -503,6 +505,8 @@
                 <li data-name="jQueryExtends.unbindSelect"><a href="jQueryExtends.html#unbindSelect">unbindSelect</a></li>
             
                 <li data-name="jQueryExtends.unbindTab"><a href="jQueryExtends.html#unbindTab">unbindTab</a></li>
+            
+                <li data-name="jQueryExtends.updateTabs"><a href="jQueryExtends.html#updateTabs">updateTabs</a></li>
             
             </ul>
             <ul class="events itemMembers">
@@ -821,6 +825,8 @@
             
                 <li data-name="AXGrid.click"><a href="AXGrid.html#click">click</a></li>
             
+                <li data-name="AXGrid.clipBoardClear"><a href="AXGrid.html#clipBoardClear">clipBoardClear</a></li>
+            
                 <li data-name="AXGrid.colGroupListClick"><a href="AXGrid.html#colGroupListClick">colGroupListClick</a></li>
             
                 <li data-name="AXGrid.colHeadCheckBoxClick"><a href="AXGrid.html#colHeadCheckBoxClick">colHeadCheckBoxClick</a></li>
@@ -874,6 +880,8 @@
                 <li data-name="AXGrid.dataSync"><a href="AXGrid.html#dataSync">dataSync</a></li>
             
                 <li data-name="AXGrid.editCell"><a href="AXGrid.html#editCell">editCell</a></li>
+            
+                <li data-name="AXGrid.editCellClear"><a href="AXGrid.html#editCellClear">editCellClear</a></li>
             
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
@@ -991,15 +999,19 @@
             
                 <li data-name="AXGrid.scrollTop"><a href="AXGrid.html#scrollTop">scrollTop</a></li>
             
+                <li data-name="AXGrid.selectClear"><a href="AXGrid.html#selectClear">selectClear</a></li>
+            
                 <li data-name="AXGrid.setBody"><a href="AXGrid.html#setBody">setBody</a></li>
             
                 <li data-name="AXGrid.setColHead"><a href="AXGrid.html#setColHead">setColHead</a></li>
             
-                <li data-name="AXGrid.setConig"><a href="AXGrid.html#setConig">setConig</a></li>
+                <li data-name="AXGrid.setConfig"><a href="AXGrid.html#setConfig">setConfig</a></li>
             
                 <li data-name="AXGrid.setData"><a href="AXGrid.html#setData">setData</a></li>
             
                 <li data-name="AXGrid.setDataSet"><a href="AXGrid.html#setDataSet">setDataSet</a></li>
+            
+                <li data-name="AXGrid.setEditCellValue"><a href="AXGrid.html#setEditCellValue">setEditCellValue</a></li>
             
                 <li data-name="AXGrid.setEditor"><a href="AXGrid.html#setEditor">setEditor</a></li>
             
@@ -1018,6 +1030,8 @@
                 <li data-name="AXGrid.sortList"><a href="AXGrid.html#sortList">sortList</a></li>
             
                 <li data-name="AXGrid.unbindAXbind"><a href="AXGrid.html#unbindAXbind">unbindAXbind</a></li>
+            
+                <li data-name="AXGrid.updateItem"><a href="AXGrid.html#updateItem">updateItem</a></li>
             
                 <li data-name="AXGrid.updateList"><a href="AXGrid.html#updateList">updateList</a></li>
             
@@ -1484,6 +1498,8 @@
                 <li data-name="AXSelectConverter.bindSelectAddOptions"><a href="AXSelectConverter.html#bindSelectAddOptions">bindSelectAddOptions</a></li>
             
                 <li data-name="AXSelectConverter.bindSelectRemoveOptions"><a href="AXSelectConverter.html#bindSelectRemoveOptions">bindSelectRemoveOptions</a></li>
+            
+                <li data-name="AXSelectConverter.bindSelectUpdateOptions"><a href="AXSelectConverter.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
             
             </ul>
             <ul class="events itemMembers">
@@ -2315,7 +2331,7 @@ axdom.fn.mask = function (configs) {
  * AXNotification
  * @class AXNotification
  * @extends AXJ
- * @version v1.4
+ * @version v1.6
  * @author tom@axisj.com
  * @logs
  "2012-10-30 오후 12:01:10",
@@ -2324,6 +2340,8 @@ axdom.fn.mask = function (configs) {
  "2014-05-26 tom : dialog 에서 top 속성 설정 추가"
  "2014-08-16 tom : dialog body에서 \n -> &lt;br/> auto replace "
  "2014-08-25 tom : dialog body에서 \n -> &lt;br/> auto replace 예외처리 "
+ "2015-01-12 tom : ie7,8 fadeOut error fix https://github.com/axisj-com/axisj/issues/386"
+ "2015-01-19 tom : https://github.com/axisj-com/axisj/issues/392 dialog에 onConfirm 추가"
  */
 var AXNotification = Class.create(AXJ, {
     initialize: function (AXJ_super) {
@@ -2427,8 +2445,10 @@ var AXNotification = Class.create(AXJ, {
         if (config.type == "toast") {
             if (!AXgetId(config.targetID)) axdom(document.body).append(this.toastTray);
             this.bread.push({ breadID: breadID, type: obj.type, html: po.join('').enc() });
-            this.insertBread();
-        } else if (config.type == "dialog") {
+            this.insertBread(obj);
+        }
+        else
+        if (config.type == "dialog") {
             if (!AXgetId(config.targetID)) axdom(document.body).append(this.dialogTray);
             this.dialogTray.prepend(po.join(''));
 
@@ -2442,17 +2462,18 @@ var AXNotification = Class.create(AXJ, {
 		        this.dialogTray.css({ top:50 });
 	        }
 
-
-            axdom("#bread_AX_" + breadID).fadeIn();
+            var breadBox = axdom("#bread_AX_" + breadID);
+            breadBox.fadeIn();
 
             var endCheck = this.endCheck.bind(this);
 
             //Confirm button
             axdom("#bread_AX_" + breadID + "_AX_confirm").bind("click", function () {
                 if (obj.onConfirm) obj.onConfirm(obj.data);
-                axdom("#bread_AX_" + breadID).fadeOut({
+                breadBox.find("button, input").hide();
+                breadBox.fadeOut({
                     duration: config.easing.close.duration, easing: config.easing.close.easing, complete: function () {
-                        axdom("#bread_AX_" + breadID).remove();
+                        breadBox.remove();
                         endCheck();
                     }
                 });
@@ -2462,15 +2483,16 @@ var AXNotification = Class.create(AXJ, {
             axdom(".AXNotificationButtons").find(".AXButton").bind("click", function (event) {
                 var eid = event.target.id.split(/_AX_/g);
                 var myBreadID = eid[1];
-                var buttonSeq = eid.last();
+                var buttonSeq = eid.last(), breadBox = axdom("#bread_AX_" + myBreadID);
                 if (obj.buttons) {
                     if (obj.buttons[buttonSeq]) {
                         if (obj.buttons[buttonSeq].onClick) obj.buttons[buttonSeq].onClick(obj.buttons[buttonSeq].data);
                     }
                 }
-                axdom("#bread_AX_" + myBreadID).fadeOut({
+                breadBox.find("button, input").hide();
+                breadBox.fadeOut({
                     duration: config.easing.close.duration, easing: config.easing.close.easing, complete: function () {
-                        axdom("#bread_AX_" + myBreadID).remove();
+                        breadBox.remove();
                         endCheck();
                     }
                 });
@@ -2490,7 +2512,7 @@ var AXNotification = Class.create(AXJ, {
             });
         }
     },
-    insertBread: function () {
+    insertBread: function (obj) {
         var config = this.config;
         if (this.bread.length == 0) {
             return;
@@ -2502,12 +2524,16 @@ var AXNotification = Class.create(AXJ, {
         var endCheck = this.endCheck.bind(this);
 
         var myQue = this.bread.first();
-        var breadID = myQue.breadID;
+        var breadID = myQue.breadID, breadBox;
         axdom("#" + config.targetID).prepend(myQue.html.decode());
+        breadBox = axdom("#bread_AX_" + breadID);
+
         axdom("#bread_AX_" + breadID + "_AX_confirm").bind("click", function () {
-            axdom("#bread_AX_" + breadID).fadeOut({
+            if (obj.onConfirm) obj.onConfirm(obj.data);
+            breadBox.find("button, input").hide();
+            breadBox.fadeOut({
                 duration: config.easing.close.duration, easing: config.easing.close.easing, complete: function () {
-                    axdom("#bread_AX_" + breadID).remove();
+                    breadBox.remove();
                     endCheck();
                 }
             });
@@ -2519,9 +2545,9 @@ var AXNotification = Class.create(AXJ, {
                 //axdom("#msg").html(axdom("#msg").html()+"&lt;br/>"+AXgetId("bread_AX_"+breadID)+"/"+breadID);
                 if (myQue.type != "Caution") {
                     setTimeout(function () {
-                        axdom("#bread_AX_" + breadID).fadeOut({
+                        breadBox.fadeOut({
                             duration: config.easing.close.duration, easing: config.easing.close.easing, complete: function () {
-                                axdom("#bread_AX_" + breadID).remove();
+                                breadBox.remove();
                                 endCheck();
                             }
                         });
@@ -4891,7 +4917,7 @@ axdom.fn.unbindAXResizable = function (config) {
  * AXContextMenuClass
  * @class AXContextMenuClass
  * @extends AXJ
- * @version v1.25
+ * @version v1.27
  * @author tom@axisj.com, axisj.com
  * @logs
  "2013-03-22 오후 6:08:57",
@@ -4902,7 +4928,8 @@ axdom.fn.unbindAXResizable = function (config) {
  "2014-04-07 오전 9:55:57 tom, extent checkbox, sortbox"
  "2014-06-24 tom : reserveKeys.subMenu 설정할 수 있도록 기능 보강, 콜백함수 개선"
  "2014-12-18 tom : onclose 속성을 추가 할 수 있도록 속성 추가
- "2014-12-22 tom : filter를 통화한 메뉴 아이템이 없을 경우 표시 안하도록 변경"
+ "2014-12-22 tom : filter를 통과한 메뉴 아이템이 없을 경우 표시 안하도록 변경"
+ "2015-01-22 tom : item false 이면 표시 안하도록 변경"
  */
 
 var AXContextMenuClass = Class.create(AXJ, {
@@ -4972,9 +4999,14 @@ var AXContextMenuClass = Class.create(AXJ, {
 		checkbox:"checkbox", // [checkbox|radio]
 		sortbox:true,
 		menu:[
-			{label:'선택 1', checked:true, onclick:function(){
-				return false;
-			}},
+			{
+				label:'선택 1',
+				checked:true,
+				className: 'doc | docline | plus | minus | group | edit | copy | cut | paste | up | down | left | right | link | unlink | openall | closeall'
+				onclick:function(){
+					return false;
+				}
+			},
 			{label:'선택 2', checked:true,
 				subMenu:[
 					{label:"하위메뉴1"},
@@ -5038,7 +5070,7 @@ var AXContextMenuClass = Class.create(AXJ, {
             var sendObj = {
                 menu: menu,
                 sendObj: obj.sendObj
-            }
+            };
             return myobj.filter.call(sendObj, objID);
         } else {
             return true;
@@ -5070,7 +5102,9 @@ var AXContextMenuClass = Class.create(AXJ, {
                     po.push("&lt;div class='tool-checkbox"+ checked +"' id=\"" + subMenuID + "_tool_AX_" + depth + "_AX_" + idx + "\">&lt;/div>");
                 }
 
-                po.push("&lt;span class='label'>" + menu.label + "&lt;/label>");
+                po.push("&lt;span class='label'>" + menu.label + "&lt;/span>");
+
+                if(menu.shotCut) po.push("&lt;span class='shot-cut'>" + menu.shotCut + "&lt;/span>");
 
                 po.push("&lt;div class='tool-rightGroup'>");
                 if (menu[obj.reserveKeys.subMenu] && menu[obj.reserveKeys.subMenu].length > 0) po.push("&lt;div class=\"contextSubMenuIcon\">&lt;/div>");
@@ -5198,6 +5232,8 @@ AXContextMenu.open({
 
                 po.push("&lt;span class='label'>" + menu.label + "&lt;/label>");
 
+                if(menu.shotCut) po.push("&lt;span class='shot-cut'>" + menu.shotCut + "&lt;/span>");
+
                 po.push("&lt;div class='tool-rightGroup'>");
                 if (menu[obj.reserveKeys.subMenu] && menu[obj.reserveKeys.subMenu].length > 0) po.push("&lt;div class=\"contextSubMenuIcon\">&lt;/div>");
                 if (obj.sortbox){
@@ -5292,7 +5328,7 @@ AXContextMenu.open({
         po.push("&lt;div id=\"" + objID + "_AX_containerBox\" class=\"AXContextMenuContainer\" style=\"" + styles.join(";") + "\">");
         po.push("&lt;div id=\"" + objID + "_AX_scroll\" class=\"AXContextMenuScroll\">");
         axf.each(menuList, function (idx, menu) {
-            if (filter(objSeq, objID, myobj, menu)) {
+            if (menu && filter(objSeq, objID, myobj, menu)) {
                 var className = (menu.className) ? " " + menu.className : "";
                 var hasSubMenu = (menu[obj.reserveKeys.subMenu]) ? " hasSubMenu" : "";
                 po.push("&lt;a " + href + " class=\"contextMenuItem" + className + hasSubMenu + "\" id=\"" + subMenuID + "_AX_" + depth + "_AX_" + idx + "\">");
@@ -5304,6 +5340,8 @@ AXContextMenu.open({
                 }
 
                 po.push("&lt;span class='label'>" + menu.label + "&lt;/label>");
+
+                if(menu.shotCut) po.push("&lt;span class='shot-cut'>" + menu.shotCut + "&lt;/span>");
 
                 po.push("&lt;div class='tool-rightGroup'>");
                 if (menu[obj.reserveKeys.subMenu] && menu[obj.reserveKeys.subMenu].length > 0) po.push("&lt;div class=\"contextSubMenuIcon\">&lt;/div>");
@@ -5383,7 +5421,8 @@ AXContextMenu.open({
         var po = [];
         po.push("&lt;div id=\"" + objID + "\" class=\"" + theme + "\" style=\"width:" + width + "px;\">");
         AXUtil.each(obj.menu, function (idx, menu) {
-            if (filter(objSeq, objID, myobj, menu)) {
+            if (menu && filter(objSeq, objID, myobj, menu)) {
+
                 if (menu.upperLine) {
                     po.push("&lt;div class=\"hline\">&lt;/div>");
                 }
@@ -5397,6 +5436,8 @@ AXContextMenu.open({
                 }
 
                 po.push("&lt;span class='label'>" + menu.label + "&lt;/span>");
+
+                if(menu.shotCut) po.push("&lt;span class='shot-cut'>" + menu.shotCut + "&lt;/span>");
 
                 po.push("&lt;div class='tool-rightGroup'>");
                 if (menu[obj.reserveKeys.subMenu] && menu[obj.reserveKeys.subMenu].length > 0) po.push("&lt;div class=\"contextSubMenuIcon\">&lt;/div>");
@@ -6804,7 +6845,7 @@ axdom.fn.endFocus = function () {
 
 /**
  * @method jQueryExtends.setCaret
- * @param {Number} pos - 포커스 포지션 넘버
+ * @param {Number} [pos=valueLength] - 포커스 포지션 넘버
  * @returns {jQueryObject}
  * @description input 엘리먼트 특정위치에 커서를 위치시켜 줍니다.
  * @example
@@ -6814,6 +6855,9 @@ axdom.fn.endFocus = function () {
  */
 axdom.fn.setCaret = function (pos) {
     var input = this[0];
+    if(typeof pos == "undefined"){
+        pos = input.value.length;
+    }
     if (input.setSelectionRange) {
         input.focus();
         input.setSelectionRange(pos, pos);
@@ -6896,7 +6940,7 @@ axdom(document.body).ready(function () {
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:38:11 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Feb 26 2015 22:25:52 GMT+0900 (KST)
         </footer>
     </div>
 </div>
