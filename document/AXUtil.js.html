@@ -456,6 +456,8 @@
             
                 <li data-name="jQueryExtends.bindSelectUpdate"><a href="jQueryExtends.html#bindSelectUpdate">bindSelectUpdate</a></li>
             
+                <li data-name="jQueryExtends.bindSelectUpdateOptions"><a href="jQueryExtends.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
+            
                 <li data-name="jQueryExtends.bindSlider"><a href="jQueryExtends.html#bindSlider">bindSlider</a></li>
             
                 <li data-name="jQueryExtends.bindSwitch"><a href="jQueryExtends.html#bindSwitch">bindSwitch</a></li>
@@ -503,6 +505,8 @@
                 <li data-name="jQueryExtends.unbindSelect"><a href="jQueryExtends.html#unbindSelect">unbindSelect</a></li>
             
                 <li data-name="jQueryExtends.unbindTab"><a href="jQueryExtends.html#unbindTab">unbindTab</a></li>
+            
+                <li data-name="jQueryExtends.updateTabs"><a href="jQueryExtends.html#updateTabs">updateTabs</a></li>
             
             </ul>
             <ul class="events itemMembers">
@@ -821,6 +825,8 @@
             
                 <li data-name="AXGrid.click"><a href="AXGrid.html#click">click</a></li>
             
+                <li data-name="AXGrid.clipBoardClear"><a href="AXGrid.html#clipBoardClear">clipBoardClear</a></li>
+            
                 <li data-name="AXGrid.colGroupListClick"><a href="AXGrid.html#colGroupListClick">colGroupListClick</a></li>
             
                 <li data-name="AXGrid.colHeadCheckBoxClick"><a href="AXGrid.html#colHeadCheckBoxClick">colHeadCheckBoxClick</a></li>
@@ -875,6 +881,8 @@
             
                 <li data-name="AXGrid.editCell"><a href="AXGrid.html#editCell">editCell</a></li>
             
+                <li data-name="AXGrid.editCellClear"><a href="AXGrid.html#editCellClear">editCellClear</a></li>
+            
                 <li data-name="AXGrid.fetchList"><a href="AXGrid.html#fetchList">fetchList</a></li>
             
                 <li data-name="AXGrid.focusEditorForm"><a href="AXGrid.html#focusEditorForm">focusEditorForm</a></li>
@@ -886,6 +894,8 @@
                 <li data-name="AXGrid.getCheckedList"><a href="AXGrid.html#getCheckedList">getCheckedList</a></li>
             
                 <li data-name="AXGrid.getCheckedListWithIndex"><a href="AXGrid.html#getCheckedListWithIndex">getCheckedListWithIndex</a></li>
+            
+                <li data-name="AXGrid.getCheckedParams"><a href="AXGrid.html#getCheckedParams">getCheckedParams</a></li>
             
                 <li data-name="AXGrid.getColGroup"><a href="AXGrid.html#getColGroup">getColGroup</a></li>
             
@@ -926,6 +936,8 @@
                 <li data-name="AXGrid.getItem"><a href="AXGrid.html#getItem">getItem</a></li>
             
                 <li data-name="AXGrid.getItemMarker"><a href="AXGrid.html#getItemMarker">getItemMarker</a></li>
+            
+                <li data-name="AXGrid.getList"><a href="AXGrid.html#getList">getList</a></li>
             
                 <li data-name="AXGrid.getMarkerDisplay"><a href="AXGrid.html#getMarkerDisplay">getMarkerDisplay</a></li>
             
@@ -991,15 +1003,19 @@
             
                 <li data-name="AXGrid.scrollTop"><a href="AXGrid.html#scrollTop">scrollTop</a></li>
             
+                <li data-name="AXGrid.selectClear"><a href="AXGrid.html#selectClear">selectClear</a></li>
+            
                 <li data-name="AXGrid.setBody"><a href="AXGrid.html#setBody">setBody</a></li>
             
                 <li data-name="AXGrid.setColHead"><a href="AXGrid.html#setColHead">setColHead</a></li>
             
-                <li data-name="AXGrid.setConig"><a href="AXGrid.html#setConig">setConig</a></li>
+                <li data-name="AXGrid.setConfig"><a href="AXGrid.html#setConfig">setConfig</a></li>
             
                 <li data-name="AXGrid.setData"><a href="AXGrid.html#setData">setData</a></li>
             
                 <li data-name="AXGrid.setDataSet"><a href="AXGrid.html#setDataSet">setDataSet</a></li>
+            
+                <li data-name="AXGrid.setEditCellValue"><a href="AXGrid.html#setEditCellValue">setEditCellValue</a></li>
             
                 <li data-name="AXGrid.setEditor"><a href="AXGrid.html#setEditor">setEditor</a></li>
             
@@ -1018,6 +1034,8 @@
                 <li data-name="AXGrid.sortList"><a href="AXGrid.html#sortList">sortList</a></li>
             
                 <li data-name="AXGrid.unbindAXbind"><a href="AXGrid.html#unbindAXbind">unbindAXbind</a></li>
+            
+                <li data-name="AXGrid.updateItem"><a href="AXGrid.html#updateItem">updateItem</a></li>
             
                 <li data-name="AXGrid.updateList"><a href="AXGrid.html#updateList">updateList</a></li>
             
@@ -1485,6 +1503,8 @@
             
                 <li data-name="AXSelectConverter.bindSelectRemoveOptions"><a href="AXSelectConverter.html#bindSelectRemoveOptions">bindSelectRemoveOptions</a></li>
             
+                <li data-name="AXSelectConverter.bindSelectUpdateOptions"><a href="AXSelectConverter.html#bindSelectUpdateOptions">bindSelectUpdateOptions</a></li>
+            
             </ul>
             <ul class="events itemMembers">
             
@@ -1619,7 +1639,7 @@
             
                 <li data-name="AXTree.removeTree"><a href="AXTree.html#removeTree">removeTree</a></li>
             
-                <li data-name="AXTree.setConig"><a href="AXTree.html#setConig">setConig</a></li>
+                <li data-name="AXTree.setConfig"><a href="AXTree.html#setConfig">setConfig</a></li>
             
                 <li data-name="AXTree.setFocus"><a href="AXTree.html#setFocus">setFocus</a></li>
             
@@ -1940,13 +1960,34 @@ trace(axf.timeKey()); // A004222760
  * @param {String} name
  * @param {String} value
  * @param {Number} [expiredays]
+ * @param {Object} options
  * @description 쿠키에 값을 지정합니다.
  * @example
 ```js
-axf.setCookie("myname", "tomas", 10);
+axf.setCookie("myname", "tomas", 10, {
+    path  : "/",             // {String} [현재 페이지의 path]
+    domain: "www.axisj.com", // {String} [현재 사이트의 domain]
+    secure: true             // {Boolean} [false]
+});
 ```
  */
-	setCookie: function (name, value, expiredays) { if (expiredays) { var todayDate = new Date(); todayDate.setDate(todayDate.getDate() + expiredays); document.cookie = name + '=' + escape(value) + '; path=/; expires=' + todayDate.toGMTString() + ';'; } else { document.cookie = name + '=' + escape(value) + '; path=/;'; } },
+	setCookie: function (name, value, expiredays, options) {
+        var expireDate;
+        if (typeof expiredays === "number") {
+            expireDate = new Date();
+            expireDate.setDate(expireDate.getDate() + expiredays);
+        }
+
+        options = options || {};
+
+        return (document.cookie = [
+            encodeURIComponent(name), '=', String(value),
+            expireDate      ? "; expires=" + expireDate.toUTCString() : "", // use expires attribute, max-age is not supported by IE
+            options.path    ? "; path=" + options.path : "",
+            options.domain  ? "; domain=" + options.domain : "",
+            options.secure  ? "; secure" : ""
+        ].join(""));
+    },
 /**
  * @method axf.getCookie
  * @param {String} name
@@ -1957,7 +1998,20 @@ axf.setCookie("myname", "tomas", 10);
  // tomas
  ```
  */
-	getCookie: function (name) { var nameOfCookie = name + "="; var x = 0; while (x &lt;= document.cookie.length) { var y = (x + nameOfCookie.length); if (document.cookie.substring(x, y) == nameOfCookie) { if ((endOfCookie = document.cookie.indexOf(";", y)) == -1) endOfCookie = document.cookie.length; return unescape(document.cookie.substring(y, endOfCookie)); } x = document.cookie.indexOf(" ", x) + 1; if (x == 0) break; } return ""; },
+	getCookie: function (name) {
+        var nameOfCookie = name + "=";
+        var x = 0;
+        while (x &lt;= document.cookie.length) {
+            var y = (x + nameOfCookie.length);
+            if (document.cookie.substring(x, y) == nameOfCookie) {
+                if ((endOfCookie = document.cookie.indexOf(";", y)) == -1) endOfCookie = document.cookie.length;
+                return decodeURIComponent(document.cookie.substring(y, endOfCookie));
+            }
+            x = document.cookie.indexOf(" ", x) + 1;
+            if (x == 0) break;
+        }
+        return "";
+    },
 	JSONFilter: /^\/\*-secure-([\s\S]*)\*\/\s*$/,
 /**
  * @method axf.dayLen
@@ -2335,6 +2389,7 @@ axf.encParam("name=장기영&sex=남");
 				if(Object.isObject(cond)){
 					for(var k in cond){
 						if(k === "tagname"){
+							trace(_target.tagName);
 							if(_target.tagName.lcase() != cond[k]) {
 								result = false;
 								break;
@@ -2354,7 +2409,12 @@ axf.encParam("name=장기영&sex=남");
 						}
 						else
 						{ // 그외 속성값들.
-							if(_target.getAttribute(k) != cond[k]) {
+							if(_target.getAttribute) {
+								if (_target.getAttribute(k) != cond[k]) {
+									result = false;
+									break;
+								}
+							}else{
 								result = false;
 								break;
 							}
@@ -4238,7 +4298,7 @@ var getUrlInfo = axf.getUrlInfo;</code></pre>
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Mon Jan 05 2015 21:38:11 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a> on Thu Mar 12 2015 23:09:44 GMT+0900 (KST)
         </footer>
     </div>
 </div>
