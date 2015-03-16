@@ -3,31 +3,11 @@
  */
 module.exports = function (grunt) {
     var path = require('path');
-    var DEMO_PATH = 'document';
-    //var DEMO_SAMPLE_PATH = 'http://newdoc.axisj.com/';
-    var DEMO_SAMPLE_PATH = '../axisj/';
+    var DOCU_PATH = 'document';
+    var SOURCE_PATH = '../axisj/';
     
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
-        connect: {
-            options: {
-                hostname: '*'
-            },
-            demo: {
-                options: {
-                    port: 2016,
-                    base: DEMO_PATH,
-                    middleware: function (connect, options) {
-                        return [
-                            require('connect-livereload')(),
-                            connect.static(path.resolve(options.base))
-                        ];
-                    }
-                }
-            }
-        },
-
         watch: {
             options: {
                 livereload: true
@@ -49,138 +29,132 @@ module.exports = function (grunt) {
                 tasks: ['jsdoc']
             }
         },
-
         clean: {
             demo: {
-                src: DEMO_PATH
+                src: DOCU_PATH
             }
         },
-
         jsdoc: {
             demo: {
                 src: [
 
-	                DEMO_SAMPLE_PATH + 'lib/AXConfig.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXUtil.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXCore.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXTree.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXGrid.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXInput.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXModal.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXSelect.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXTab.js',
+	                SOURCE_PATH + 'lib/AXConfig.js',
+	                SOURCE_PATH + 'lib/AXUtil.js',
+	                SOURCE_PATH + 'lib/AXCore.js',
+	                SOURCE_PATH + 'lib/AXTree.js',
+	                SOURCE_PATH + 'lib/AXGrid.js',
+	                SOURCE_PATH + 'lib/AXInput.js',
+	                SOURCE_PATH + 'lib/AXModal.js',
+	                SOURCE_PATH + 'lib/AXSelect.js',
+	                SOURCE_PATH + 'lib/AXTab.js',
 
-	                //DEMO_SAMPLE_PATH + 'lib/AXDOMRange.js',
-	                //DEMO_SAMPLE_PATH + 'lib/AXDrag.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXEditor.js',
-	                //DEMO_SAMPLE_PATH + 'lib/AXExcelConvert.js',
-	                //DEMO_SAMPLE_PATH + 'lib/AXSplit.js',
+	                //SOURCE_PATH + 'lib/AXDOMRange.js',
+	                //SOURCE_PATH + 'lib/AXDrag.js',
+	                SOURCE_PATH + 'lib/AXEditor.js',
+	                //SOURCE_PATH + 'lib/AXExcelConvert.js',
+	                //SOURCE_PATH + 'lib/AXSplit.js',
 
-	                //DEMO_SAMPLE_PATH + 'lib/AXHtmlElement.js',
+	                //SOURCE_PATH + 'lib/AXHtmlElement.js',
 
-	                DEMO_SAMPLE_PATH + 'lib/AXMobileMenu.js',
+	                SOURCE_PATH + 'lib/AXMobileMenu.js',
 
-	                //DEMO_SAMPLE_PATH + 'lib/AXModelControl.js',
-	                //DEMO_SAMPLE_PATH + 'lib/AXModelControlGrid.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXMultiSelector.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXProgress.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXSearch.js',
+	                //SOURCE_PATH + 'lib/AXModelControl.js',
+	                //SOURCE_PATH + 'lib/AXModelControlGrid.js',
+	                SOURCE_PATH + 'lib/AXMultiSelector.js',
+	                SOURCE_PATH + 'lib/AXProgress.js',
+	                SOURCE_PATH + 'lib/AXSearch.js',
 
-	                DEMO_SAMPLE_PATH + 'lib/AXSlideViewer.js',
+	                SOURCE_PATH + 'lib/AXSlideViewer.js',
 
-	                DEMO_SAMPLE_PATH + 'lib/AXTopDownMenu.js',
+	                SOURCE_PATH + 'lib/AXTopDownMenu.js',
 
-	                DEMO_SAMPLE_PATH + 'lib/AXUpload5.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXUserSelect.js',
-	                DEMO_SAMPLE_PATH + 'lib/AXValidator.js',
-	                //DEMO_SAMPLE_PATH + 'lib/AXWaterfall.js',
+	                SOURCE_PATH + 'lib/AXUpload5.js',
+	                SOURCE_PATH + 'lib/AXUserSelect.js',
+	                SOURCE_PATH + 'lib/AXValidator.js',
+	                //SOURCE_PATH + 'lib/AXWaterfall.js',
 
                     // You can add README.md file for index page at documentations.
                     'index.md'
                 ],
                 options: {
                     verbose: true,
-                    destination: DEMO_PATH,
+                    destination: DOCU_PATH,
                     configure: 'conf.json',
                     template: './',
                     'private': false
                 }
             }
         },
-
         less: {
             dist: {
                 src: 'less/**/axisjdoc.less',
                 dest: 'static/styles/axisjdoc.css'
             }
         },
-
         copy: {
             css: {
                 src: 'static/styles/axisjdoc.css',
-                dest: DEMO_PATH + '/styles/axisjdoc.css'
+                dest: DOCU_PATH + '/styles/axisjdoc.css'
             },
-
             js: {
                 src: 'static/scripts/main.js',
-                dest: DEMO_PATH + '/scripts/main.js'
+                dest: DOCU_PATH + '/scripts/main.js'
             }
         },
-
 	    wkhtmltopdf: {
 		    dev: {
 			    /*
 			    src: [
-					DEMO_PATH + 'Array.html',
-					DEMO_PATH + 'AXCalendar.html',
-					DEMO_PATH + 'AXConfig.html',
-					DEMO_PATH + 'AXContextMenu.html',
-					DEMO_PATH + 'AXContextMenuClass.html',
-					DEMO_PATH + 'AXEditor.html',
-					DEMO_PATH + 'axf.html',
-					DEMO_PATH + 'AXGrid.html',
-					DEMO_PATH + 'AXInputConverter.html',
-					DEMO_PATH + 'AXJ.html',
-					DEMO_PATH + 'AXMask.html',
-					DEMO_PATH + 'AXMobileMenu.html',
-					DEMO_PATH + 'AXMobileModal.html',
-					DEMO_PATH + 'AXModal.html',
-					DEMO_PATH + 'AXMultiSelect.html',
-					DEMO_PATH + 'AXNotification.html',
-					DEMO_PATH + 'AXPopOver.html',
-					DEMO_PATH + 'AXPopOverClass.html',
-					DEMO_PATH + 'AXProgress.html',
-					DEMO_PATH + 'AXReq.html',
-					DEMO_PATH + 'AXReqQue.html',
-					DEMO_PATH + 'AXResizable.html',
-					DEMO_PATH + 'AXScroll.html',
-					DEMO_PATH + 'AXSearch.html',
-					DEMO_PATH + 'AXSelectConverter.html',
-					DEMO_PATH + 'AXSlideViewer.html',
-					DEMO_PATH + 'AXTabClass.html',
-					DEMO_PATH + 'AXTopDownMenu.html',
-					DEMO_PATH + 'AXTree.html',
-					DEMO_PATH + 'AXUpload5.html',
-					DEMO_PATH + 'AXUserSelect.html',
-					DEMO_PATH + 'AXValidator.html',
-					DEMO_PATH + 'Class.html',
-					DEMO_PATH + 'Date.html',
-					DEMO_PATH + 'Error.html',
-					DEMO_PATH + 'Function.html',
-					DEMO_PATH + 'index.html',
-					DEMO_PATH + 'jQueryExtends.html',
-					DEMO_PATH + 'Number.html',
-					DEMO_PATH + 'Object.html',
-					DEMO_PATH + 'String.html'
+					DOCU_PATH + 'Array.html',
+					DOCU_PATH + 'AXCalendar.html',
+					DOCU_PATH + 'AXConfig.html',
+					DOCU_PATH + 'AXContextMenu.html',
+					DOCU_PATH + 'AXContextMenuClass.html',
+					DOCU_PATH + 'AXEditor.html',
+					DOCU_PATH + 'axf.html',
+					DOCU_PATH + 'AXGrid.html',
+					DOCU_PATH + 'AXInputConverter.html',
+					DOCU_PATH + 'AXJ.html',
+					DOCU_PATH + 'AXMask.html',
+					DOCU_PATH + 'AXMobileMenu.html',
+					DOCU_PATH + 'AXMobileModal.html',
+					DOCU_PATH + 'AXModal.html',
+					DOCU_PATH + 'AXMultiSelect.html',
+					DOCU_PATH + 'AXNotification.html',
+					DOCU_PATH + 'AXPopOver.html',
+					DOCU_PATH + 'AXPopOverClass.html',
+					DOCU_PATH + 'AXProgress.html',
+					DOCU_PATH + 'AXReq.html',
+					DOCU_PATH + 'AXReqQue.html',
+					DOCU_PATH + 'AXResizable.html',
+					DOCU_PATH + 'AXScroll.html',
+					DOCU_PATH + 'AXSearch.html',
+					DOCU_PATH + 'AXSelectConverter.html',
+					DOCU_PATH + 'AXSlideViewer.html',
+					DOCU_PATH + 'AXTabClass.html',
+					DOCU_PATH + 'AXTopDownMenu.html',
+					DOCU_PATH + 'AXTree.html',
+					DOCU_PATH + 'AXUpload5.html',
+					DOCU_PATH + 'AXUserSelect.html',
+					DOCU_PATH + 'AXValidator.html',
+					DOCU_PATH + 'Class.html',
+					DOCU_PATH + 'Date.html',
+					DOCU_PATH + 'Error.html',
+					DOCU_PATH + 'Function.html',
+					DOCU_PATH + 'index.html',
+					DOCU_PATH + 'jQueryExtends.html',
+					DOCU_PATH + 'Number.html',
+					DOCU_PATH + 'Object.html',
+					DOCU_PATH + 'String.html'
 				],
 				*/
-			    src: DEMO_PATH + '/*.html',
+			    src: DOCU_PATH + '/*.html',
 			    dest: 'pdf/'
 		    },
 		    dev2: {
 			    src: [
-				    DEMO_PATH + '/index.html',
-				    DEMO_PATH + '/String.html'
+				    DOCU_PATH + '/index.html',
+				    DOCU_PATH + '/String.html'
 			    ],
 			    dest: 'pdf/'
 		    }
@@ -189,7 +163,6 @@ module.exports = function (grunt) {
 
     // Load task libraries
     [
-		'grunt-contrib-connect',
 		'grunt-contrib-watch',
 		'grunt-contrib-copy',
 		'grunt-contrib-clean',
@@ -201,10 +174,8 @@ module.exports = function (grunt) {
     });
 
     // Definitions of tasks
-
     grunt.registerTask('watch_run', 'Watch project files', [
         'axisj_jsdoc_bulid',
-        //'connect:demo',
         'watch'
     ]);
 
@@ -213,7 +184,6 @@ module.exports = function (grunt) {
         'clean:demo',
         'jsdoc:demo'
     ]);
-
 
 	grunt.registerTask('axisj_jsdoc_topdf', 'Create documentations for pdf', [
 		'wkhtmltopdf:dev'
