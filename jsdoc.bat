@@ -1,0 +1,1 @@
+node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\grunt-cli\bin\grunt --gruntfile Gruntfile.js axisj_jsdoc_bulid
