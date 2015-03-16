@@ -188,4 +188,12 @@ module.exports = function (grunt) {
 	grunt.registerTask('axisj_jsdoc_topdf', 'Create documentations for pdf', [
 		'wkhtmltopdf:dev'
 	]);
+	
+	
+	//npm install grunt-contrib-watch --save-dev
+	//npm install grunt-contrib-copy --save-dev
+	//npm install grunt-contrib-clean --save-dev
+	//npm install grunt-contrib-less --save-dev
+	//npm install git+https://github.com/jsdoc3/jsdoc.git
+	//npm install grunt-wkhtmltopdf
 };
