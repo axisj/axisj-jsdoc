@@ -10,15 +10,9 @@
 			"outputSourceFiles" : true
 		},
 		"applicationName": "AXISJ API",
-<<<<<<< HEAD
 		"git_liblink": "https://github.com/axisj/axisj/blob/master/lib/",
 		"disqus": "",
 		"googleAnalytics": "UA-56252826-1",
-=======
-		"git_liblink": "https://github.com/axisj-com/axisj/blob/master/lib/",
-		"disqus": "",
-		"googleAnalytics": "",
->>>>>>> 293d56bdd520d6d6abf2744627b312d32911df86
 		"openGraph": {
 			"title": "AXISJ JSDOC",
 			"type": "JSDOC API",
