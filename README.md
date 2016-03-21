@@ -169,7 +169,11 @@ module.exports = function (grunt) {
 			"outputSourceFiles" : true
 		},
 		"applicationName": "AXISJ API",
+<<<<<<< HEAD
 		"git_liblink": "https://github.com/axisj/axisj/blob/master/lib/", // 이부분 추가 했는데요. 메소드 명 옆에 파일이름과 줄번호를 gitHub링크로 보냅니다.
+=======
+		"git_liblink": "https://github.com/axisj-com/axisj/blob/master/lib/", // 이부분 추가 했는데요. 메소드 명 옆에 파일이름과 줄번호를 gitHub링크로 보냅니다.
+>>>>>>> 293d56bdd520d6d6abf2744627b312d32911df86
 		"disqus": "",
 		"googleAnalytics": "",
 		"openGraph": {

@@ -4,7 +4,11 @@
 module.exports = function (grunt) {
     var path = require('path');
     var DOCU_PATH = 'document';
+<<<<<<< HEAD
     var SOURCE_PATH = '../axisj/';
+=======
+    var SOURCE_PATH = 'src';
+>>>>>>> 293d56bdd520d6d6abf2744627b312d32911df86
     
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -37,6 +41,7 @@ module.exports = function (grunt) {
         jsdoc: {
             demo: {
                 src: [
+<<<<<<< HEAD
 
 	                SOURCE_PATH + 'lib/AXConfig.js',
 
@@ -74,6 +79,9 @@ module.exports = function (grunt) {
 	                SOURCE_PATH + 'lib/AXValidator.js',
 	                //SOURCE_PATH + 'lib/AXWaterfall.js',
 
+=======
+	                SOURCE_PATH + '/samples.js',
+>>>>>>> 293d56bdd520d6d6abf2744627b312d32911df86
                     // You can add README.md file for index page at documentations.
                     'index.md'
                 ],
@@ -104,6 +112,7 @@ module.exports = function (grunt) {
         },
 	    wkhtmltopdf: {
 		    dev: {
+<<<<<<< HEAD
 			    /*
 			    src: [
 					DOCU_PATH + 'Array.html',
@@ -158,6 +167,10 @@ module.exports = function (grunt) {
 				    DOCU_PATH + '/String.html'
 			    ],
 			    dest: 'pdf/'
+=======
+			    src: DOCU_PATH + '/*.html',
+			    dest: 'pdf/'
+>>>>>>> 293d56bdd520d6d6abf2744627b312d32911df86
 		    }
 	    }
     });
