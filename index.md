@@ -3,17 +3,10 @@
 AXISJ 를 처음 사용하시는 분들을 위한 사용 가이드입니다.
 >This guide walks through the easy steps of setting up AXISJ.
 
-<<<<<<< HEAD
-AXISJ의 모든 소르는 다음의 주소(gitHub)에서 모두 다운로드 받으실 수 있고 사용상 질문도 하실 수 있습니다. https://github.com/axisj/axisj.
+AXISJ의 모든 소스는 다음의 주소(gitHub)에서 모두 다운로드 받으실 수 있고 사용상 질문도 하실 수 있습니다. https://github.com/axisj/axisj.
 >directory image sample
 Please download AXISJ.
 Download available on https://github.com/axisj/axisj.
-=======
-AXISJ의 모든 소르는 다음의 주소(gitHub)에서 모두 다운로드 받으실 수 있고 사용상 질문도 하실 수 있습니다. https://github.com/axisj-com/axisj.
->directory image sample
-Please download AXISJ.
-Download available on https://github.com/axisj-com/axisj.
->>>>>>> 293d56bdd520d6d6abf2744627b312d32911df86
 
 다운로드 받은 파일 중에 _AXJ 폴더를 작업 중인 폴더 안에 위치시킵니다. 우측의 이미지에 보시면 루트 밑에 "_AXJ" 폴더를 위치시켰습니다. 위치는 사용상의 편의에 따라서 이동가능 합니다. 위치를 변경하셨다면 링크시에 위치를 적절하게 변경 해 주셔야 합니다. 이번 예제에서는 우측 이미지처럼 루트 밑에 지정했다는 가정 하에 진행합니다.
 >You can find '_AXJ' or 'axisj' folder from the downloaded files. Place it in the folder of your current project. As can be seen from the image on the right, '_AXJ' or 'axisj' folder can be placed just under the root folder. The location of the folder can be changed, but you need to change the folder path when you link if the folder is located under other folders not the root folder. Please keep in mind that '_AXJ' folder is assumed to be right under the root folder in the following example below.
@@ -113,13 +106,8 @@ $(document.body).ready(function(){
 </style>
 ```
 
-<<<<<<< HEAD
 보다 편리한 이용을 위해서는 AXU를 이용하시는 것을 권장 합니다. http://axu.axisj.com, https://github.com/axisj/axu
 >and you can use with 'AXU' http://axu.axisj.com, https://github.com/axisj/axu
-=======
-보다 편리한 이용을 위해서는 AXU를 이용하시는 것을 권장 합니다. http://axu.axisj.com, https://github.com/axisj-com/axu
->and you can use with 'AXU' http://axu.axisj.com, https://github.com/axisj-com/axu
->>>>>>> 293d56bdd520d6d6abf2744627b312d32911df86
 
 ## AXGrid 사용가이드
 
@@ -302,11 +290,7 @@ AXGrid.setList 메소드를 붙이는데 문제가 없다면 아래와 같은 �
 
 ## 참조
 * [AXISJ웹사이트] https://www.axisj.com
-<<<<<<< HEAD
 * [AXISJ gitHub] https://github.com/axisj
-=======
-* [AXISJ gitHub] https://github.com/axisj-com
->>>>>>> 293d56bdd520d6d6abf2744627b312d32911df86
 * [AXISJ Facebook] https://www.facebook.com/axisj
 
 ## 문서작업 기여자

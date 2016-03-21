@@ -1806,9 +1806,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L120" target="_blank">
+            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L119" target="_blank">
             AXEditor.js,
-            line 120</a>
+            line 119</a>
         </div>
         
     </div>
@@ -1914,9 +1914,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L1602" target="_blank">
+            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L1635" target="_blank">
             AXEditor.js,
-            line 1602</a>
+            line 1635</a>
         </div>
         
     </div>
@@ -1983,14 +1983,14 @@
         
 
     
-    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code> var myContent = myEditor.getContent();
- var content = [];
- while(myContent.length > 0){
+    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code>     var myContent = myEditor.getContent();
+     var content = [];
+     while(myContent.length > 0){
     content.push(&quot;content=&quot;+myContent.substr(0, 102399).enc());
     myContent = myContent.substr(102399);
  }
- alert(content);
- // post전송할 때 짤림현상 방지를 위해서는 content를 잘라서 보내야 합니다.</code></pre></code></pre>
+     alert(content);
+     // post전송할 때 짤림현상 방지를 위해서는 content를 잘라서 보내야 합니다.</code></pre></code></pre>
     
 
     
@@ -2008,9 +2008,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L576" target="_blank">
+            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L573" target="_blank">
             AXEditor.js,
-            line 576</a>
+            line 573</a>
         </div>
         
     </div>
@@ -2122,10 +2122,10 @@
         
 
     
-    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code> var file = {
+    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code>     var file = {
     id:&quot;식별자&quot;, nm:&quot;저장된파일이름&quot;, ty:&quot;파일타입&quot;
 };
- myEditor.insertIMG(file);</code></pre></code></pre>
+     myEditor.insertIMG(file);</code></pre></code></pre>
     
 
     
@@ -2143,9 +2143,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L626" target="_blank">
+            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L623" target="_blank">
             AXEditor.js,
-            line 626</a>
+            line 623</a>
         </div>
         
     </div>
@@ -2257,7 +2257,7 @@
         
 
     
-    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code> myEditor.removeIMG(&quot;IMG_00110011&quot;);</code></pre></code></pre>
+    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code>     myEditor.removeIMG(&quot;IMG_00110011&quot;);</code></pre></code></pre>
     
 
     
@@ -2275,9 +2275,9 @@
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L237" target="_blank">
+            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L234" target="_blank">
             AXEditor.js,
-            line 237</a>
+            line 234</a>
         </div>
         
     </div>
@@ -2380,9 +2380,9 @@
         
 
     
-    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code>var myEditor = new AXEditor();
+    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code>     var myEditor = new AXEditor();
 
-myEditor.setConfig({
+     myEditor.setConfig({
     targetID: &quot;AXEditorTarget&quot;, // 에디터 표시 타겟
     lang: &quot;kr&quot;,
     height: 300,
@@ -2413,9 +2413,9 @@ myEditor.setConfig({
         
         <div class="tag-source">
             <i class="axi axi-github"></i>
-            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L1643" target="_blank">
+            <a href="https://github.com/axisj/axisj/blob/master/lib/AXEditor.js#L1677" target="_blank">
             AXEditor.js,
-            line 1643</a>
+            line 1677</a>
         </div>
         
     </div>
@@ -2530,8 +2530,8 @@ myEditor.setConfig({
         
 
     
-    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code> myEditor.setContent($(&quot;#editContent&quot;));
- myEditor.setContent(&quot;액시스제이&quot;);</code></pre></code></pre>
+    <pre class="prettyprint linenums"><code><pre class="prettyprint source lang-js"><code>     myEditor.setContent($(&quot;#editContent&quot;));
+     myEditor.setContent(&quot;액시스제이&quot;);</code></pre></code></pre>
     
 
     
@@ -2554,7 +2554,7 @@ myEditor.setConfig({
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Mar 21 2016 22:05:02 GMT+0900 (KST)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Mon Mar 21 2016 22:13:45 GMT+0900 (KST)
         </footer>
     </div>
 </div>
