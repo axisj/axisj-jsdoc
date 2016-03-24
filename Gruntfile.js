@@ -150,7 +150,7 @@ module.exports = function (grunt) {
 					DOCU_PATH + 'String.html'
 				],
 				*/
-			    src: DOCU_PATH + '/*.html',
+			    src: [DOCU_PATH + '/*.html', '!' + DOCU_PATH + '/*.js.html'],
 			    dest: 'pdf/'
 		    },
 		    dev2: {
