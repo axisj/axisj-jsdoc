@@ -311,8 +311,7 @@
 		}
 
 		.prettyprint{
-			padding: 10px;
-			background: #414141;
+
 			ol{margin: 0px;margin-left:40px;}
 			li{
 				margin: 0px;color: #aaa;
@@ -320,12 +319,18 @@
 			}
 		}
 		pre.prettyprint{
+            padding: 10px;
+            background: #414141;
 			width: auto;
 			margin: 0px;
 			font-size: 12px;
 			word-break:break-all;
 			li{
 				word-break:break-all;
+                pre{
+                    padding:1px !important;
+                    border-radius: 0px;
+                }
 				code{
 					span{white-space: pre-wrap;}
 				}

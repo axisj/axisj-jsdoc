@@ -1,161 +1,178 @@
 @import "common.less";
 
-@print:	~"only print";
+@print: ~"only print";
 
 // normalize
 html, body {
-	margin: 0px;
-	padding: 0px;
-    font: 12px "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font: 12px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
-	line-height: 1.5em;
+    line-height: 1.5em;
 }
+
 ul, ol {
     margin: 0;
     padding: 0;
 }
+
 li {
     list-style-type: none;
 }
-p{
-	color: #666;
-	line-height: 1.8em;
+
+p {
+    color: #666;
+    line-height: 1.8em;
 }
+
 #wrap {
     position: relative;
 }
-
 
 @import "navigation.less";
 @import "main.less";
 @import "footer.less";
 
-
 @media @print {
-	html, body{
-		background: #fff;
-	}
-	.navigation{
-		display: none;
-	}
-	.main {
-		page-break-before: always;
-		background: #fff;
-		padding: 20px 20px;
-		margin-left: 0px;
-		img{width: 100%;}
+    html, body {
+        background: #fff;
+    }
 
-		article {
-			.prettyprint{
-				padding: 10px;
-				background: #fff;
-				border: 1px solid #ccc;
-				border-radius: 10px;
-				ol{margin: 0px;margin-left:40px;}
-				li{
-					margin: 0px;color: #aaa;
-					background: #fff;
-				}
-			}
-			pre.prettyprint{
-				width: auto;
-				margin: 0px;
-				font-size: 12px;
-				word-break:break-all;
-				li{
-					word-break:break-all;
-					code{
-						span{white-space: pre-wrap;}
-					}
-				}
-			}
-		}
-	}
+    .navigation {
+        display: none;
+    }
 
-	/*
-	.index{
-		.navigation{
-			display: block;
-			position: relative;
-			float: none;
-			width: auto;
-			height: auto;
-			overflow: visible;
-			background: #fff;
-			.applicationName{
-				color: #000;
-				a{color: #000;}
-			}
-			.search{display: none;}
-			.list{
-				height: auto;
-				overflow: visible;
-			}
-			li.item {
-				display: block;
-				margin: 8px 0px;
-				padding: 8px 0px;
-				border-top: 1px solid #ccc;
-				border-bottom: 0px none;
+    .main {
+        page-break-before: always;
+        background: #fff;
+        padding: 20px 20px;
+        margin-left: 0px;
+        img {
+            width: 100%;
+        }
 
-				a {
-					font-size: 12px;
-					text-decoration: none;
-					color: #000;
-					&:hover {
-						color: #000;
-					}
-				}
-				.title {
-					cursor: pointer;
-					position: relative;
+        article {
+            .prettyprint {
+                ol {
+                    margin: 0px;
+                    margin-left: 40px;
+                }
+                li {
+                    margin: 0px;
+                    color: #aaa;
+                    background: #fff;
+                }
+            }
+            pre.prettyprint {
+                padding: 10px;
+                background: #fff;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                width: auto;
+                margin: 0px;
+                font-size: 12px;
+                word-break: break-all;
+                li {
+                    word-break: break-all;
+                    pre {
+                        padding: 1px !important;
+                        border: 0px none;
+                        border-radius: 0px;
+                    }
+                    code {
+                        span {
+                            white-space: pre-wrap;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-					a {
-						font-size: 18px;
-						color: #000;
-						&:hover {
-							color: #000;
-						}
-					}
-					display: block;
-					font-size: 0.8em;
+    /*
+    .index{
+        .navigation{
+            display: block;
+            position: relative;
+            float: none;
+            width: auto;
+            height: auto;
+            overflow: visible;
+            background: #fff;
+            .applicationName{
+                color: #000;
+                a{color: #000;}
+            }
+            .search{display: none;}
+            .list{
+                height: auto;
+                overflow: visible;
+            }
+            li.item {
+                display: block;
+                margin: 8px 0px;
+                padding: 8px 0px;
+                border-top: 1px solid #ccc;
+                border-bottom: 0px none;
 
-					.static {
-						display: block;
-						border-radius: 3px;
-						background-color: @colorSubtitle;
-						color: #000;
-						font-size: 0.7em;
-						line-height: 1.2em;
-						padding: 2px 4px;
-						float: right;
-					}
-				}
+                a {
+                    font-size: 12px;
+                    text-decoration: none;
+                    color: #000;
+                    &:hover {
+                        color: #000;
+                    }
+                }
+                .title {
+                    cursor: pointer;
+                    position: relative;
 
-				.subtitle {
-					margin-top: 10px;
-					font: bold 1em Helvetica;
-					color: @colorSubtitle;
-					display: block;
-				}
+                    a {
+                        font-size: 18px;
+                        color: #000;
+                        &:hover {
+                            color: #000;
+                        }
+                    }
+                    display: block;
+                    font-size: 0.8em;
+
+                    .static {
+                        display: block;
+                        border-radius: 3px;
+                        background-color: @colorSubtitle;
+                        color: #000;
+                        font-size: 0.7em;
+                        line-height: 1.2em;
+                        padding: 2px 4px;
+                        float: right;
+                    }
+                }
+
+                .subtitle {
+                    margin-top: 10px;
+                    font: bold 1em Helvetica;
+                    color: @colorSubtitle;
+                    display: block;
+                }
 
 
-				ul {
-					& > li {
-						font-size: 0.9em;
-						padding-left: 20px;
-						margin-top: 2px;
-					}
-				}
+                ul {
+                    & > li {
+                        font-size: 0.9em;
+                        padding-left: 20px;
+                        margin-top: 2px;
+                    }
+                }
 
-				.itemMembers {
-					margin-left:20px;
-					display: block;
-					font-size: 13px;
-				}
-			}
-		}
-	}
+                .itemMembers {
+                    margin-left:20px;
+                    display: block;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
 */
 
 }
